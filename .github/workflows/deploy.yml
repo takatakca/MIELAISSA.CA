@@ -21,7 +21,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: main
+          ref: ${{ github.event_name == 'workflow_run' && github.event.workflow_run.head_sha || 'main' }}
       - name: Validate SSH settings
         env:
           HOST: ${{ vars.MIELAISSA_SSH_HOST }}
