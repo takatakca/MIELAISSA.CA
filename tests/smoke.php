@@ -36,6 +36,7 @@ function get_terms() { return $GLOBALS['ma_categories']; }
 function get_term_link($term) { return 'https://mielaissa.ca/product-category/' . $term->slug . '/'; }
 function get_permalink($id) { return 'https://mielaissa.ca/product/' . $id . '/'; }
 function wc_get_coupon_id_by_code($code) { return isset($GLOBALS['ma_coupon_ids'][$code]) ? $GLOBALS['ma_coupon_ids'][$code] : 0; }
+function get_post_status($id) { return !empty($GLOBALS['ma_coupons'][$id]['unpublished']) ? 'draft' : 'publish'; }
 
 class FakeProduct {
     public function get_id() { return 101; }
@@ -109,6 +110,9 @@ $GLOBALS['ma_coupons'][1]['free_shipping'] = false;
 $GLOBALS['ma_coupons'][2]['amount'] = '10';
 verify(count(mielaissa_available_offers()) === 0, 'Wrong coupon mechanics rejected');
 $GLOBALS['ma_coupons'][1]['free_shipping'] = true;
+$GLOBALS['ma_coupons'][1]['unpublished'] = true;
+verify(count(mielaissa_available_offers()) === 0, 'Unpublished coupons rejected');
+$GLOBALS['ma_coupons'][1]['unpublished'] = false;
 $GLOBALS['ma_coupons'][1]['expired'] = true;
 verify(count(mielaissa_available_offers()) === 0, 'Expired and mismatched coupons rejected');
 
