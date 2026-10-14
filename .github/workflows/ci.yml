@@ -1,0 +1,32 @@
+name: Miel Aissa CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          coverage: none
+      - name: PHP syntax and smoke checks
+        run: bash scripts/check.sh
+      - name: Package WordPress plugin
+        run: |
+          cd wordpress/wp-content/plugins
+          zip -r "$GITHUB_WORKSPACE/mielaissa-storefront.zip" mielaissa-storefront
+      - uses: actions/upload-artifact@v4
+        with:
+          name: mielaissa-storefront-plugin
+          path: mielaissa-storefront.zip
+          if-no-files-found: error

@@ -1,0 +1,65 @@
+name: Deploy Miel Aissa plugin
+
+on:
+  workflow_run:
+    workflows: ["Miel Aissa CI"]
+    types: [completed]
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: mielaissa-production-plugin
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    if: ${{ vars.MIELAISSA_DEPLOY_ENABLED == 'true' && (github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success') }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Validate SSH settings
+        env:
+          HOST: ${{ vars.MIELAISSA_SSH_HOST }}
+          PORT: ${{ vars.MIELAISSA_SSH_PORT }}
+          USER: ${{ vars.MIELAISSA_SSH_USER }}
+          WP_ROOT: ${{ vars.MIELAISSA_WP_ROOT }}
+          KEY: ${{ secrets.MIELAISSA_SSH_PRIVATE_KEY }}
+          HOST_KEYS: ${{ secrets.MIELAISSA_SSH_KNOWN_HOSTS }}
+        run: |
+          set -euo pipefail
+          for value in "$HOST" "$PORT" "$USER" "$WP_ROOT" "$KEY" "$HOST_KEYS"; do
+            test -n "$value" || { echo "Missing required SSH setting"; exit 1; }
+          done
+          [[ "$WP_ROOT" =~ ^/[A-Za-z0-9/_-]+$ ]] || { echo "Invalid WordPress path"; exit 1; }
+          [[ "$PORT" =~ ^[0-9]+$ ]] || exit 1
+          [[ "$HOST" =~ ^[A-Za-z0-9.-]+$ ]] || exit 1
+          [[ "$USER" =~ ^[A-Za-z0-9_-]+$ ]] || exit 1
+      - name: Configure verified SSH trust
+        env:
+          KEY: ${{ secrets.MIELAISSA_SSH_PRIVATE_KEY }}
+          HOST_KEYS: ${{ secrets.MIELAISSA_SSH_KNOWN_HOSTS }}
+        run: |
+          set -euo pipefail
+          install -d -m 700 ~/.ssh
+          printf '%s\n' "$KEY" > ~/.ssh/id_ed25519
+          printf '%s\n' "$HOST_KEYS" > ~/.ssh/known_hosts
+          chmod 600 ~/.ssh/id_ed25519 ~/.ssh/known_hosts
+      - name: Synchronize only plugin files
+        env:
+          HOST: ${{ vars.MIELAISSA_SSH_HOST }}
+          PORT: ${{ vars.MIELAISSA_SSH_PORT }}
+          USER: ${{ vars.MIELAISSA_SSH_USER }}
+          WP_ROOT: ${{ vars.MIELAISSA_WP_ROOT }}
+        run: |
+          set -euo pipefail
+          TARGET="$WP_ROOT/wp-content/plugins/mielaissa-storefront"
+          ssh -p "$PORT" -o BatchMode=yes "$USER@$HOST" "test -d '$WP_ROOT/wp-content/plugins' && mkdir -p '$TARGET'"
+          rsync -az --delete -e "ssh -p $PORT -o BatchMode=yes" \
+            wordpress/wp-content/plugins/mielaissa-storefront/ \
+            "$USER@$HOST:$TARGET/"
+          echo "Plugin synchronized. WordPress activation and shortcode placement are separate."
