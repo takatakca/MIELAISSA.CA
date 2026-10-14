@@ -64,7 +64,7 @@ function mielaissa_available_offers() {
     $valid = array();
     foreach ($definitions as $code => $type) {
         $id = wc_get_coupon_id_by_code($code);
-        if (!$id) {
+        if (!$id || get_post_status($id) !== 'publish') {
             continue;
         }
         $coupon = new WC_Coupon($id);
