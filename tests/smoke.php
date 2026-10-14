@@ -1,43 +1,115 @@
 <?php
-/* Framework-free smoke tests; never substitute for WordPress integration testing. */
+/**
+ * Contract smoke tests (no database / no real WordPress runtime).
+ * Verify hook registration, translations, escaping, catalogue rendering,
+ * limit handling and coupon states before the plugin enters staging.
+ */
 define('ABSPATH', __DIR__ . '/');
-$GLOBALS['registered'] = array();
-function add_action($name, $handler) { $GLOBALS['registered'][$name] = $handler; }
-function add_shortcode($name, $handler) { $GLOBALS['registered'][$name] = $handler; }
+$GLOBALS['ma_registered'] = array();
+$GLOBALS['ma_products'] = array();
+$GLOBALS['ma_categories'] = array();
+$GLOBALS['ma_coupon_ids'] = array();
+$GLOBALS['ma_coupons'] = array();
+$GLOBALS['ma_product_query'] = array();
+
+function add_action($name, $fn) { $GLOBALS['ma_registered'][$name] = $fn; }
+function add_shortcode($name, $fn) { $GLOBALS['ma_registered'][$name] = $fn; }
 function get_locale() { return 'fr_CA'; }
 function shortcode_atts($defaults, $atts, $shortcode = '') { return array_merge($defaults, $atts); }
 function esc_html($str) { return htmlspecialchars((string) $str, ENT_QUOTES, 'UTF-8'); }
 function esc_attr($str) { return esc_html($str); }
 function esc_url($str) { return esc_html($str); }
+function wp_kses_post($str) { return $str; }
 function home_url($path = '/') { return 'https://mielaissa.ca' . $path; }
-function absint($n) { return abs((int) $n); }
+function absint($num) { return abs((int) $num); }
 function is_wp_error($value) { return false; }
-function sanitize_email($value) { return $value; }
+function sanitize_email($email) { return $email; }
 function plugin_dir_url($file) { return '/wp-content/plugins/mielaissa-storefront/'; }
 function wp_enqueue_style() {}
 function wp_enqueue_script() {}
-function wp_kses_post($value) { return $value; }
-function get_terms() { return array(); }
-function wc_get_products() { return array(); }
 function wc_get_page_permalink() { return 'https://mielaissa.ca/shop/'; }
+function wc_get_products($query) {
+    $GLOBALS['ma_product_query'] = $query;
+    return $GLOBALS['ma_products'];
+}
+function get_terms() { return $GLOBALS['ma_categories']; }
+function get_term_link($term) { return 'https://mielaissa.ca/product-category/' . $term->slug . '/'; }
+function get_permalink($id) { return 'https://mielaissa.ca/product/' . $id . '/'; }
+function wc_get_coupon_id_by_code($code) { return isset($GLOBALS['ma_coupon_ids'][$code]) ? $GLOBALS['ma_coupon_ids'][$code] : 0; }
+
+class FakeProduct {
+    public function get_id() { return 101; }
+    public function is_visible() { return true; }
+    public function get_name() { return 'Honey & <script>bad()</script>'; }
+    public function get_image($size) { return '<img src="/honey.jpg" alt="Honey">'; }
+    public function get_price_html() { return '<span class="amount">$50</span>'; }
+}
+class WC_Coupon {
+    private $id;
+    public function __construct($id) { $this->id = $id; }
+    public function get_id() { return $this->id; }
+    public function get_date_expires() {
+        $offer = $GLOBALS['ma_coupons'][$this->id];
+        return !empty($offer['expired']) ? new DateTimeImmutable('-1 day') : null;
+    }
+    public function get_free_shipping() { return !empty($GLOBALS['ma_coupons'][$this->id]['free_shipping']); }
+    public function get_discount_type() { return $GLOBALS['ma_coupons'][$this->id]['type']; }
+    public function get_amount() { return $GLOBALS['ma_coupons'][$this->id]['amount']; }
+}
+
 require __DIR__ . '/../wordpress/wp-content/plugins/mielaissa-storefront/mielaissa-storefront.php';
-function expect_true($state, $label) {
-    if (!$state) { fwrite(STDERR, "FAIL: $label\n"); exit(1); }
+
+function verify($condition, $label) {
+    if (!$condition) {
+        fwrite(STDERR, "FAIL: $label\n");
+        exit(1);
+    }
     echo "PASS: $label\n";
 }
-expect_true(mielaissa_language() === 'fr', 'French from WordPress locale');
-expect_true(mielaissa_language('en') === 'en', 'English override');
-expect_true(mielaissa_label('hero', 'fr') !== mielaissa_label('hero', 'en'), 'Translated content');
-expect_true(isset($GLOBALS['registered']['init']), 'WordPress init hook');
+
+verify(mielaissa_language() === 'fr', 'French default locale');
+verify(mielaissa_language('en') === 'en', 'English override');
+verify(mielaissa_language('invalid') === 'fr', 'Invalid override uses locale');
+verify(mielaissa_label('hero', 'en') !== mielaissa_label('hero', 'fr'), 'Bilingual translations');
+verify(isset($GLOBALS['ma_registered']['init']) && isset($GLOBALS['ma_registered']['wp_enqueue_scripts']), 'WordPress hooks');
 mielaissa_register_shortcodes();
-expect_true(isset($GLOBALS['registered']['mielaissa_storefront']), 'Storefront shortcode');
-expect_true(isset($GLOBALS['registered']['mielaissa_offers']), 'Offers shortcode');
-$fr = mielaissa_storefront_shortcode(array('lang' => 'fr', 'limit' => 999));
-$en = mielaissa_storefront_shortcode(array('lang' => 'en'));
-expect_true(strpos($fr, 'Du miel pour') !== false, 'French render');
-expect_true(strpos($en, 'Honey for') !== false, 'English render');
-expect_true(strpos($fr, 'https://mielaissa.ca/shop/') !== false, 'WooCommerce shop link');
-expect_true(strpos($fr, 'Les produits seront affichés') !== false, 'No product fallback');
-$offers = mielaissa_offers_shortcode();
-expect_true(strpos($offers, 'Consultez la boutique') !== false, 'No unverified coupon displayed');
-echo "Smoke checks passed.\n";
+verify(isset($GLOBALS['ma_registered']['mielaissa_storefront']) && isset($GLOBALS['ma_registered']['mielaissa_offers']), 'Both shortcodes');
+
+$fr = mielaissa_storefront_shortcode(array('lang' => 'fr', 'limit' => '999'));
+verify(strpos($fr, 'Du miel pour') !== false, 'French storefront renders');
+verify(strpos($fr, 'Les produits seront affichés') !== false, 'Empty catalogue state');
+verify(strpos($fr, 'https://mielaissa.ca/shop/') !== false, 'Links to existing WooCommerce shop');
+verify($GLOBALS['ma_product_query']['limit'] === 12, 'Product limit upper bound');
+$en = mielaissa_storefront_shortcode(array('lang' => 'en', 'limit' => '0'));
+verify(strpos($en, 'Honey for') !== false, 'English storefront renders');
+verify($GLOBALS['ma_product_query']['limit'] === 1, 'Product limit lower bound');
+
+$GLOBALS['ma_products'] = array(new FakeProduct());
+$GLOBALS['ma_categories'] = array((object) array('slug' => 'honey', 'name' => 'Honey <b>Sweet</b>'));
+$rendered = mielaissa_storefront_shortcode(array('lang' => 'en'));
+verify(strpos($rendered, 'Honey &amp; &lt;script&gt;bad()&lt;/script&gt;') !== false, 'Escaped product titles');
+verify(strpos($rendered, 'Honey &lt;b&gt;Sweet&lt;/b&gt;') !== false, 'Escaped category labels');
+verify(strpos($rendered, '<img src="/honey.jpg"') !== false, 'WooCommerce product image rendered');
+verify(strpos($rendered, '$50</span>') !== false, 'WooCommerce price HTML rendered');
+verify(strpos($rendered, 'https://mielaissa.ca/product/101/') !== false, 'Product detail links');
+verify(strpos($rendered, '<script>bad()') === false, 'No raw script injection in product titles');
+
+$no_coupons = mielaissa_offers_shortcode();
+verify(strpos($no_coupons, 'Consultez la boutique') !== false, 'Unknown coupons not advertised');
+$GLOBALS['ma_coupon_ids'] = array('MIELAISSA120' => 1, 'FIRSTORDER15' => 2);
+$GLOBALS['ma_coupons'] = array(
+    1 => array('type' => 'fixed_cart', 'amount' => '0', 'free_shipping' => true),
+    2 => array('type' => 'percent', 'amount' => '15', 'free_shipping' => false),
+);
+$offers = mielaissa_available_offers();
+verify(count($offers) === 2, 'Valid existing coupons advertised');
+verify(strpos(mielaissa_offers_shortcode(array('lang' => 'en')), 'FIRSTORDER15') !== false, 'Coupons displayed in English');
+
+$GLOBALS['ma_coupons'][1]['free_shipping'] = false;
+$GLOBALS['ma_coupons'][2]['amount'] = '10';
+verify(count(mielaissa_available_offers()) === 0, 'Wrong coupon mechanics rejected');
+$GLOBALS['ma_coupons'][1]['free_shipping'] = true;
+$GLOBALS['ma_coupons'][1]['expired'] = true;
+verify(count(mielaissa_available_offers()) === 0, 'Expired and mismatched coupons rejected');
+
+echo "All storefront smoke checks passed.\n";
