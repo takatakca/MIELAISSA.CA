@@ -30,6 +30,9 @@ function wp_enqueue_script() {}
 function wc_get_page_permalink() { return 'https://mielaissa.ca/shop/'; }
 function wc_get_products($query) {
     $GLOBALS['ma_product_query'] = $query;
+    if (!empty($GLOBALS['ma_fail_product_query'])) {
+        throw new RuntimeException('Sensitive database error details');
+    }
     return $GLOBALS['ma_products'];
 }
 function get_terms() { return $GLOBALS['ma_categories']; }
@@ -48,7 +51,12 @@ class FakeProduct {
 }
 class WC_Coupon {
     private $id;
-    public function __construct($id) { $this->id = $id; }
+    public function __construct($id) {
+        if (!empty($GLOBALS['ma_coupons'][$id]['throw'])) {
+            throw new RuntimeException('Corrupt coupon metadata');
+        }
+        $this->id = $id;
+    }
     public function get_id() { return $this->id; }
     public function get_date_expires() {
         $offer = $GLOBALS['ma_coupons'][$this->id];
@@ -127,5 +135,15 @@ verify(count(mielaissa_storefront_available_offers()) === 0, 'Unpublished coupon
 $GLOBALS['ma_coupons'][1]['unpublished'] = false;
 $GLOBALS['ma_coupons'][1]['expired'] = true;
 verify(count(mielaissa_storefront_available_offers()) === 0, 'Expired and mismatched coupons rejected');
+
+$GLOBALS['ma_fail_product_query'] = true;
+$unavailable = mielaissa_storefront_shortcode(array('lang' => 'en'));
+verify(strpos($unavailable, 'The store is temporarily unavailable.') !== false, 'WooCommerce exceptions return a safe customer-facing fallback');
+verify(strpos($unavailable, 'Sensitive database error') === false, 'No internal exception messages exposed');
+$GLOBALS['ma_fail_product_query'] = false;
+$GLOBALS['ma_coupons'][1]['expired'] = false;
+$GLOBALS['ma_coupons'][1]['throw'] = true;
+$GLOBALS['ma_coupons'][2]['amount'] = '15';
+verify(count(mielaissa_storefront_available_offers()) === 1, 'Corrupt coupon does not suppress other valid offers');
 
 echo "All storefront smoke checks passed.\n";

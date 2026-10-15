@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Miel Aissa Storefront
  * Description: A bilingual WooCommerce catalogue and verified offer highlights.
- * Version: 0.2.3
+ * Version: 0.2.4
  * Requires at least: 6.2
  * Requires PHP: 7.4
  * Text Domain: mielaissa-storefront
@@ -10,7 +10,7 @@
 
 defined('ABSPATH') || exit;
 
-define('MIELAISSA_STOREFRONT_VERSION', '0.2.3');
+define('MIELAISSA_STOREFRONT_VERSION', '0.2.4');
 
 function mielaissa_storefront_language($requested = '') {
     if (in_array($requested, array('fr', 'en'), true)) {
@@ -68,25 +68,30 @@ function mielaissa_storefront_available_offers() {
         if (!$id || get_post_status($id) !== 'publish') {
             continue;
         }
-        $coupon = new WC_Coupon($id);
-        if (!$coupon->get_id()) {
+        try {
+            $coupon = new WC_Coupon($id);
+            if (!$coupon->get_id()) {
+                continue;
+            }
+            $expiration = $coupon->get_date_expires();
+            if ($expiration && $expiration->getTimestamp() < time()) {
+                continue;
+            }
+            $usage_limit = (int) $coupon->get_usage_limit();
+            if ($usage_limit > 0 && (int) $coupon->get_usage_count() >= $usage_limit) {
+                continue;
+            }
+            if ($type === 'shipping' && !$coupon->get_free_shipping()) {
+                continue;
+            }
+            if ($type === 'first' && ($coupon->get_discount_type() !== 'percent' || (float) $coupon->get_amount() !== 15.0)) {
+                continue;
+            }
+            $valid[] = array('code' => $code, 'type' => $type);
+        } catch (Throwable $error) {
+            // Malformed coupon data must not interrupt the rest of the shop.
             continue;
         }
-        $expiration = $coupon->get_date_expires();
-        if ($expiration && $expiration->getTimestamp() < time()) {
-            continue;
-        }
-        $usage_limit = (int) $coupon->get_usage_limit();
-        if ($usage_limit > 0 && (int) $coupon->get_usage_count() >= $usage_limit) {
-            continue;
-        }
-        if ($type === 'shipping' && !$coupon->get_free_shipping()) {
-            continue;
-        }
-        if ($type === 'first' && ($coupon->get_discount_type() !== 'percent' || (float) $coupon->get_amount() !== 15.0)) {
-            continue;
-        }
-        $valid[] = array('code' => $code, 'type' => $type);
     }
     return $valid;
 }
@@ -130,8 +135,13 @@ function mielaissa_storefront_shortcode($atts = array()) {
     if (!function_exists('wc_get_products') || !function_exists('wc_get_page_permalink')) {
         return '<p class="ma-notice">' . esc_html(mielaissa_storefront_label('unavailable', $lang)) . '</p>';
     }
-    $products = wc_get_products(array('status' => 'publish', 'visibility' => 'catalog', 'limit' => $limit, 'orderby' => 'date', 'order' => 'DESC'));
-    $categories = get_terms(array('taxonomy' => 'product_cat', 'hide_empty' => true, 'number' => 6, 'orderby' => 'count', 'order' => 'DESC'));
+    try {
+        $products = wc_get_products(array('status' => 'publish', 'visibility' => 'catalog', 'limit' => $limit, 'orderby' => 'date', 'order' => 'DESC'));
+        $categories = get_terms(array('taxonomy' => 'product_cat', 'hide_empty' => true, 'number' => 6, 'orderby' => 'count', 'order' => 'DESC'));
+    } catch (Throwable $error) {
+        // Never expose database errors or internal paths in public shortcode HTML.
+        return '<p class="ma-notice" role="status">' . esc_html(mielaissa_storefront_label('unavailable', $lang)) . '</p>';
+    }
     if (!is_array($products)) {
         $products = array();
     }
