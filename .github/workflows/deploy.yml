@@ -24,6 +24,17 @@ jobs:
         with:
           ref: ${{ github.event.workflow_run.head_sha }}
           persist-credentials: false
+      - name: Reject superseded main revisions
+        env:
+          EXPECTED_SHA: ${{ github.event.workflow_run.head_sha }}
+        run: |
+          set -euo pipefail
+          LATEST_MAIN="$(git ls-remote --heads origin refs/heads/main | awk '{print $1}')"
+          test -n "$LATEST_MAIN" || { echo "Unable to verify main HEAD"; exit 1; }
+          if [ "$LATEST_MAIN" != "$EXPECTED_SHA" ]; then
+            echo "REFUSED: newer main commit exists; only deploy the latest validated revision" >&2
+            exit 1
+          fi
       - name: Revalidate source
         run: bash scripts/check.sh
       - name: Validate configuration
