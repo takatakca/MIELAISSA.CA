@@ -71,12 +71,12 @@ function verify($condition, $label) {
     echo "PASS: $label\n";
 }
 
-verify(mielaissa_language() === 'fr', 'French default locale');
-verify(mielaissa_language('en') === 'en', 'English override');
-verify(mielaissa_language('invalid') === 'fr', 'Invalid override uses locale');
-verify(mielaissa_label('hero', 'en') !== mielaissa_label('hero', 'fr'), 'Bilingual translations');
+verify(mielaissa_storefront_language() === 'fr', 'French default locale');
+verify(mielaissa_storefront_language('en') === 'en', 'English override');
+verify(mielaissa_storefront_language('invalid') === 'fr', 'Invalid override uses locale');
+verify(mielaissa_storefront_label('hero', 'en') !== mielaissa_storefront_label('hero', 'fr'), 'Bilingual translations');
 verify(isset($GLOBALS['ma_registered']['init']) && isset($GLOBALS['ma_registered']['wp_enqueue_scripts']), 'WordPress hooks');
-mielaissa_register_shortcodes();
+mielaissa_storefront_register_shortcodes();
 verify(isset($GLOBALS['ma_registered']['mielaissa_storefront']) && isset($GLOBALS['ma_registered']['mielaissa_offers']), 'Both shortcodes');
 
 $fr = mielaissa_storefront_shortcode(array('lang' => 'fr', 'limit' => '999'));
@@ -99,30 +99,30 @@ verify(strpos($rendered, 'https://mielaissa.ca/product/101/') !== false, 'Produc
 verify(strpos($rendered, 'Out of stock') !== false, 'Translated inventory state for sold-out products');
 verify(strpos($rendered, '<script>bad()') === false, 'No raw script injection in product titles');
 
-$no_coupons = mielaissa_offers_shortcode();
+$no_coupons = mielaissa_storefront_offers_shortcode();
 verify(strpos($no_coupons, 'Consultez la boutique') !== false, 'Unknown coupons not advertised');
 $GLOBALS['ma_coupon_ids'] = array('MIELAISSA120' => 1, 'FIRSTORDER15' => 2);
 $GLOBALS['ma_coupons'] = array(
     1 => array('type' => 'fixed_cart', 'amount' => '0', 'free_shipping' => true),
     2 => array('type' => 'percent', 'amount' => '15', 'free_shipping' => false),
 );
-$offers = mielaissa_available_offers();
+$offers = mielaissa_storefront_available_offers();
 verify(count($offers) === 2, 'Valid existing coupons advertised');
 $GLOBALS['ma_coupons'][2]['usage_limit'] = 3;
 $GLOBALS['ma_coupons'][2]['usage_count'] = 3;
-verify(count(mielaissa_available_offers()) === 1, 'Exhausted coupons hidden');
+verify(count(mielaissa_storefront_available_offers()) === 1, 'Exhausted coupons hidden');
 $GLOBALS['ma_coupons'][2]['usage_count'] = 2;
-verify(count(mielaissa_available_offers()) === 2, 'Unexhausted coupons available');
-verify(strpos(mielaissa_offers_shortcode(array('lang' => 'en')), 'FIRSTORDER15') !== false, 'Coupons displayed in English');
+verify(count(mielaissa_storefront_available_offers()) === 2, 'Unexhausted coupons available');
+verify(strpos(mielaissa_storefront_offers_shortcode(array('lang' => 'en')), 'FIRSTORDER15') !== false, 'Coupons displayed in English');
 
 $GLOBALS['ma_coupons'][1]['free_shipping'] = false;
 $GLOBALS['ma_coupons'][2]['amount'] = '10';
-verify(count(mielaissa_available_offers()) === 0, 'Wrong coupon mechanics rejected');
+verify(count(mielaissa_storefront_available_offers()) === 0, 'Wrong coupon mechanics rejected');
 $GLOBALS['ma_coupons'][1]['free_shipping'] = true;
 $GLOBALS['ma_coupons'][1]['unpublished'] = true;
-verify(count(mielaissa_available_offers()) === 0, 'Unpublished coupons rejected');
+verify(count(mielaissa_storefront_available_offers()) === 0, 'Unpublished coupons rejected');
 $GLOBALS['ma_coupons'][1]['unpublished'] = false;
 $GLOBALS['ma_coupons'][1]['expired'] = true;
-verify(count(mielaissa_available_offers()) === 0, 'Expired and mismatched coupons rejected');
+verify(count(mielaissa_storefront_available_offers()) === 0, 'Expired and mismatched coupons rejected');
 
 echo "All storefront smoke checks passed.\n";
