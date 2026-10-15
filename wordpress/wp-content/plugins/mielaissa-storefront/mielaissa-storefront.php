@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Miel Aissa Storefront
  * Description: A bilingual WooCommerce catalogue and verified offer highlights.
- * Version: 0.1.0
+ * Version: 0.2.0
  * Requires at least: 6.2
  * Requires PHP: 7.4
  * Text Domain: mielaissa-storefront
@@ -10,7 +10,7 @@
 
 defined('ABSPATH') || exit;
 
-define('MIELAISSA_STOREFRONT_VERSION', '0.1.0');
+define('MIELAISSA_STOREFRONT_VERSION', '0.2.0');
 
 function mielaissa_language($requested = '') {
     if (in_array($requested, array('fr', 'en'), true)) {
@@ -41,6 +41,7 @@ function mielaissa_label($key, $language = 'fr') {
         'copy' => array('fr' => 'Copier', 'en' => 'Copy'),
         'copied' => array('fr' => 'Copié !', 'en' => 'Copied!'),
         'no_offers' => array('fr' => 'Consultez la boutique pour connaître les offres en vigueur.', 'en' => 'Check the shop for current offers.'),
+        'sold_out' => array('fr' => 'Rupture de stock', 'en' => 'Out of stock'),
     );
     $language = mielaissa_language($language);
     return isset($translations[$key][$language]) ? $translations[$key][$language] : '';
@@ -73,6 +74,10 @@ function mielaissa_available_offers() {
         }
         $expiration = $coupon->get_date_expires();
         if ($expiration && $expiration->getTimestamp() < time()) {
+            continue;
+        }
+        $usage_limit = (int) $coupon->get_usage_limit();
+        if ($usage_limit > 0 && (int) $coupon->get_usage_count() >= $usage_limit) {
             continue;
         }
         if ($type === 'shipping' && !$coupon->get_free_shipping()) {
@@ -130,6 +135,12 @@ function mielaissa_storefront_shortcode($atts = array()) {
     if (!is_array($products)) {
         $products = array();
     }
+    // WooCommerce visibility can hide individual products even after a published query.
+    // Filter first so the empty-state copy accurately reflects the visible grid.
+    $products = array_values(array_filter($products, function ($product) {
+        return is_object($product) && method_exists($product, 'is_visible') && $product->is_visible()
+            && method_exists($product, 'get_id');
+    }));
     if (is_wp_error($categories) || !is_array($categories)) {
         $categories = array();
     }
@@ -178,12 +189,14 @@ function mielaissa_storefront_shortcode($atts = array()) {
             <div class="ma-product-grid">
               <?php foreach ($products as $product) : ?>
                 <?php
-                  if (!is_object($product) || !method_exists($product, 'get_id') || !method_exists($product, 'is_visible') || !$product->is_visible()) { continue; }
                   $url = get_permalink($product->get_id());
                 ?>
                 <article class="ma-product">
                   <a class="ma-product__image" href="<?php echo esc_url($url); ?>" aria-label="<?php echo esc_attr($product->get_name()); ?>"><?php echo wp_kses_post($product->get_image('woocommerce_thumbnail')); ?></a>
                   <div class="ma-product__body">
+                    <?php if (method_exists($product, 'is_in_stock') && !$product->is_in_stock()) : ?>
+                      <p class="ma-product__stock" role="status"><?php echo esc_html(mielaissa_label('sold_out', $lang)); ?></p>
+                    <?php endif; ?>
                     <h3><a href="<?php echo esc_url($url); ?>"><?php echo esc_html($product->get_name()); ?></a></h3>
                     <?php if ($product->get_price_html()) : ?><p class="ma-product__price"><?php echo wp_kses_post($product->get_price_html()); ?></p><?php endif; ?>
                     <a class="ma-product__detail" href="<?php echo esc_url($url); ?>"><?php echo esc_html(mielaissa_label('details', $lang)); ?> <span aria-hidden="true">↗</span></a>
