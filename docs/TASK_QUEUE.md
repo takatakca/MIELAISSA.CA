@@ -62,3 +62,12 @@ Lire AGENTS.md, docs/AGENT_HANDOFF.md, puis chercher le **premier item faisable*
 - [x] Confirmer la CI de code et ses archives ZIP sur 4cbabffe, 831bfbf5, be6e596b.
 - [ ] Vérifier la première exécution planifiée du workflow public-health et corriger une éventuelle anomalie.
 - [ ] Toujours bloqué : confirmer WP_ROOT réel, l'accès, les sauvegardes et staging avant l'installation.
+
+
+## Suite de durcissement exécutée
+
+- [x] Attraper les erreurs WooCommerce de produits sans rendre publiques les erreurs internes.
+- [x] Ignorer individuellement les coupons qui déclenchent une exception, sans retirer les autres coupons valides.
+- [x] Ajouter tests d'erreur de requête et coupon et valider la CI 38791678148.
+- [x] Revalider HEAD distant main juste avant publication pour refuser les anciennes révisions en attente.
+- [ ] Vérifier la CI du dernier commit documentaire, puis reprendre la première tâche P0 requérant l'accès réel au site.

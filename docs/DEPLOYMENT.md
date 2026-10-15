@@ -100,3 +100,10 @@ Le workflow `workflow_run` doit provenir d'une CI réussie sur push main du mêm
 ## Surveillance publique indépendante
 
 `.github/workflows/public-health.yml` planifie quotidiennement `bash scripts/public-health.sh` et permet `workflow_dispatch`. Le script vérifie le HTTP 200 et une page HTML identifiant Miel Aissa, tout en détectant quelques erreurs fatales WordPress. Il ne lit ni client ni commande et ne vérifie **pas** les shortcodes / l'activation du plugin. Les notifications d'échec de workflow sont gérées par GitHub selon la configuration du compte.
+
+
+## Anti-déploiement d'une révision supplantée
+
+Le SHA publié par le workflow_run doit correspondre au HEAD de main au début du job. Un contrôle **supplémentaire** exécute maintenant `git ls-remote --heads origin refs/heads/main` après le checkout et avant la phase SSH. Si une nouvelle révision a remplacé la révision validée entre le déclenchement de la CI et le démarrage du déploiement, le job refuse de publier la version devenue obsolète.
+
+Ce contrôle ne change pas les autres obligations : validité du site WordPress cible, sauvegarde/restauration, staging, vérification de la clé hôte et variable d'activation volontaire.

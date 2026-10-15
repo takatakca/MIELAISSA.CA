@@ -1,3 +1,30 @@
+# Reprise technique finale de la session — 15 octobre 2026
+
+**Dépôt / branche :** takatakca/MIELAISSA.CA / main.
+**Base relue :** 35992b1232462f89fda47e5314ac9b0600217885.
+**Dernier commit de code poussé avant ce document :** f147360713a67bcac72c6cff3e8e345c31e80335.
+**HEAD de documentation :** consulter main sur GitHub, car son SHA n'existe qu'après la création de son propre commit.
+
+**Dernière tâche terminée :** robustesse contre erreurs internes WooCommerce (v0.2.4), tests d'exception de catalogue/coupons, vérification tardive du vrai HEAD distant de main pour rejeter toute publication d'un commit devenu obsolète.
+
+**Tâche en cours :** validation des dernières GitHub Actions, puis déploiement en staging après obtention des accès réels au WordPress.
+
+**Fichiers modifiés depuis le précédent handoff :**
+- wordpress/wp-content/plugins/mielaissa-storefront/mielaissa-storefront.php
+- tests/smoke.php
+- .github/workflows/deploy.yml
+- docs/AGENT_HANDOFF.md, docs/PROJECT_STATUS.md, docs/TASK_QUEUE.md, docs/DEPLOYMENT.md, docs/DECISIONS.md
+
+**Vérifications exécutées :** GitHub Actions CI run 38791678148 **success** sur le code 33c29d4dc99b77fdf81c3d32dcc55d6bf464cb98 ; PHP 7.4, 8.2, 8.3, JS, ZIP et scénarios de récupération contrôlée. La CI pour f1473607 était en cours à la rédaction : inspecter les runs actuels sur GitHub, et corriger en cas d'échec.
+
+**Problèmes connus / état du déploiement :** aucun accès vérifié à la racine WP_ROOT, au compte wp-admin, à une sauvegarde/restauration ou à un staging. Le déploiement SSH est configuré mais **désactivé/ignoré** ; aucune activation de plugin ni tests réels checkout confirmés. Le contrôle public confirme seulement la disponibilité du site existant.
+
+**Accès nécessaires :** WordPress/admin autorisé, SSH avec clef et known_hosts confirmés, root WP-CLI vérifié par `home`, sauvegardes restaurables, permission d'installer le plugin et de tester les shortcodes.
+
+**Action exacte suivante :** 1. Vérifier dernier HEAD main et succès CI, 2. trouver WP_ROOT via accès SSH/cPanel autorisé et option WordPress home, 3. sauvegarder/valider restauration sur staging, 4. installer l'extension ZIP et exécuter le smoke WP-CLI read-only, 5. valider catalogue, offres, fidélité, panier, checkout, 6. configurer les variables/secrets de publication, activer et observer le déploiement, enregistrer SHA distant + URL et fermer issue #1 seulement avec les preuves.
+
+---
+
 # Session complémentaire — 15 octobre 2026 (dernière relève)
 
 **Dépôt/branche** : takatakca/MIELAISSA.CA / main

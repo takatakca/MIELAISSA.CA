@@ -57,3 +57,12 @@ Une vérification quotidienne GitHub Actions contrôle la disponibilité publiqu
 ## 2026-10-15 — Respecter la visibilité catalogue WooCommerce
 
 `wc_get_products` est invoqué avec `visibility=catalog` avant `limit`, conformément aux paramètres pris en charge par WooCommerce. Le code continue de rejeter les produits qui ne sont pas visibles pour des raisons supplémentaires. La version de l'extension est portée à 0.2.3.
+
+
+## 2026-10-15 — Résilience aux erreurs WooCommerce
+
+Une erreur interne d'accès aux produits ne doit pas afficher de trace sensible ni tuer la page d'accueil : le shortcode renvoie une indisponibilité générique. Un coupon corrompu est ignoré sans empêcher l'affichage des autres offres. Les tests simulent ces exceptions.
+
+## 2026-10-15 — Contrôler de nouveau la version juste avant SSH
+
+Les vérifications du contexte GitHub workflow_run ne suffisent pas si un nouveau commit a été poussé pendant l'attente. Le script du workflow de déploiement interroge le HEAD distant main au moment de l'exécution et interrompt toute publication d'une version supplantée.

@@ -66,3 +66,11 @@ Un contrôle intégré en lecture seule est disponible à scripts/wordpress-smok
 - be6e596b : requête catalogue officielle `wc_get_products( visibility = catalog )` avant la limite ; évite une liste vide parce que les dernières fiches sont masquées.
 - CI complète vérifiée : 38790908812, 38791128612 et 38791232939, conclusions success.
 - Toujours pas d'activation WordPress en production ni d'accès SSH vérifié.
+
+
+## Résilience WooCommerce et révision principale (15 octobre 2026)
+
+- Plugin 0.2.4, commit 33c29d4 : exceptions du chargement des produits interceptées, réponse publique de repli sans détails internes ; coupons individuellement invalides n'empêchent plus d'afficher les autres promotions valides.
+- Tests de régression associés ; run CI GitHub 38791678148 réussi.
+- f1473607 : contrôle `git ls-remote origin refs/heads/main` immédiatement avant publication ; refuse de déployer une révision validée mais déjà remplacée par un nouveau main.
+- Le statut de production reste non déployé/non vérifié : seuls les fichiers GitHub et pipelines ont été modifiés.
