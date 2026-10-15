@@ -64,3 +64,6 @@
 @media(max-width:640px){.ma-container{width:calc(100% - 28px)}.ma-hero__inner{min-height:0;grid-template-columns:1fr;padding:65px 0 36px}.ma-hero__art{height:270px;transform:scale(.7);margin:-12px auto -22px}.ma-hero h1{font-size:clamp(2.8rem,11vw,4.4rem)}.ma-category-grid{grid-template-columns:1fr}.ma-product-grid{gap:12px}.ma-product__body{padding:15px}.ma-section{padding:58px 0}.ma-story{padding:60px 0}.ma-story__inner{grid-template-columns:1fr;gap:24px}.ma-hero__actions .ma-button{width:100%}}
 @media(max-width:400px){.ma-product-grid{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){.ma-store *,.ma-offers *{transition:none!important;scroll-behavior:auto!important}}
+
+/* Accessible, translated stock state from WooCommerce (never infer inventory). */
+.ma-product__stock{width:fit-content;margin:0 0 10px;padding:5px 10px;border-radius:3px;color:#822e22;background:#fff0e9;font-size:.77rem;font-weight:800;letter-spacing:.02em}
