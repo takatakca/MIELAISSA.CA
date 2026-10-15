@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Miel Aissa Storefront
  * Description: A bilingual WooCommerce catalogue and verified offer highlights.
- * Version: 0.2.1
+ * Version: 0.2.2
  * Requires at least: 6.2
  * Requires PHP: 7.4
  * Text Domain: mielaissa-storefront
@@ -10,7 +10,7 @@
 
 defined('ABSPATH') || exit;
 
-define('MIELAISSA_STOREFRONT_VERSION', '0.2.1');
+define('MIELAISSA_STOREFRONT_VERSION', '0.2.2');
 
 function mielaissa_storefront_language($requested = '') {
     if (in_array($requested, array('fr', 'en'), true)) {
@@ -35,8 +35,8 @@ function mielaissa_storefront_label($key, $language = 'fr') {
         'story' => array('fr' => 'Une expérience simple, du choix à la dégustation.', 'en' => 'An effortless experience, from selection to tasting.'),
         'story_body' => array('fr' => 'Parcourez la sélection, choisissez vos favoris et finalisez votre commande sur notre boutique en ligne.', 'en' => 'Explore the selection, choose your favourites and complete your order in our online store.'),
         'offers' => array('fr' => 'Offres en boutique', 'en' => 'Shop offers'),
-        'shipping' => array('fr' => 'Livraison offerte avec le code', 'en' => 'Free delivery with code'),
-        'first' => array('fr' => '15 % de réduction avec le code', 'en' => '15% off with code'),
+        'shipping' => array('fr' => 'Livraison offerte sur commande admissible avec le code', 'en' => 'Free delivery on eligible orders with code'),
+        'first' => array('fr' => '15 % de réduction sur une première commande admissible avec le code', 'en' => '15% off an eligible first order with code'),
         'terms' => array('fr' => 'Sous réserve des conditions et de l’éligibilité à la commande.', 'en' => 'Subject to eligibility and terms at checkout.'),
         'copy' => array('fr' => 'Copier', 'en' => 'Copy'),
         'copied' => array('fr' => 'Copié !', 'en' => 'Copied!'),
