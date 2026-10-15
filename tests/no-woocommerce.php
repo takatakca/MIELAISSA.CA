@@ -9,6 +9,7 @@ function add_action($hook, $callback) {}
 function add_shortcode($shortcode, $callback) {}
 function shortcode_atts($defaults, $atts, $shortcode = '') { return array_merge($defaults, $atts); }
 function get_locale() { return 'fr_CA'; }
+function absint($value) { return abs((int) $value); }
 function esc_html($value) { return htmlspecialchars((string) $value, ENT_QUOTES, 'UTF-8'); }
 function esc_attr($value) { return esc_html($value); }
 function esc_url($value) { return esc_html($value); }
