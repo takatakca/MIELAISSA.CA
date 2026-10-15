@@ -1,11 +1,11 @@
 name: Deploy Miel Aissa plugin
 
+# CI-gated publication of only the plugin directory, never the WordPress root.
 on:
   workflow_run:
     workflows: ["Miel Aissa CI"]
     types: [completed]
     branches: [main]
-  workflow_dispatch:
 
 permissions:
   contents: read
@@ -16,13 +16,17 @@ concurrency:
 
 jobs:
   deploy:
-    if: ${{ vars.MIELAISSA_DEPLOY_ENABLED == 'true' && (github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success') }}
+    if: ${{ vars.MIELAISSA_DEPLOY_ENABLED == 'true' && github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.head_sha == github.sha }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout exact CI-tested revision
+        uses: actions/checkout@v4
         with:
-          ref: ${{ github.event_name == 'workflow_run' && github.event.workflow_run.head_sha || 'main' }}
-      - name: Validate SSH settings
+          ref: ${{ github.event.workflow_run.head_sha }}
+          persist-credentials: false
+      - name: Revalidate source
+        run: bash scripts/check.sh
+      - name: Validate configuration
         env:
           HOST: ${{ vars.MIELAISSA_SSH_HOST }}
           PORT: ${{ vars.MIELAISSA_SSH_PORT }}
@@ -33,13 +37,13 @@ jobs:
         run: |
           set -euo pipefail
           for value in "$HOST" "$PORT" "$USER" "$WP_ROOT" "$KEY" "$HOST_KEYS"; do
-            test -n "$value" || { echo "Missing required SSH setting"; exit 1; }
+            test -n "$value" || { echo "Missing SSH deployment setting"; exit 1; }
           done
-          [[ "$WP_ROOT" =~ ^/[A-Za-z0-9/_-]+$ ]] || { echo "Invalid WordPress path"; exit 1; }
+          [[ "$WP_ROOT" =~ ^/[A-Za-z0-9/_-]+$ ]] || { echo "Invalid WordPress root"; exit 1; }
           [[ "$PORT" =~ ^[0-9]+$ ]] || exit 1
           [[ "$HOST" =~ ^[A-Za-z0-9.-]+$ ]] || exit 1
           [[ "$USER" =~ ^[A-Za-z0-9_-]+$ ]] || exit 1
-      - name: Configure verified SSH trust
+      - name: Install SSH credentials and pinned server key
         env:
           KEY: ${{ secrets.MIELAISSA_SSH_PRIVATE_KEY }}
           HOST_KEYS: ${{ secrets.MIELAISSA_SSH_KNOWN_HOSTS }}
@@ -49,7 +53,39 @@ jobs:
           printf '%s\n' "$KEY" > ~/.ssh/id_ed25519
           printf '%s\n' "$HOST_KEYS" > ~/.ssh/known_hosts
           chmod 600 ~/.ssh/id_ed25519 ~/.ssh/known_hosts
-      - name: Synchronize only plugin files
+      - name: Upload to staging directory and keep previous version
+        env:
+          HOST: ${{ vars.MIELAISSA_SSH_HOST }}
+          PORT: ${{ vars.MIELAISSA_SSH_PORT }}
+          USER: ${{ vars.MIELAISSA_SSH_USER }}
+          WP_ROOT: ${{ vars.MIELAISSA_WP_ROOT }}
+          VERSION_SHA: ${{ github.event.workflow_run.head_sha }}
+        run: |
+          set -euo pipefail
+          PLUGINS="$WP_ROOT/wp-content/plugins"
+          TARGET="$PLUGINS/mielaissa-storefront"
+          REVISION="$(printf '%.12s' "$VERSION_SHA")"
+          INCOMING="$PLUGINS/.mielaissa-incoming-$REVISION"
+          BACKUP="$PLUGINS/.mielaissa-previous"
+          REMOTE="$USER@$HOST"
+          ssh -p "$PORT" -o BatchMode=yes "$REMOTE" "test -d '$PLUGINS' && mkdir -p '$INCOMING'"
+          rsync -az --delete -e "ssh -p $PORT -o BatchMode=yes" \
+            wordpress/wp-content/plugins/mielaissa-storefront/ "$REMOTE:$INCOMING/"
+          ssh -p "$PORT" -o BatchMode=yes "$REMOTE" bash -s -- "$TARGET" "$INCOMING" "$BACKUP" <<'REMOTE_SCRIPT'
+          set -euo pipefail
+          target="$1"
+          incoming="$2"
+          backup="$3"
+          test -s "$incoming/mielaissa-storefront.php"
+          if [ -e "$backup" ]; then rm -rf -- "$backup"; fi
+          if [ -e "$target" ]; then mv -- "$target" "$backup"; fi
+          if ! mv -- "$incoming" "$target"; then
+            if [ -d "$backup" ]; then mv -- "$backup" "$target"; fi
+            exit 1
+          fi
+          test -s "$target/mielaissa-storefront.php"
+          REMOTE_SCRIPT
+      - name: Verify deployed main file checksum
         env:
           HOST: ${{ vars.MIELAISSA_SSH_HOST }}
           PORT: ${{ vars.MIELAISSA_SSH_PORT }}
@@ -57,9 +93,8 @@ jobs:
           WP_ROOT: ${{ vars.MIELAISSA_WP_ROOT }}
         run: |
           set -euo pipefail
-          TARGET="$WP_ROOT/wp-content/plugins/mielaissa-storefront"
-          ssh -p "$PORT" -o BatchMode=yes "$USER@$HOST" "test -d '$WP_ROOT/wp-content/plugins' && mkdir -p '$TARGET'"
-          rsync -az --delete -e "ssh -p $PORT -o BatchMode=yes" \
-            wordpress/wp-content/plugins/mielaissa-storefront/ \
-            "$USER@$HOST:$TARGET/"
-          echo "Plugin synchronized. WordPress activation and shortcode placement are separate."
+          FILE=wordpress/wp-content/plugins/mielaissa-storefront/mielaissa-storefront.php
+          LOCAL_SHA="$(sha256sum "$FILE" | cut -d ' ' -f 1)"
+          REMOTE_SHA="$(ssh -p "$PORT" -o BatchMode=yes "$USER@$HOST" "sha256sum '$WP_ROOT/wp-content/plugins/mielaissa-storefront/mielaissa-storefront.php' | cut -d ' ' -f 1")"
+          test "$LOCAL_SHA" = "$REMOTE_SHA"
+          echo "Plugin content verified. WordPress activation not implied."
