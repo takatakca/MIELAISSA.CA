@@ -22,3 +22,7 @@
 
 ## No false-completion claims
 There is no verified SSH or WordPress-admin access in this repository. A successful push and CI run is not evidence that the plugin has been activated on mielaissa.ca.
+
+
+
+> Historique de la reprise initiale (2026-10-14). Pour la dernière session et la tâche exacte en cours, consulter le document canonique docs/AGENT_HANDOFF.md, puis docs/TASK_QUEUE.md.

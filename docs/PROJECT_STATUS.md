@@ -40,3 +40,12 @@ Une correspondance d'hébergement antérieure (début octobre 2026) associe miel
 Des fonctions de fidélité WordPress ont déjà été utilisées sur la boutique : [mielaissa_points], champ utilisateur _miel_diamonds et route /en-ca/games/. L'extension actuelle n'enregistre ni ne modifie ces éléments. Vérifier leur coexistence durant les tests de non-régression.
 
 Un contrôle intégré en lecture seule est disponible à scripts/wordpress-smoke.php pour WordPress/WooCommerce via WP-CLI. Aucun accès live confirmé pour l'exécuter actuellement.
+
+
+## Durcissement complémentaire (15 octobre 2026)
+
+- Plugin version 0.2.2 : textes des offres explicites sur les commandes admissibles et la première commande.
+- Fonctions internes préfixées mielaissa_storefront_* pour éviter les collisions avec les personnalisations fidélité historiques.
+- Tests du fonctionnement sans WooCommerce (état dégradé sûr), du stock et de coupons épuisés/invalides.
+- Workflow de publication : vérification de port SSH, bascule réversible, restauration du dossier précédent en cas de différence SHA256.
+- Contrôle d'intégration sans écriture : scripts/wordpress-smoke.php (non exécuté sur l'hébergement réel).

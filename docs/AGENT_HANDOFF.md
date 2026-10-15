@@ -63,3 +63,14 @@ Validation des nouveaux workflows GitHub Actions sur le dernier main. La tâche 
 - Boutique personnalisée auparavant avec fidélité [mielaissa_points], métadonnée privée _miel_diamonds, navigation /en-ca/games/ ; ne pas casser ni migrer ces fonctions sans audit.
 - Script de validation WordPress ajouté : scripts/wordpress-smoke.php ; à exécuter sur staging par wp eval-file ; scripts/check.sh en contrôle seulement la syntaxe tant que WordPress n'est pas accessible.
 - Dernier commit de code déjà poussé durant cette reprise : 340a671065a4325ad4a1832c1b183f36d448679a (refactorisation du préfixage WordPress). Vérifier le HEAD après ce commit documentaire.
+
+
+## Compte rendu technique de fin de cycle (2026-10-15)
+
+- Dernier commit de code connu avant ce document : 4a5f0efa72045ac3aa719ea40941a37ae17d64cf ; récupérer impérativement le nouveau HEAD distant car ce fichier est versionné dans un commit postérieur.
+- Versions livrées : plugin 0.2.2, vérifications d'éligibilité formulées explicitement, noms de fonctions distinctifs, gestion d'indisponibilité WooCommerce.
+- Fichiers supplémentaires : tests/no-woocommerce.php, scripts/wordpress-smoke.php ; scripts/check.sh inclut les deux vérifications de syntaxe et la vérification sans WooCommerce.
+- Workflow .github/workflows/deploy.yml : sélection HEAD main validé, staging de fichiers, ancien plugin conservé, checksum SHA256 et restauration en cas de discordance.
+- CI confirmées réussies pour 6fb56d803cb7a8521cb0d7b662c0fd7607b83bf4, 340a671065a4325ad4a1832c1b183f36d448679a, 33c6f462e2303a86b5aa34acd18fe7d3a5988b8d et 89682eb746cc8494140243f45d2943adaff90d35. Les révisions ultérieures requièrent une consultation des runs, pas une supposition.
+- Déploiement réel : NON EFFECTUÉ / NON VÉRIFIÉ. GitHub deploy job ignoré faute de paramètres d'activation. Aucun accès confirmé à WP_ROOT, wp-admin, SSH ou sauvegarde. Site public inchangé.
+- Tâche bloquante suivante : localiser la véritable installation WordPress de mielaissa.ca via les accès autorisés du compte d'hébergement, vérifier backup + staging, puis exécuter scripts/wordpress-smoke.php, activer le déploiement contrôlé et vérifier la page publique.

@@ -35,3 +35,12 @@ Le site a historiquement utilisé [mielaissa_points], _miel_diamonds et /en-ca/g
 ## 2026-10-15 — Hébergement : pistes historiques, pas un chemin déduit
 
 MochaHost/cPanel bolonca/s3650.can1.stableserver.net apparaissent dans l'historique de la boutique (octobre 2026). La racine WordPress, son emplacement actuel, les sauvegardes, les clés et l'autorisation de déploiement ne sont toujours pas confirmés : on ne déploie pas avec un chemin inventé.
+
+
+## 2026-10-15 — Offres honnêtes et défaut de dépendance
+
+Pour ne pas promettre une réduction générale, les textes de coupon précisent « commande admissible » et « première commande admissible » : WooCommerce reste décisionnaire des droits au paiement. Sans WooCommerce, le shortcode de catalogue affiche un message de panne, et la section offres n'affiche aucun code invérifiable. Les tests couvrent cet état.
+
+## 2026-10-15 — Rollback après checksum
+
+Si le transfert SSH provoque une différence SHA256, la version précédente de l'extension est réinstallée automatiquement si elle existe. Ce mécanisme ne remplace pas un backup intégral WordPress + SQL.

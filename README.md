@@ -50,3 +50,8 @@ On an authorized staging WordPress server with WP-CLI and WooCommerce active, ru
     wp --path=/verified/wordpress/root eval-file /path/to/repository/scripts/wordpress-smoke.php
 
 This checks real shortcodes, plugin activation, a live WooCommerce catalogue query, and FR/EN rendering. It neither submits orders nor touches the existing loyalty/points workflow. Do not run against a guessed WordPress path.
+
+
+## Graceful degradation
+
+If WooCommerce is inactive, the storefront shortcode presents an availability message and the offers shortcode suppresses unverified coupon codes. CI checks this with tests/no-woocommerce.php, in addition to the standard mocked WooCommerce contract checks and the optional real-install WP-CLI verification.

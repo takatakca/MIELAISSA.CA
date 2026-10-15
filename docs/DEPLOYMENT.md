@@ -76,3 +76,14 @@ Quand WP-CLI et une installation de test WordPress/WooCommerce sont accessibles 
     wp --path=/chemin/confirme eval-file /chemin/repository/scripts/wordpress-smoke.php
 
 Le script refuse de s'exécuter hors WordPress et exige les deux plugins actifs. Il n'ajoute ni commandes ni clients, ne change pas les points fidélité et ne simule pas de transaction commerciale.
+
+
+## Sécurité complémentaire du job SSH
+
+En cas de discordance SHA256 sur le fichier PHP après transfert, le workflow conserve la version rejetée en .mielaissa-failed et restaure automatiquement .mielaissa-previous lorsque celle-ci existe. Ce rollback concerne **uniquement les fichiers de l'extension**, pas la base de données ni la page WordPress. Après une première installation sans version précédente, le module incriminé est retiré du chemin actif lors de cet échec et nécessite une vérification manuelle.
+
+Le workflow vérifie maintenant aussi la plage numérique du port SSH. Ne pas activer le pipeline sans confirmer les accès et la présence d'une sauvegarde complète.
+
+## Continuité de service et refus prudent
+
+Si WooCommerce est désactivé ou absent, [mielaissa_storefront] affiche une indisponibilité explicite, et [mielaissa_offers] n'annonce aucun coupon non vérifiable. La commande scripts/check.sh vérifie aussi ce cas sans WordPress, distinctement du test de catalogue.

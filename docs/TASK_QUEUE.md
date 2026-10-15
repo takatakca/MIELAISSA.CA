@@ -33,3 +33,12 @@ Lire AGENTS.md, docs/AGENT_HANDOFF.md, puis chercher le **premier item faisable*
 - [ ] Confirmer que les programmes fidélité déjà présents restent intacts : [mielaissa_points], _miel_diamonds et /en-ca/games/ ; ne jamais créer ou copier des données clients pour ces vérifications.
 - [ ] Investiguer, uniquement avec accès autorisé, les personnalisations historiques d'autres marques potentiellement présentes dans les pages Miel Aissa avant de toucher au contenu.
 - [ ] Exécuter sur staging le contrôle intégré : wp --path=CHEMIN_WORDPRESS eval-file CHEMIN_REPO/scripts/wordpress-smoke.php ; consigner la sortie sans informations personnelles.
+
+
+## Travaux de durcissement ajoutés et livrés
+
+- [x] Préfixer les fonctions PHP pour limiter les risques de collision avec les personnalisations WordPress déjà présentes.
+- [x] Tester l'affichage prudent quand WooCommerce est désactivé.
+- [x] Vérifier l'état d'épuisement des coupons et leurs textes d'éligibilité FR/EN.
+- [x] Protéger le transfert SSH par comparaison SHA256 avec rollback du plugin précédent lors d'une discordance.
+- [x] Ajouter un test WordPress/WooCommerce réel, en lecture seule, exécutable avec WP-CLI après accès.
