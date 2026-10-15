@@ -49,3 +49,16 @@ Lire AGENTS.md, docs/AGENT_HANDOFF.md, puis chercher le **premier item faisable*
 - [x] Identifier et corriger la défaillance CI introduite dans les stubs WordPress du test sans WooCommerce.
 - [x] Valider le test sur PHP 7.4, 8.2, 8.3 et obtenir l'archive ZIP installable.
 - [x] Ajouter .gitignore pour secrets WordPress et exports de données.
+
+
+## Durcissement réalisé — session supplémentaire du 15 octobre 2026
+
+- [x] Accepter les chemins de domaine de type `mielaissa.ca` en refusant les traversées de chemins.
+- [x] Limiter le workflow privilégié au push main CI authentique du dépôt.
+- [x] Vérifier le vrai nom de domaine WordPress par WP-CLI avant chaque transfert.
+- [x] Ajouter contrôles de syntaxe shell et tests de validation de cible.
+- [x] Ajouter surveillance GitHub Actions quotidienne de la disponibilité publique.
+- [x] Corriger la requête catalogue pour filtrer la visibilité WooCommerce avant d'appliquer la limite.
+- [x] Confirmer la CI de code et ses archives ZIP sur 4cbabffe, 831bfbf5, be6e596b.
+- [ ] Vérifier la première exécution planifiée du workflow public-health et corriger une éventuelle anomalie.
+- [ ] Toujours bloqué : confirmer WP_ROOT réel, l'accès, les sauvegardes et staging avant l'installation.

@@ -57,3 +57,12 @@ Un contrôle intégré en lecture seule est disponible à scripts/wordpress-smok
 - Correction de l'environnement simulé des tests sans WooCommerce, à ne pas confondre avec un problème connu dans le vrai WordPress.
 - Fichier .gitignore ajouté pour empêcher l'ajout accidentel de sauvegardes WordPress, exports de données, secrets et archives.
 - Dernière CI requise pour le nouveau HEAD doit être consultée avant toute éventuelle publication.
+
+
+## Session complémentaire — code sur main v0.2.3
+
+- 4cbabffe : contrôles des chemins de déploiement acceptant les points des domaines cPanel sans accepter ../, préflight WP-CLI contre le mauvais site, workflow déclenché uniquement depuis push CI main du même dépôt.
+- 831bfbf5 : contrôle quotidien de santé de la page publique, strictement séparé du statut du plugin ; bash -n des scripts, GitHub schedule et déclenchement manuel possible.
+- be6e596b : requête catalogue officielle `wc_get_products( visibility = catalog )` avant la limite ; évite une liste vide parce que les dernières fiches sont masquées.
+- CI complète vérifiée : 38790908812, 38791128612 et 38791232939, conclusions success.
+- Toujours pas d'activation WordPress en production ni d'accès SSH vérifié.

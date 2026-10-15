@@ -1,3 +1,41 @@
+# Session complémentaire — 15 octobre 2026 (dernière relève)
+
+**Dépôt/branche** : takatakca/MIELAISSA.CA / main
+**Point de départ vérifié** : 35992b1232462f89fda47e5314ac9b0600217885
+**Dernier commit de CODE poussé avant cette relève** : be6e596bbf269fd99225db3e7d6e3b471e2ebc5a
+**La révision de la présente relève** : voir le HEAD GitHub de main ; le SHA de ce fichier ne peut pas être connu avant son commit.
+
+## Dernière tâche réalisée et preuves
+
+- Sécurisation du workflow privilégié GitHub workflow_run : uniquement un CI push vert de la branche main et du dépôt propriétaire, correspondant à la révision actuelle.
+- Validation SSH maintenant compatible avec des racines cPanel à points telles que /home/USER/mielaissa.ca ; rejet de ../, répertoires ambigus, ports invalides et hôtes dangereux.
+- Préflight WordPress distant **avant** tout transfert : exige WP-CLI, les répertoires WordPress et un `home` strictement égal à mielaissa.ca ou www.mielaissa.ca. Échec fermé en cas de cible erronée ou de WP-CLI absent.
+- Check de santé du site public séparé du déploiement, planifié chaque jour dans .github/workflows/public-health.yml, sans donnée client. Il n'atteste PAS l'activation du plugin.
+- Correction du catalogue : requête officielle WooCommerce `visibility=catalog` avant `limit`, test de régression ajouté. Extension v0.2.3.
+- CI GitHub Actions **réussies** : commit 4cbabffe (run 38790908812), 831bfbf5 (run 38791128612), be6e596b (run 38791232939). CI multi-PHP/JS/ZIP + contrôles shell.
+
+## Fichiers modifiés
+
+.github/workflows/deploy.yml ; .github/workflows/public-health.yml ; scripts/validate-wordpress-root.sh ; scripts/test-deployment-config.sh ; scripts/public-health.sh ; scripts/check.sh ; wordpress/wp-content/plugins/mielaissa-storefront/mielaissa-storefront.php ; tests/smoke.php ; docs/AGENT_HANDOFF.md et autres docs de suivi.
+
+## Dernière tâche en cours / blocages connus
+
+**Tâche en cours** : retrouver l'installation WordPress réelle et préparer une installation en staging avec sauvegarde contrôlée. Elle est bloquée faute de preuve des accès à l'hébergement, de WP_ROOT identifié et d'un plan de restauration vérifié.
+
+**Déploiement** : GitHub CI vert ; workflow distant délibérément skipped (MIELAISSA_DEPLOY_ENABLED non activé). Pas de preuve de transfert du plugin, d'activation wp-admin ou d'essai checkout. Le site public existant répond, mais sa disponibilité ne prouve pas que la nouvelle extension est installée.
+
+**Accès nécessaires, sans secrets dans Git** : compte cPanel/SSH réellement autorisé pour mielaissa.ca ; WP-CLI pour lire l'option home et la liste des plugins ; sauvegarde/restauration ; staging WordPress/WooCommerce ; vérification de host key SSH ; variables et secrets MIELAISSA_* ; validation de la page qui recevra le shortcode.
+
+## Action exacte à exécuter lors de la prochaine reprise
+
+1. Relire AGENTS.md, ce fichier, HEAD GitHub main et dernier CI/deploy.
+2. Via accès à l'hébergement confirmé, trouver les dossiers wp-config.php en lecture seule et vérifier chaque site avec `wp --path=CHEMIN option get home`. Ne jamais supposer le chemin.
+3. Sauvegarder WordPress + base et tester la restauration, installer l'archive GitHub ZIP sur staging, activer les deux extensions, exécuter `wp --path=CHEMIN eval-file /CHEMIN/scripts/wordpress-smoke.php`.
+4. Vérifier la fidélité, l'expérience mobile, les coupons, variations, paiement test, commandes et reprise en cas d'incident.
+5. Après ces vérifications seulement, configurer et activer MIELAISSA_DEPLOY_ENABLED, observer le job SSH et consigner l'empreinte distante, l'activation de l'extension, le lien de page et la version en production.
+
+---
+
 # Relève obligatoire — MIELAISSA.CA
 
 **Date de session :** 15 octobre 2026.

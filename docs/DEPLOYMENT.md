@@ -87,3 +87,16 @@ Le workflow vérifie maintenant aussi la plage numérique du port SSH. Ne pas ac
 ## Continuité de service et refus prudent
 
 Si WooCommerce est désactivé ou absent, [mielaissa_storefront] affiche une indisponibilité explicite, et [mielaissa_offers] n'annonce aucun coupon non vérifiable. La commande scripts/check.sh vérifie aussi ce cas sans WordPress, distinctement du test de catalogue.
+
+
+## Contrôles supplémentaires en amont du transfert (15 octobre 2026)
+
+Le chemin de WordPress peut contenir un nom de domaine avec des points ; `scripts/validate-wordpress-root.sh` autorise ce format mais refuse les composants `.`, `..`, chemins relatifs et caractères pouvant injecter une commande. Des tests négatifs positifs sont intégrés dans `scripts/test-deployment-config.sh`.
+
+Le workflow `workflow_run` doit provenir d'une CI réussie sur push main du même dépôt et du SHA attendu. Avant le premier transfert, il exige maintenant WP-CLI sur le serveur cible et lit `wp --path=... --skip-plugins --skip-themes option get home`. Seuls les domaines exacts `mielaissa.ca` et `www.mielaissa.ca` sont acceptés (HTTP ou HTTPS). Cela évite un transfert accidentel sur une autre boutique partageant le même compte cPanel.
+
+**Si WP-CLI est absent ou la valeur WordPress home ne correspond pas :** la publication est interrompue sans écriture du plugin. La solution est de préparer le préflight d'hébergement, pas de désactiver le contrôle.
+
+## Surveillance publique indépendante
+
+`.github/workflows/public-health.yml` planifie quotidiennement `bash scripts/public-health.sh` et permet `workflow_dispatch`. Le script vérifie le HTTP 200 et une page HTML identifiant Miel Aissa, tout en détectant quelques erreurs fatales WordPress. Il ne lit ni client ni commande et ne vérifie **pas** les shortcodes / l'activation du plugin. Les notifications d'échec de workflow sont gérées par GitHub selon la configuration du compte.

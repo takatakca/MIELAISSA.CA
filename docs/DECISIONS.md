@@ -44,3 +44,16 @@ Pour ne pas promettre une réduction générale, les textes de coupon précisent
 ## 2026-10-15 — Rollback après checksum
 
 Si le transfert SSH provoque une différence SHA256, la version précédente de l'extension est réinstallée automatiquement si elle existe. Ce mécanisme ne remplace pas un backup intégral WordPress + SQL.
+
+
+## 2026-10-15 — Sécuriser les chemins cPanel et l'identité du serveur
+
+Les racines WordPress sous des dossiers de domaine peuvent contenir des points. On les autorise tout en interdisant la traversée des répertoires et on impose un préflight WP-CLI sur `home` pour éviter de publier par erreur chez un autre marchand du compte partagé.
+
+## 2026-10-15 — Ne jamais assimiler santé HTTP à extension activée
+
+Une vérification quotidienne GitHub Actions contrôle la disponibilité publique, mais ne remplace ni la preuve d'activation WordPress ni les tests du panier et des commandes.
+
+## 2026-10-15 — Respecter la visibilité catalogue WooCommerce
+
+`wc_get_products` est invoqué avec `visibility=catalog` avant `limit`, conformément aux paramètres pris en charge par WooCommerce. Le code continue de rejeter les produits qui ne sont pas visibles pour des raisons supplémentaires. La version de l'extension est portée à 0.2.3.
