@@ -32,3 +32,11 @@ Cette base GitHub n'est pas l'installation complète de WordPress. Elle contient
 Code sur GitHub : oui. CI : consulter les runs de la dernière révision, ne pas extrapoler les runs anciens. Artefact ZIP : généré quand le job package réussit. Production : en attente de preuve de déploiement WordPress et de tests réels. Ticket canonique : issue #1.
 
 Voir TASK_QUEUE.md et AGENT_HANDOFF.md.
+
+## Informations d'hébergement historiques à revalider
+
+Une correspondance d'hébergement antérieure (début octobre 2026) associe mielaissa.ca à MochaHost, compte cPanel bolonca et serveur s3650.can1.stableserver.net, après une migration vers Reseller 15. Ce sont des **pistes de localisation**, pas une preuve que le site est encore sur cette installation ni une racine WordPress connue. Aucun chemin public_html ni accès SSH pour Miel Aissa n'est déduit de ces informations.
+
+Des fonctions de fidélité WordPress ont déjà été utilisées sur la boutique : [mielaissa_points], champ utilisateur _miel_diamonds et route /en-ca/games/. L'extension actuelle n'enregistre ni ne modifie ces éléments. Vérifier leur coexistence durant les tests de non-régression.
+
+Un contrôle intégré en lecture seule est disponible à scripts/wordpress-smoke.php pour WordPress/WooCommerce via WP-CLI. Aucun accès live confirmé pour l'exécuter actuellement.

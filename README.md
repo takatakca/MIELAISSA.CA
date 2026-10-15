@@ -42,3 +42,11 @@ Configure GitHub Actions secrets: MIELAISSA_SSH_PRIVATE_KEY (dedicated key), MIE
 Do not enable automated production deployment until staging validation, backups, rollback process and confirmed server paths exist.
 
 See AGENTS.md and docs/AGENT_HANDOFF.md for the exact next step, docs/PROJECT_STATUS.md for verified state, docs/TASK_QUEUE.md for outstanding work, docs/DEPLOYMENT.md for the guarded rollout process, and docs/DECISIONS.md for architecture decisions.
+
+## Real WordPress integration smoke (read-only)
+
+On an authorized staging WordPress server with WP-CLI and WooCommerce active, run:
+
+    wp --path=/verified/wordpress/root eval-file /path/to/repository/scripts/wordpress-smoke.php
+
+This checks real shortcodes, plugin activation, a live WooCommerce catalogue query, and FR/EN rendering. It neither submits orders nor touches the existing loyalty/points workflow. Do not run against a guessed WordPress path.

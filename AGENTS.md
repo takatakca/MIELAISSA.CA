@@ -32,3 +32,7 @@ Never claim “deployed” from a successful repository commit or skipped deploy
 
 PHP 7.4+ compatibility per plugin metadata, supported WordPress/WooCommerce APIs, responsive mobile-first UI, clear French/English presentation, output escaping, no fake product data, accessible controls, no health claims, no secrets.
 Prefer small reversible changes, PHP smoke checks and real staging integration tests before live publication.
+
+## Compatibilité de la boutique existante
+
+Des personnalisations historiques utilisent le shortcode de fidélité [mielaissa_points], les points WooCommerce utilisateur _miel_diamonds et une page de jeux /en-ca/games/. Ce code source n'en est pas propriétaire : ne jamais écraser leurs fonctions, leurs données ou leurs droits sans avoir inventorié l'installation WordPress réelle.

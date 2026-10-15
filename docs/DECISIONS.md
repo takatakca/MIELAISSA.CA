@@ -27,3 +27,11 @@ L'écosystème GROUPE TAKATAK centralise les identités lorsque les intégration
 ## Décisions encore ouvertes
 
 Thème définitif, emplacement public des shortcodes, traduction complète de la boutique, normes de communication sur les promotions, hébergement réel, staging, sauvegarde, autorisation de mise en ligne, API TAKATAK et modalités de consentement.
+
+## 2026-10-15 — Compatibilité des personnalisations existantes
+
+Le site a historiquement utilisé [mielaissa_points], _miel_diamonds et /en-ca/games/ pour fidélité. Conserver ces contrats existants ; les fonctions de l'extension vitrine ont été préfixées de manière distinctive (mielaissa_storefront_*) pour éviter des collisions PHP. Aucun remplacement du système de fidélité n'est prévu.
+
+## 2026-10-15 — Hébergement : pistes historiques, pas un chemin déduit
+
+MochaHost/cPanel bolonca/s3650.can1.stableserver.net apparaissent dans l'historique de la boutique (octobre 2026). La racine WordPress, son emplacement actuel, les sauvegardes, les clés et l'autorisation de déploiement ne sont toujours pas confirmés : on ne déploie pas avec un chemin inventé.

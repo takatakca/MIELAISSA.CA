@@ -56,3 +56,10 @@ Validation des nouveaux workflows GitHub Actions sur le dernier main. La tâche 
 2. Si CI est verte, consulter issue #1 et retrouver les paramètres d'hébergement dans une source autorisée.
 3. Préparer staging + sauvegarde WordPress ; tester réellement WooCommerce, ensuite seulement activer MIELAISSA_DEPLOY_ENABLED et vérifier le résultat live.
 4. Réécrire ce fichier avec les vrais résultats et le SHA de la dernière révision en cours à chaque nouvelle session.
+
+## Contexte retrouvé durant cette session
+
+- Indice historique d'hébergement (octobre 2026) : MochaHost / cPanel bolonca / s3650.can1.stableserver.net, migration vers Reseller 15. Il faut revalider le site et sa racine WordPress via accès autorisé ; ne pas supposer /home/bolonca/public_html.
+- Boutique personnalisée auparavant avec fidélité [mielaissa_points], métadonnée privée _miel_diamonds, navigation /en-ca/games/ ; ne pas casser ni migrer ces fonctions sans audit.
+- Script de validation WordPress ajouté : scripts/wordpress-smoke.php ; à exécuter sur staging par wp eval-file ; scripts/check.sh en contrôle seulement la syntaxe tant que WordPress n'est pas accessible.
+- Dernier commit de code déjà poussé durant cette reprise : 340a671065a4325ad4a1832c1b183f36d448679a (refactorisation du préfixage WordPress). Vérifier le HEAD après ce commit documentaire.

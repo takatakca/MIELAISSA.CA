@@ -56,3 +56,23 @@ Ne jamais exécuter une commande de suppression massive sans vérifier le chemin
 ## 7. Critère de succès
 
 Exécution CI verte + job deploy vert + SHA256 distant correspondant + plugin réellement activé + page cible avec shortcode et opérations d'achat correctes. Sinon écrire “non vérifié” ou “non déployé”.
+
+## Localiser la véritable installation (sans supposer le chemin)
+
+Contexte historique non encore revérifié : MochaHost, serveur s3650.can1.stableserver.net, compte bolonca, changement de plan Reseller 15. Sur un terminal cPanel/SSH **autorisé**, rechercher les installations WordPress via une commande de lecture seule adaptée aux permissions :
+
+    find /home/bolonca -maxdepth 6 -type f -name wp-config.php -print
+
+Vérifier pour **chaque candidat** le site associé, par exemple avec WP-CLI :
+
+    wp --path=/chemin/confirme option get siteurl
+
+Ne choisir MIELAISSA_WP_ROOT qu'après avoir obtenu une URL correspondant à mielaissa.ca, les bons droits d'écriture et un backup restaurable.
+
+## Contrôle d'intégration en lecture seule
+
+Quand WP-CLI et une installation de test WordPress/WooCommerce sont accessibles :
+
+    wp --path=/chemin/confirme eval-file /chemin/repository/scripts/wordpress-smoke.php
+
+Le script refuse de s'exécuter hors WordPress et exige les deux plugins actifs. Il n'ajoute ni commandes ni clients, ne change pas les points fidélité et ne simule pas de transaction commerciale.

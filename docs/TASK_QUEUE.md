@@ -27,3 +27,9 @@ Ordre de priorité. Les items marqués en attente ne peuvent pas être considér
 ## Procédure de reprise
 
 Lire AGENTS.md, docs/AGENT_HANDOFF.md, puis chercher le **premier item faisable**, sans tenter d'inventer des accès. Pour les items bloqués, consigner le blocage et poursuivre les tâches de code indépendantes.
+
+## Vérifications de non-régression déjà identifiées
+
+- [ ] Confirmer que les programmes fidélité déjà présents restent intacts : [mielaissa_points], _miel_diamonds et /en-ca/games/ ; ne jamais créer ou copier des données clients pour ces vérifications.
+- [ ] Investiguer, uniquement avec accès autorisé, les personnalisations historiques d'autres marques potentiellement présentes dans les pages Miel Aissa avant de toucher au contenu.
+- [ ] Exécuter sur staging le contrôle intégré : wp --path=CHEMIN_WORDPRESS eval-file CHEMIN_REPO/scripts/wordpress-smoke.php ; consigner la sortie sans informations personnelles.
