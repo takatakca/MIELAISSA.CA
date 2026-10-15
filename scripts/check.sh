@@ -11,6 +11,7 @@ php -l scripts/wordpress-smoke.php
 php -l tests/no-woocommerce.php
 php tests/smoke.php
 php tests/no-woocommerce.php
+bash scripts/test-deployment-config.sh
 if grep -RInE 'StrictHostKeyChecking=no|password\s*=' .github "$plugin" --exclude='*.md'; then
   echo "Unsafe deployment configuration detected" >&2
   exit 1

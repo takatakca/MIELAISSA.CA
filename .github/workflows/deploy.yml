@@ -16,7 +16,7 @@ concurrency:
 
 jobs:
   deploy:
-    if: ${{ vars.MIELAISSA_DEPLOY_ENABLED == 'true' && github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.head_sha == github.sha }}
+    if: ${{ vars.MIELAISSA_DEPLOY_ENABLED == 'true' && github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.head_sha == github.sha && github.event.workflow_run.event == 'push' && github.event.workflow_run.head_branch == 'main' && github.event.workflow_run.head_repository.full_name == github.repository }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout exact CI-tested revision
@@ -39,11 +39,7 @@ jobs:
           for value in "$HOST" "$PORT" "$USER" "$WP_ROOT" "$KEY" "$HOST_KEYS"; do
             test -n "$value" || { echo "Missing SSH deployment setting"; exit 1; }
           done
-          [[ "$WP_ROOT" =~ ^/[A-Za-z0-9/_-]+$ ]] || { echo "Invalid WordPress root"; exit 1; }
-          [[ "$PORT" =~ ^[0-9]+$ ]] || exit 1
-          (( 10#$PORT >= 1 && 10#$PORT <= 65535 )) || { echo "Invalid SSH port"; exit 1; }
-          [[ "$HOST" =~ ^[A-Za-z0-9.-]+$ ]] || exit 1
-          [[ "$USER" =~ ^[A-Za-z0-9_-]+$ ]] || exit 1
+          bash scripts/validate-wordpress-root.sh "$WP_ROOT" "$PORT" "$HOST" "$USER"
       - name: Install SSH credentials and pinned server key
         env:
           KEY: ${{ secrets.MIELAISSA_SSH_PRIVATE_KEY }}
@@ -54,6 +50,28 @@ jobs:
           printf '%s\n' "$KEY" > ~/.ssh/id_ed25519
           printf '%s\n' "$HOST_KEYS" > ~/.ssh/known_hosts
           chmod 600 ~/.ssh/id_ed25519 ~/.ssh/known_hosts
+      - name: Verify Miel Aissa WordPress target before upload
+        env:
+          HOST: ${{ vars.MIELAISSA_SSH_HOST }}
+          PORT: ${{ vars.MIELAISSA_SSH_PORT }}
+          USER: ${{ vars.MIELAISSA_SSH_USER }}
+          WP_ROOT: ${{ vars.MIELAISSA_WP_ROOT }}
+        run: |
+          set -euo pipefail
+          ssh -p "$PORT" -o BatchMode=yes "$USER@$HOST" bash -s -- "$WP_ROOT" <<'PREFLIGHT'
+          set -euo pipefail
+          root="$1"
+          test -s "$root/wp-includes/version.php"
+          test -d "$root/wp-content/plugins"
+          command -v wp >/dev/null || { echo "WP-CLI is required to verify target" >&2; exit 1; }
+          home="$(wp --path="$root" --skip-plugins --skip-themes option get home)"
+          home="$(printf '%s' "$home" | sed 's:/$::')"
+          case "$home" in
+            https://mielaissa.ca|https://www.mielaissa.ca|http://mielaissa.ca|http://www.mielaissa.ca)
+              echo "WordPress home verified: $home" ;;
+            *) echo "REFUSED: wrong WordPress home URL" >&2; exit 1 ;;
+          esac
+          PREFLIGHT
       - name: Upload to staging directory and keep previous version
         env:
           HOST: ${{ vars.MIELAISSA_SSH_HOST }}
