@@ -114,6 +114,8 @@ verify(count(mielaissa_storefront_available_offers()) === 1, 'Exhausted coupons 
 $GLOBALS['ma_coupons'][2]['usage_count'] = 2;
 verify(count(mielaissa_storefront_available_offers()) === 2, 'Unexhausted coupons available');
 verify(strpos(mielaissa_storefront_offers_shortcode(array('lang' => 'en')), 'FIRSTORDER15') !== false, 'Coupons displayed in English');
+verify(strpos(mielaissa_storefront_offers_shortcode(array('lang' => 'en')), 'eligible first order') !== false, 'First-order eligibility disclosed');
+verify(strpos(mielaissa_storefront_offers_shortcode(array('lang' => 'fr')), 'commande admissible') !== false, 'French shipping eligibility disclosed');
 
 $GLOBALS['ma_coupons'][1]['free_shipping'] = false;
 $GLOBALS['ma_coupons'][2]['amount'] = '10';
