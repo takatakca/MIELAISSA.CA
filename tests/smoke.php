@@ -41,6 +41,7 @@ function get_post_status($id) { return !empty($GLOBALS['ma_coupons'][$id]['unpub
 class FakeProduct {
     public function get_id() { return 101; }
     public function is_visible() { return true; }
+    public function is_in_stock() { return false; }
     public function get_name() { return 'Honey & <script>bad()</script>'; }
     public function get_image($size) { return '<img src="/honey.jpg" alt="Honey">'; }
     public function get_price_html() { return '<span class="amount">$50</span>'; }
@@ -56,6 +57,8 @@ class WC_Coupon {
     public function get_free_shipping() { return !empty($GLOBALS['ma_coupons'][$this->id]['free_shipping']); }
     public function get_discount_type() { return $GLOBALS['ma_coupons'][$this->id]['type']; }
     public function get_amount() { return $GLOBALS['ma_coupons'][$this->id]['amount']; }
+    public function get_usage_limit() { return isset($GLOBALS['ma_coupons'][$this->id]['usage_limit']) ? $GLOBALS['ma_coupons'][$this->id]['usage_limit'] : 0; }
+    public function get_usage_count() { return isset($GLOBALS['ma_coupons'][$this->id]['usage_count']) ? $GLOBALS['ma_coupons'][$this->id]['usage_count'] : 0; }
 }
 
 require __DIR__ . '/../wordpress/wp-content/plugins/mielaissa-storefront/mielaissa-storefront.php';
@@ -93,6 +96,7 @@ verify(strpos($rendered, 'Honey &lt;b&gt;Sweet&lt;/b&gt;') !== false, 'Escaped c
 verify(strpos($rendered, '<img src="/honey.jpg"') !== false, 'WooCommerce product image rendered');
 verify(strpos($rendered, '$50</span>') !== false, 'WooCommerce price HTML rendered');
 verify(strpos($rendered, 'https://mielaissa.ca/product/101/') !== false, 'Product detail links');
+verify(strpos($rendered, 'Out of stock') !== false, 'Translated inventory state for sold-out products');
 verify(strpos($rendered, '<script>bad()') === false, 'No raw script injection in product titles');
 
 $no_coupons = mielaissa_offers_shortcode();
@@ -104,6 +108,11 @@ $GLOBALS['ma_coupons'] = array(
 );
 $offers = mielaissa_available_offers();
 verify(count($offers) === 2, 'Valid existing coupons advertised');
+$GLOBALS['ma_coupons'][2]['usage_limit'] = 3;
+$GLOBALS['ma_coupons'][2]['usage_count'] = 3;
+verify(count(mielaissa_available_offers()) === 1, 'Exhausted coupons hidden');
+$GLOBALS['ma_coupons'][2]['usage_count'] = 2;
+verify(count(mielaissa_available_offers()) === 2, 'Unexhausted coupons available');
 verify(strpos(mielaissa_offers_shortcode(array('lang' => 'en')), 'FIRSTORDER15') !== false, 'Coupons displayed in English');
 
 $GLOBALS['ma_coupons'][1]['free_shipping'] = false;
