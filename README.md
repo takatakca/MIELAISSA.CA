@@ -41,4 +41,4 @@ Configure GitHub Actions secrets: MIELAISSA_SSH_PRIVATE_KEY (dedicated key), MIE
 
 Do not enable automated production deployment until staging validation, backups, rollback process and confirmed server paths exist.
 
-See docs/HANDOFF.md for follow-up implementation tasks and remaining blockers.
+See AGENTS.md and docs/AGENT_HANDOFF.md for the exact next step, docs/PROJECT_STATUS.md for verified state, docs/TASK_QUEUE.md for outstanding work, docs/DEPLOYMENT.md for the guarded rollout process, and docs/DECISIONS.md for architecture decisions.
