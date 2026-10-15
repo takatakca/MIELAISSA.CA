@@ -1,0 +1,29 @@
+# WordPress credentials, local configuration and customer/database exports
+.env
+.env.*
+!.env.example
+**/wp-config.php
+**/wp-config-*.php
+*.sql
+*.sql.gz
+*.sqlite
+*.sqlite3
+*.bak
+*.backup
+*.dump
+*.log
+
+# Release archives / hosting backups: CI packages releases independently
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+
+# Local build and IDE artifacts
+node_modules/
+vendor/
+.cache/
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
