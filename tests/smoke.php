@@ -84,6 +84,7 @@ verify(strpos($fr, 'Du miel pour') !== false, 'French storefront renders');
 verify(strpos($fr, 'Les produits seront affichés') !== false, 'Empty catalogue state');
 verify(strpos($fr, 'https://mielaissa.ca/shop/') !== false, 'Links to existing WooCommerce shop');
 verify($GLOBALS['ma_product_query']['limit'] === 12, 'Product limit upper bound');
+verify($GLOBALS['ma_product_query']['visibility'] === 'catalog', 'WooCommerce filters catalog visibility before limiting products');
 $en = mielaissa_storefront_shortcode(array('lang' => 'en', 'limit' => '0'));
 verify(strpos($en, 'Honey for') !== false, 'English storefront renders');
 verify($GLOBALS['ma_product_query']['limit'] === 1, 'Product limit lower bound');

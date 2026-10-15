@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Miel Aissa Storefront
  * Description: A bilingual WooCommerce catalogue and verified offer highlights.
- * Version: 0.2.2
+ * Version: 0.2.3
  * Requires at least: 6.2
  * Requires PHP: 7.4
  * Text Domain: mielaissa-storefront
@@ -10,7 +10,7 @@
 
 defined('ABSPATH') || exit;
 
-define('MIELAISSA_STOREFRONT_VERSION', '0.2.2');
+define('MIELAISSA_STOREFRONT_VERSION', '0.2.3');
 
 function mielaissa_storefront_language($requested = '') {
     if (in_array($requested, array('fr', 'en'), true)) {
@@ -130,7 +130,7 @@ function mielaissa_storefront_shortcode($atts = array()) {
     if (!function_exists('wc_get_products') || !function_exists('wc_get_page_permalink')) {
         return '<p class="ma-notice">' . esc_html(mielaissa_storefront_label('unavailable', $lang)) . '</p>';
     }
-    $products = wc_get_products(array('status' => 'publish', 'limit' => $limit, 'orderby' => 'date', 'order' => 'DESC'));
+    $products = wc_get_products(array('status' => 'publish', 'visibility' => 'catalog', 'limit' => $limit, 'orderby' => 'date', 'order' => 'DESC'));
     $categories = get_terms(array('taxonomy' => 'product_cat', 'hide_empty' => true, 'number' => 6, 'orderby' => 'count', 'order' => 'DESC'));
     if (!is_array($products)) {
         $products = array();
