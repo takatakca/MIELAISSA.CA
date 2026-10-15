@@ -42,3 +42,10 @@ Lire AGENTS.md, docs/AGENT_HANDOFF.md, puis chercher le **premier item faisable*
 - [x] Vérifier l'état d'épuisement des coupons et leurs textes d'éligibilité FR/EN.
 - [x] Protéger le transfert SSH par comparaison SHA256 avec rollback du plugin précédent lors d'une discordance.
 - [x] Ajouter un test WordPress/WooCommerce réel, en lecture seule, exécutable avec WP-CLI après accès.
+
+
+## Dernières tâches de code terminées
+
+- [x] Identifier et corriger la défaillance CI introduite dans les stubs WordPress du test sans WooCommerce.
+- [x] Valider le test sur PHP 7.4, 8.2, 8.3 et obtenir l'archive ZIP installable.
+- [x] Ajouter .gitignore pour secrets WordPress et exports de données.

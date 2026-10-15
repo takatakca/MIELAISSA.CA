@@ -74,3 +74,14 @@ Validation des nouveaux workflows GitHub Actions sur le dernier main. La tâche 
 - CI confirmées réussies pour 6fb56d803cb7a8521cb0d7b662c0fd7607b83bf4, 340a671065a4325ad4a1832c1b183f36d448679a, 33c6f462e2303a86b5aa34acd18fe7d3a5988b8d et 89682eb746cc8494140243f45d2943adaff90d35. Les révisions ultérieures requièrent une consultation des runs, pas une supposition.
 - Déploiement réel : NON EFFECTUÉ / NON VÉRIFIÉ. GitHub deploy job ignoré faute de paramètres d'activation. Aucun accès confirmé à WP_ROOT, wp-admin, SSH ou sauvegarde. Site public inchangé.
 - Tâche bloquante suivante : localiser la véritable installation WordPress de mielaissa.ca via les accès autorisés du compte d'hébergement, vérifier backup + staging, puis exécuter scripts/wordpress-smoke.php, activer le déploiement contrôlé et vérifier la page publique.
+
+
+## Dernière correction vérifiée avant mise à jour de relève
+
+- Défaut détecté par CI sur 4a5f0efa et 023a8266 : le double de WordPress sans WooCommerce ne déclarait pas absint(), fonction native de WordPress.
+- Correction réalisée dans tests/no-woocommerce.php : commit 603a7a6027d6548863cd92a8179f7f54bf96f209.
+- **Preuve de validation** : GitHub Actions run 38777390418, CI success : PHP 7.4, PHP 8.2, PHP 8.3, JavaScript, package ZIP.
+- Mesure sécurité finale : .gitignore protégeant wp-config.php, exports SQL, journaux, archives et fichiers .env, commit d3f5e6251c16bba3ff03ea174cc699c6991b7f54.
+- Aucune activation réelle de l'extension n'a été observée. Workflow distant désactivé ou ignoré, même si la CI est verte.
+- **État nécessaire à la relève :** la prochaine tâche exécutable dans un environnement disposant d'accès est la découverte de WP_ROOT confirmé dans cPanel/SSH, restauration possible, staging et test WP-CLI read-only ; ensuite déploiement sur la cible vérifiée. Ne pas réimplémenter les fonctionnalités déjà codées.
+- Avant de reprendre, relire le commit HEAD distant postérieur à ce document ; le SHA de la documentation est auto-référentiel et se lit dans Git, pas en l'écrivant avant son propre commit.

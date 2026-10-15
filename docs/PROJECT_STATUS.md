@@ -49,3 +49,11 @@ Un contrôle intégré en lecture seule est disponible à scripts/wordpress-smok
 - Tests du fonctionnement sans WooCommerce (état dégradé sûr), du stock et de coupons épuisés/invalides.
 - Workflow de publication : vérification de port SSH, bascule réversible, restauration du dossier précédent en cas de différence SHA256.
 - Contrôle d'intégration sans écriture : scripts/wordpress-smoke.php (non exécuté sur l'hébergement réel).
+
+
+## Résultat CI récent
+
+- Run 38777390418 pour 603a7a6027d6548863cd92a8179f7f54bf96f209 : succès (PHP 7.4, 8.2, 8.3, JavaScript, archive).
+- Correction de l'environnement simulé des tests sans WooCommerce, à ne pas confondre avec un problème connu dans le vrai WordPress.
+- Fichier .gitignore ajouté pour empêcher l'ajout accidentel de sauvegardes WordPress, exports de données, secrets et archives.
+- Dernière CI requise pour le nouveau HEAD doit être consultée avant toute éventuelle publication.
