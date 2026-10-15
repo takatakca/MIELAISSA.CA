@@ -41,6 +41,7 @@ jobs:
           done
           [[ "$WP_ROOT" =~ ^/[A-Za-z0-9/_-]+$ ]] || { echo "Invalid WordPress root"; exit 1; }
           [[ "$PORT" =~ ^[0-9]+$ ]] || exit 1
+          (( 10#$PORT >= 1 && 10#$PORT <= 65535 )) || { echo "Invalid SSH port"; exit 1; }
           [[ "$HOST" =~ ^[A-Za-z0-9.-]+$ ]] || exit 1
           [[ "$USER" =~ ^[A-Za-z0-9_-]+$ ]] || exit 1
       - name: Install SSH credentials and pinned server key
@@ -96,5 +97,19 @@ jobs:
           FILE=wordpress/wp-content/plugins/mielaissa-storefront/mielaissa-storefront.php
           LOCAL_SHA="$(sha256sum "$FILE" | cut -d ' ' -f 1)"
           REMOTE_SHA="$(ssh -p "$PORT" -o BatchMode=yes "$USER@$HOST" "sha256sum '$WP_ROOT/wp-content/plugins/mielaissa-storefront/mielaissa-storefront.php' | cut -d ' ' -f 1")"
-          test "$LOCAL_SHA" = "$REMOTE_SHA"
+          if [ "$LOCAL_SHA" != "$REMOTE_SHA" ]; then
+            echo "Checksum mismatch; restoring previous plugin where available." >&2
+            ssh -p "$PORT" -o BatchMode=yes "$USER@$HOST" \
+              bash -s -- "$WP_ROOT/wp-content/plugins" <<'ROLLBACK'
+          set -euo pipefail
+          plugins="$1"
+          target="$plugins/mielaissa-storefront"
+          previous="$plugins/.mielaissa-previous"
+          failed="$plugins/.mielaissa-failed"
+          if [ -e "$failed" ]; then rm -rf -- "$failed"; fi
+          if [ -d "$target" ]; then mv -- "$target" "$failed"; fi
+          if [ -d "$previous" ]; then mv -- "$previous" "$target"; fi
+          ROLLBACK
+            exit 1
+          fi
           echo "Plugin content verified. WordPress activation not implied."
