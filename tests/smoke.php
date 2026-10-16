@@ -54,7 +54,7 @@ class FakeProduct {
         return true;
     }
     public function is_in_stock() { return false; }
-    public function get_name() { return 'Honey & <script>bad()</script>'; }
+    public function get_name() { if (!empty($GLOBALS['ma_throw_product_name'])) { throw new RuntimeException('Private product failure'); } return 'Honey & <script>bad()</script>'; }
     public function get_image($size) { return '<img src="/honey.jpg" alt="Honey">'; }
     public function get_price_html() { return '<span class="amount">$50</span>'; }
 }
@@ -169,5 +169,12 @@ $GLOBALS['ma_throw_coupon_lookup'] = false;
 $GLOBALS['ma_throw_coupon_status'] = true;
 verify(count(mielaissa_storefront_available_offers()) === 1, 'Coupon status exception skips only failed coupon');
 $GLOBALS['ma_throw_coupon_status'] = false;
+
+$GLOBALS['ma_throw_product_name'] = true;
+$partially_available = mielaissa_storefront_shortcode(array('lang' => 'en'));
+verify(strpos($partially_available, 'ma-products-title') !== false, 'Storefront continues when product getter throws');
+verify(strpos($partially_available, 'Private product failure') === false, 'No private product error in HTML');
+verify(strpos($partially_available, '<article class="ma-product">') === false, 'Malformed product skipped');
+$GLOBALS['ma_throw_product_name'] = false;
 
 echo "All storefront smoke checks passed.\n";
