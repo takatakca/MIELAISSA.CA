@@ -38,12 +38,21 @@ function wc_get_products($query) {
 function get_terms() { return $GLOBALS['ma_categories']; }
 function get_term_link($term) { return 'https://mielaissa.ca/product-category/' . $term->slug . '/'; }
 function get_permalink($id) { return 'https://mielaissa.ca/product/' . $id . '/'; }
-function wc_get_coupon_id_by_code($code) { return isset($GLOBALS['ma_coupon_ids'][$code]) ? $GLOBALS['ma_coupon_ids'][$code] : 0; }
-function get_post_status($id) { return !empty($GLOBALS['ma_coupons'][$id]['unpublished']) ? 'draft' : 'publish'; }
+function wc_get_coupon_id_by_code($code) {
+    if (!empty($GLOBALS['ma_throw_coupon_lookup']) && $code === 'MIELAISSA120') { throw new RuntimeException('Private coupon lookup'); }
+    return isset($GLOBALS['ma_coupon_ids'][$code]) ? $GLOBALS['ma_coupon_ids'][$code] : 0;
+}
+function get_post_status($id) {
+    if (!empty($GLOBALS['ma_throw_coupon_status']) && $id === 1) { throw new RuntimeException('Private coupon status'); }
+    return !empty($GLOBALS['ma_coupons'][$id]['unpublished']) ? 'draft' : 'publish';
+}
 
 class FakeProduct {
     public function get_id() { return 101; }
-    public function is_visible() { return true; }
+    public function is_visible() {
+        if (!empty($GLOBALS['ma_throw_visibility'])) { throw new RuntimeException('Private product metadata'); }
+        return true;
+    }
     public function is_in_stock() { return false; }
     public function get_name() { return 'Honey & <script>bad()</script>'; }
     public function get_image($size) { return '<img src="/honey.jpg" alt="Honey">'; }
@@ -145,5 +154,20 @@ $GLOBALS['ma_coupons'][1]['expired'] = false;
 $GLOBALS['ma_coupons'][1]['throw'] = true;
 $GLOBALS['ma_coupons'][2]['amount'] = '15';
 verify(count(mielaissa_storefront_available_offers()) === 1, 'Corrupt coupon does not suppress other valid offers');
+
+$GLOBALS['ma_throw_visibility'] = true;
+$visibility_fail = mielaissa_storefront_shortcode(array('lang' => 'en'));
+verify(strpos($visibility_fail, 'The store is temporarily unavailable.') !== false, 'Broken visibility getter falls back safely');
+verify(strpos($visibility_fail, 'Private product metadata') === false, 'Visibility exceptions never leak internals');
+$GLOBALS['ma_throw_visibility'] = false;
+$GLOBALS['ma_coupons'][1]['throw'] = false;
+$GLOBALS['ma_coupons'][1]['expired'] = false;
+$GLOBALS['ma_coupons'][2]['amount'] = '15';
+$GLOBALS['ma_throw_coupon_lookup'] = true;
+verify(count(mielaissa_storefront_available_offers()) === 1, 'Coupon lookup exception skips only failed coupon');
+$GLOBALS['ma_throw_coupon_lookup'] = false;
+$GLOBALS['ma_throw_coupon_status'] = true;
+verify(count(mielaissa_storefront_available_offers()) === 1, 'Coupon status exception skips only failed coupon');
+$GLOBALS['ma_throw_coupon_status'] = false;
 
 echo "All storefront smoke checks passed.\n";

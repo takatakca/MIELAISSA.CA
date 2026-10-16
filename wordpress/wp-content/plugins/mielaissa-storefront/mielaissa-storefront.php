@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Miel Aissa Storefront
  * Description: A bilingual WooCommerce catalogue and verified offer highlights.
- * Version: 0.2.4
+ * Version: 0.2.5
  * Requires at least: 6.2
  * Requires PHP: 7.4
  * Text Domain: mielaissa-storefront
@@ -10,7 +10,7 @@
 
 defined('ABSPATH') || exit;
 
-define('MIELAISSA_STOREFRONT_VERSION', '0.2.4');
+define('MIELAISSA_STOREFRONT_VERSION', '0.2.5');
 
 function mielaissa_storefront_language($requested = '') {
     if (in_array($requested, array('fr', 'en'), true)) {
@@ -64,11 +64,11 @@ function mielaissa_storefront_available_offers() {
     $definitions = array('MIELAISSA120' => 'shipping', 'FIRSTORDER15' => 'first');
     $valid = array();
     foreach ($definitions as $code => $type) {
-        $id = wc_get_coupon_id_by_code($code);
-        if (!$id || get_post_status($id) !== 'publish') {
-            continue;
-        }
         try {
+            $id = wc_get_coupon_id_by_code($code);
+            if (!$id || get_post_status($id) !== 'publish') {
+                continue;
+            }
             $coupon = new WC_Coupon($id);
             if (!$coupon->get_id()) {
                 continue;
@@ -138,19 +138,18 @@ function mielaissa_storefront_shortcode($atts = array()) {
     try {
         $products = wc_get_products(array('status' => 'publish', 'visibility' => 'catalog', 'limit' => $limit, 'orderby' => 'date', 'order' => 'DESC'));
         $categories = get_terms(array('taxonomy' => 'product_cat', 'hide_empty' => true, 'number' => 6, 'orderby' => 'count', 'order' => 'DESC'));
+        if (!is_array($products)) {
+            $products = array();
+        }
+        // Product visibility can itself throw when WooCommerce metadata is corrupt.
+        $products = array_values(array_filter($products, function ($product) {
+            return is_object($product) && method_exists($product, 'is_visible') && $product->is_visible()
+                && method_exists($product, 'get_id');
+        }));
     } catch (Throwable $error) {
-        // Never expose database errors or internal paths in public shortcode HTML.
+        // Do not expose database details or partially rendered product data to visitors.
         return '<p class="ma-notice" role="status">' . esc_html(mielaissa_storefront_label('unavailable', $lang)) . '</p>';
     }
-    if (!is_array($products)) {
-        $products = array();
-    }
-    // WooCommerce visibility can hide individual products even after a published query.
-    // Filter first so the empty-state copy accurately reflects the visible grid.
-    $products = array_values(array_filter($products, function ($product) {
-        return is_object($product) && method_exists($product, 'is_visible') && $product->is_visible()
-            && method_exists($product, 'get_id');
-    }));
     if (is_wp_error($categories) || !is_array($categories)) {
         $categories = array();
     }
