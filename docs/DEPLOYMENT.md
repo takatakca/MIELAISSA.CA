@@ -107,3 +107,14 @@ Le workflow `workflow_run` doit provenir d'une CI réussie sur push main du mêm
 Le SHA publié par le workflow_run doit correspondre au HEAD de main au début du job. Un contrôle **supplémentaire** exécute maintenant `git ls-remote --heads origin refs/heads/main` après le checkout et avant la phase SSH. Si une nouvelle révision a remplacé la révision validée entre le déclenchement de la CI et le démarrage du déploiement, le job refuse de publier la version devenue obsolète.
 
 Ce contrôle ne change pas les autres obligations : validité du site WordPress cible, sauvegarde/restauration, staging, vérification de la clé hôte et variable d'activation volontaire.
+
+
+## Manifeste intégral de l'extension (16 octobre 2026)
+
+`scripts/plugin-manifest.sh DOSSIER_PLUGIN` vérifie la présence du fichier PHP, du CSS et du JS puis renvoie un manifeste SHA256 trié de **tous** les fichiers de l'extension. Après `rsync` vers le dossier provisoire, le workflow compare les manifestes local et distant avant de remplacer le plugin courant. Il effectue une deuxième comparaison après bascule et revient au plugin précédent en cas de discordance.
+
+`scripts/test-plugin-manifest.sh` vérifie localement : manifestes identiques pour copies identiques, différence après altération JavaScript, erreur lors de la disparition de CSS. Ce test ne remplace pas un déploiement SSH réellement vérifié.
+
+Le workflow `public-health.yml` s'exécute désormais sur chaque push `main` et quotidiennement. Son succès signifie seulement que `https://mielaissa.ca/` a rendu une page HTML identifiable, pas que le ZIP actuel a été activé. Ne jamais déclarer la production prête sur la base du seul health check.
+
+Les blocages d'accès à WP-CLI, cPanel, SSH, staging et sauvegardes restent inchangés.

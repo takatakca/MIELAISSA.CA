@@ -1,3 +1,47 @@
+# Relève immédiate — 16 octobre 2026 (dernier état)
+
+**Dépôt et branche :** `takatakca/MIELAISSA.CA`, `main`. **Point de départ vérifié :** `5f87d1eb32a40c90a8b0803f9122d7dee9129be9`.
+**Dernier commit fonctionnel poussé :** `8b8b2cffde8ba13f0aa26e8d40d1d9ad958bb720` (plugin v0.2.7). **Pour le SHA de cette relève**, consulter le HEAD réel de `main` après publication.
+
+## Dernière tâche terminée
+
+- Correctif `570afec6` : exceptions de recherche et de statut coupon, ainsi que de visibilité produit interceptées.
+- Correctif `049450db` : manifeste SHA256 de TOUS les fichiers de l'extension vérifié après staging et après activation, au lieu du seul fichier PHP ; script `scripts/plugin-manifest.sh` et tests `scripts/test-plugin-manifest.sh`.
+- Correctif `2cfef81a` : le contrôle public `public-health.yml` s'exécute sur chaque push main et quotidiennement, indépendamment de l'activation WordPress.
+- Correctifs `c5aac93e` et `8b8b2cff` : erreurs individuelles de produit isolées et préparation des cartes de produits avant le rendu ; affichage d'un message explicite si aucune carte valide n'existe. Pas de clients, commandes ou stock modifiés.
+
+## Vérifications réellement effectuées
+
+- GitHub CI `38848544219` sur `570afec6` : **success**.
+- GitHub CI `38848652264` sur `049450db` : **success** (PHP 7.4/8.2/8.3, JS, manifest checks, ZIP).
+- GitHub Actions public health `38848751393`, `38848854010` et `38848959851` : **success** ; le site public répond, sans preuve d'activation du nouveau plugin.
+- CI `38848854034` sur `c5aac93e` : **success**.
+- CI du dernier commit fonctionnel `8b8b2cff` : exécution `38848959841` ; **consulter la conclusion actuelle avant toute publication** (encore en cours lors de la rédaction).
+- Le déploiement SSH a encore été **skipped** : `MIELAISSA_DEPLOY_ENABLED` non activé. Aucun déploiement du nouveau plugin n'a été confirmé.
+
+## Dernière tâche en cours et problème bloquant
+
+Exécuter des vérifications WordPress/WooCommerce sur un site de staging **réel**. Aucun chemin `WP_ROOT`, accès cPanel/SSH/wp-admin, sauvegarde restaurable, URL staging ou compte de test n'a été vérifié par les outils accessibles ici. Les pistes historiques MochaHost ne constituent pas un accès. Ne pas inventer ces paramètres, ne pas changer le DNS, ne pas remplacer le thème, les données clients, le système fidélité ou le panier.
+
+## Fichiers modifiés dans cette session
+
+- `wordpress/wp-content/plugins/mielaissa-storefront/mielaissa-storefront.php`
+- `tests/smoke.php`
+- `.github/workflows/deploy.yml`
+- `.github/workflows/public-health.yml`
+- `scripts/plugin-manifest.sh`, `scripts/test-plugin-manifest.sh`, `scripts/check.sh`
+- Documents de statut et de relève.
+
+## Accès nécessaires et action suivante exacte
+
+1. Revalider le HEAD main et les résultats GitHub CI/health/deploy de la dernière révision.
+2. Via un accès cPanel/SSH **autorisé**, découvrir la vraie racine WordPress associée à `mielaissa.ca`, vérifier `wp option get home`, versions PHP et WooCommerce, thème et personnalisation fidélité.
+3. Sauvegarder fichiers et SQL, tester le retour arrière sur staging et installer le ZIP d'extension uniquement en staging.
+4. Activer la page de prévisualisation avec `[mielaissa_storefront]` et `[mielaissa_offers]`; exécuter `wp --path=CHEMIN_REEL eval-file /CHEMIN_REPO/scripts/wordpress-smoke.php`, vérifier responsive, inventaire, coupons, paiement test et fidélité.
+5. Après cette preuve et l'accord d'exploitation : configurer les variables/secrets SSH dans GitHub, activer `MIELAISSA_DEPLOY_ENABLED`, constater le manifeste SHA256 distant et l'activation WordPress. Consigner SHA du site et preuves dans docs et issue #1.
+
+---
+
 # Reprise technique finale de la session — 15 octobre 2026
 
 **Dépôt / branche :** takatakca/MIELAISSA.CA / main.

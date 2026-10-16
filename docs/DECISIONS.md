@@ -66,3 +66,12 @@ Une erreur interne d'accès aux produits ne doit pas afficher de trace sensible 
 ## 2026-10-15 — Contrôler de nouveau la version juste avant SSH
 
 Les vérifications du contexte GitHub workflow_run ne suffisent pas si un nouveau commit a été poussé pendant l'attente. Le script du workflow de déploiement interroge le HEAD distant main au moment de l'exécution et interrompt toute publication d'une version supplantée.
+
+
+## 2026-10-16 — Contrôle exhaustif du ZIP au lieu d'une empreinte PHP isolée
+
+Le déploiement considère tous les octets de l'extension (PHP, CSS, JS et autres fichiers futurs) dans un manifeste trié SHA256. Un fichier additionnel ou supprimé doit également modifier la preuve d'intégrité ; les copies suspectes sont rejetées avant la bascule. La vérification post-bascule conserve le retour arrière existant.
+
+## 2026-10-16 — Résilience de la vitrine et disponibilité publique
+
+Les erreurs de coupon et de produit sont isolées individuellement, sans jamais afficher de messages internes aux acheteurs. L'absence de cartes valides affiche un état vide plutôt qu'une grille blanche. La surveillance HTTP est indépendante de la version WordPress : son succès ne constitue ni une preuve de déploiement, ni un test de paiement.

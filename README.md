@@ -62,3 +62,10 @@ If WooCommerce is inactive, the storefront shortcode presents an availability me
 A dedicated GitHub Actions workflow (`.github/workflows/public-health.yml`) checks the existing public homepage daily. It confirms HTTP/HTML accessibility, **not** deployment or plugin activation.
 
 Automated deployment now validates domain-named WordPress paths and refuses an incorrect WordPress installation: WP-CLI must be present on the actual target and its `home` must match `mielaissa.ca` or `www.mielaissa.ca`. The production deployment remains opt-in and is not yet enabled.
+
+
+## Deployment integrity and public health
+
+The opt-in SSH workflow now compares full, deterministic SHA-256 manifests of the complete WordPress plugin directory **before** switching directories and **after** deployment. Run `bash scripts/test-plugin-manifest.sh` to test missing files and unexpected modifications. It still requires a confirmed WordPress installation and never activates a shortcode automatically.
+
+The read-only public health workflow also runs on pushes to main, in addition to daily scheduling. A successful homepage probe is not evidence that the new extension is active or that checkout has been tested.

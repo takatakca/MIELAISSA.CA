@@ -71,3 +71,15 @@ Lire AGENTS.md, docs/AGENT_HANDOFF.md, puis chercher le **premier item faisable*
 - [x] Ajouter tests d'erreur de requête et coupon et valider la CI 38791678148.
 - [x] Revalider HEAD distant main juste avant publication pour refuser les anciennes révisions en attente.
 - [ ] Vérifier la CI du dernier commit documentaire, puis reprendre la première tâche P0 requérant l'accès réel au site.
+
+
+## Tâches réalisées lors de la reprise du 16 octobre 2026
+
+- [x] Vérifier que la dernière CI du HEAD précédent est verte et confirmer que le déploiement distant est ignoré.
+- [x] Éviter les exceptions non interceptées dans la recherche / statut des coupons et dans le getter de visibilité produit ; tests de régression.
+- [x] Vérifier SHA256 de **tous** les fichiers d'extension après staging et après installation (et non uniquement le PHP principal).
+- [x] Tester un transfert identique, un JS modifié et un fichier CSS manquant sans accès serveur.
+- [x] Déclencher immédiatement le contrôle de santé du site public à chaque push main, tout en conservant le programme quotidien.
+- [x] Vérifier l'exécution publique initiale 38848751393 (success) et deux autres contrôles sur push.
+- [x] Ne pas laisser de grille vide si les objets WooCommerce individuels sont invalides ; affichage d'état vide explicite.
+- [ ] **Blocage P0 réel :** confirmer et tester staging WordPress, backup restaurable, WP_ROOT, accès admin/SSH, puis déployer et vérifier la version activée.

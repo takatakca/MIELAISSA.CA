@@ -74,3 +74,13 @@ Un contrôle intégré en lecture seule est disponible à scripts/wordpress-smok
 - Tests de régression associés ; run CI GitHub 38791678148 réussi.
 - f1473607 : contrôle `git ls-remote origin refs/heads/main` immédiatement avant publication ; refuse de déployer une révision validée mais déjà remplacée par un nouveau main.
 - Le statut de production reste non déployé/non vérifié : seuls les fichiers GitHub et pipelines ont été modifiés.
+
+
+## Reprise du 16 octobre 2026 — version 0.2.7
+
+- Code publié sur GitHub : corrections `570afec6`, `049450db`, `2cfef81a`, `c5aac93e`, `8b8b2cff`.
+- Plugin plus résilient aux exceptions WooCommerce (recherche/statut de coupon, visibilité produit, construction des fiches). Les cartes invalides sont filtrées avant affichage et l'état vide reste lisible.
+- Transmission WordPress : manifeste SHA256 complet PHP/CSS/JS et fichiers additionnels, vérifié AVANT l'échange de dossiers et APRÈS. Simulation de fichiers modifiés/supprimés en CI.
+- Disponibilité publique : workflow GitHub Actions sur push et quotidien. Exécutions 38848751393, 38848854010 et 38848959851 réussies. Cette surveillance n'est PAS une preuve d'installation de l'extension.
+- CI green vérifiées : 38848544219, 38848652264, 38848854034. Le statut de 38848959841 doit être vérifié après cette rédaction.
+- **Production WordPress inchangée/non vérifiée** : déploiement SSH skipped, staging et credentials non confirmés. Ticket bloquant #1 toujours ouvert.
