@@ -12,6 +12,9 @@ php -l tests/no-woocommerce.php
 php tests/smoke.php
 php tests/no-woocommerce.php
 bash scripts/test-deployment-config.sh
+bash scripts/test-plugin-manifest.sh
+bash -n scripts/plugin-manifest.sh
+bash -n scripts/test-plugin-manifest.sh
 bash -n scripts/public-health.sh
 bash -n scripts/validate-wordpress-root.sh
 bash -n scripts/test-deployment-config.sh

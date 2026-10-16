@@ -101,6 +101,13 @@ jobs:
           ssh -p "$PORT" -o BatchMode=yes "$REMOTE" "test -d '$PLUGINS' && mkdir -p '$INCOMING'"
           rsync -az --delete -e "ssh -p $PORT -o BatchMode=yes" \
             wordpress/wp-content/plugins/mielaissa-storefront/ "$REMOTE:$INCOMING/"
+          # Reject any missing or modified plugin file before switching.
+          LOCAL_MANIFEST="$(bash scripts/plugin-manifest.sh wordpress/wp-content/plugins/mielaissa-storefront)"
+          REMOTE_MANIFEST="$(ssh -p "$PORT" -o BatchMode=yes "$REMOTE" bash -s -- "$INCOMING" < scripts/plugin-manifest.sh)"
+          if [ "$LOCAL_MANIFEST" != "$REMOTE_MANIFEST" ]; then
+            echo "REFUSED: staged plugin manifest differs from validated source" >&2
+            exit 1
+          fi
           ssh -p "$PORT" -o BatchMode=yes "$REMOTE" bash -s -- "$TARGET" "$INCOMING" "$BACKUP" <<'REMOTE_SCRIPT'
           set -euo pipefail
           target="$1"
@@ -115,7 +122,7 @@ jobs:
           fi
           test -s "$target/mielaissa-storefront.php"
           REMOTE_SCRIPT
-      - name: Verify deployed main file checksum
+      - name: Verify full deployed plugin manifest
         env:
           HOST: ${{ vars.MIELAISSA_SSH_HOST }}
           PORT: ${{ vars.MIELAISSA_SSH_PORT }}
@@ -123,11 +130,11 @@ jobs:
           WP_ROOT: ${{ vars.MIELAISSA_WP_ROOT }}
         run: |
           set -euo pipefail
-          FILE=wordpress/wp-content/plugins/mielaissa-storefront/mielaissa-storefront.php
-          LOCAL_SHA="$(sha256sum "$FILE" | cut -d ' ' -f 1)"
-          REMOTE_SHA="$(ssh -p "$PORT" -o BatchMode=yes "$USER@$HOST" "sha256sum '$WP_ROOT/wp-content/plugins/mielaissa-storefront/mielaissa-storefront.php' | cut -d ' ' -f 1")"
-          if [ "$LOCAL_SHA" != "$REMOTE_SHA" ]; then
-            echo "Checksum mismatch; restoring previous plugin where available." >&2
+          LOCAL_MANIFEST="$(bash scripts/plugin-manifest.sh wordpress/wp-content/plugins/mielaissa-storefront)"
+          REMOTE_MANIFEST="$(ssh -p "$PORT" -o BatchMode=yes "$USER@$HOST" \
+            bash -s -- "$WP_ROOT/wp-content/plugins/mielaissa-storefront" < scripts/plugin-manifest.sh)"
+          if [ "$LOCAL_MANIFEST" != "$REMOTE_MANIFEST" ]; then
+            echo "Full plugin manifest mismatch; restoring previous plugin where available." >&2
             ssh -p "$PORT" -o BatchMode=yes "$USER@$HOST" \
               bash -s -- "$WP_ROOT/wp-content/plugins" <<'ROLLBACK'
           set -euo pipefail
@@ -141,4 +148,4 @@ jobs:
           ROLLBACK
             exit 1
           fi
-          echo "Plugin content verified. WordPress activation not implied."
+          echo "All plugin file hashes verified. WordPress activation not implied."
