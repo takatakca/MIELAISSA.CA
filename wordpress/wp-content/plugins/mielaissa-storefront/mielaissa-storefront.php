@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Miel Aissa Storefront
  * Description: A bilingual WooCommerce catalogue and verified offer highlights.
- * Version: 0.2.6
+ * Version: 0.2.7
  * Requires at least: 6.2
  * Requires PHP: 7.4
  * Text Domain: mielaissa-storefront
@@ -10,7 +10,7 @@
 
 defined('ABSPATH') || exit;
 
-define('MIELAISSA_STOREFRONT_VERSION', '0.2.6');
+define('MIELAISSA_STOREFRONT_VERSION', '0.2.7');
 
 function mielaissa_storefront_language($requested = '') {
     if (in_array($requested, array('fr', 'en'), true)) {
@@ -153,6 +153,25 @@ function mielaissa_storefront_shortcode($atts = array()) {
     if (is_wp_error($categories) || !is_array($categories)) {
         $categories = array();
     }
+    // Hydrate visible product cards before opening the HTML buffer. If every
+    // product is malformed, visitors see an informative empty state.
+    $cards = array();
+    foreach ($products as $product) {
+        try {
+            $url = get_permalink($product->get_id());
+            $name = $product->get_name();
+            $image = $product->get_image('woocommerce_thumbnail');
+            $price = $product->get_price_html();
+            $in_stock = !method_exists($product, 'is_in_stock') || $product->is_in_stock();
+            if (!$url || !$name) {
+                continue;
+            }
+            $cards[] = array('url' => $url, 'name' => $name, 'image' => $image, 'price' => $price, 'in_stock' => $in_stock);
+        } catch (Throwable $error) {
+            // Skip broken individual records while keeping the remainder visible.
+            continue;
+        }
+    }
     $shop = wc_get_page_permalink('shop');
     $email = defined('MIELAISSA_CONTACT_EMAIL') ? MIELAISSA_CONTACT_EMAIL : 'mielaissa.ca@gmail.com';
     $phone = defined('MIELAISSA_CONTACT_PHONE') ? MIELAISSA_CONTACT_PHONE : '+15149964247';
@@ -192,33 +211,20 @@ function mielaissa_storefront_shortcode($atts = array()) {
       <section class="ma-section ma-products" id="ma-products" aria-labelledby="ma-products-title">
         <div class="ma-container">
           <div class="ma-section__heading"><p class="ma-kicker">MIEL AISSA</p><h2 id="ma-products-title"><?php echo esc_html(mielaissa_storefront_label('products', $lang)); ?></h2></div>
-          <?php if (empty($products)) : ?>
+          <?php if (empty($cards)) : ?>
             <p class="ma-notice"><?php echo esc_html(mielaissa_storefront_label('empty', $lang)); ?></p>
           <?php else : ?>
             <div class="ma-product-grid">
-              <?php foreach ($products as $product) : ?>
-                <?php
-                  try {
-                      $url = get_permalink($product->get_id());
-                      $name = $product->get_name();
-                      $image = $product->get_image('woocommerce_thumbnail');
-                      $price = $product->get_price_html();
-                      $in_stock = !method_exists($product, 'is_in_stock') || $product->is_in_stock();
-                      if (!$url || !$name) { continue; }
-                  } catch (Throwable $error) {
-                      // Skip only this malformed product; the rest of the catalog remains usable.
-                      continue;
-                  }
-                ?>
+              <?php foreach ($cards as $card) : ?>
                 <article class="ma-product">
-                  <a class="ma-product__image" href="<?php echo esc_url($url); ?>" aria-label="<?php echo esc_attr($name); ?>"><?php echo wp_kses_post($image); ?></a>
+                  <a class="ma-product__image" href="<?php echo esc_url($card['url']); ?>" aria-label="<?php echo esc_attr($card['name']); ?>"><?php echo wp_kses_post($card['image']); ?></a>
                   <div class="ma-product__body">
-                    <?php if (!$in_stock) : ?>
+                    <?php if (!$card['in_stock']) : ?>
                       <p class="ma-product__stock" role="status"><?php echo esc_html(mielaissa_storefront_label('sold_out', $lang)); ?></p>
                     <?php endif; ?>
-                    <h3><a href="<?php echo esc_url($url); ?>"><?php echo esc_html($name); ?></a></h3>
-                    <?php if ($price) : ?><p class="ma-product__price"><?php echo wp_kses_post($price); ?></p><?php endif; ?>
-                    <a class="ma-product__detail" href="<?php echo esc_url($url); ?>"><?php echo esc_html(mielaissa_storefront_label('details', $lang)); ?> <span aria-hidden="true">↗</span></a>
+                    <h3><a href="<?php echo esc_url($card['url']); ?>"><?php echo esc_html($card['name']); ?></a></h3>
+                    <?php if ($card['price']) : ?><p class="ma-product__price"><?php echo wp_kses_post($card['price']); ?></p><?php endif; ?>
+                    <a class="ma-product__detail" href="<?php echo esc_url($card['url']); ?>"><?php echo esc_html(mielaissa_storefront_label('details', $lang)); ?> <span aria-hidden="true">↗</span></a>
                   </div>
                 </article>
               <?php endforeach; ?>

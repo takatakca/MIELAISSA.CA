@@ -175,6 +175,7 @@ $partially_available = mielaissa_storefront_shortcode(array('lang' => 'en'));
 verify(strpos($partially_available, 'ma-products-title') !== false, 'Storefront continues when product getter throws');
 verify(strpos($partially_available, 'Private product failure') === false, 'No private product error in HTML');
 verify(strpos($partially_available, '<article class="ma-product">') === false, 'Malformed product skipped');
+verify(strpos($partially_available, 'Products will appear here once published.') !== false, 'Empty-state message appears if every product is invalid');
 $GLOBALS['ma_throw_product_name'] = false;
 
 echo "All storefront smoke checks passed.\n";
