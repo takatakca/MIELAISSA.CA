@@ -5,9 +5,9 @@ Read this document, docs/AGENT_HANDOFF.md and docs/TASK_QUEUE.md **before** chan
 ## Repository authority
 
 - GitHub: takatakca/MIELAISSA.CA, production branch main.
-- Do not start a new site: this repository contains an additive WordPress / WooCommerce plugin for the separate, existing live site mielaissa.ca.
+- Owner instruction, 2026-10-30: replace WordPress with a Node.js storefront integrated with TAKATAK-V1. The old additive-plugin-only scope below is historical and superseded for development. Read docs/NODE_MIGRATION.md first.
 - The merchant's real WordPress installation (not checked into Git) is the system of record for products, orders, customer accounts, payments, inventory and coupons.
-- Do not replace WordPress, the theme, the live domain or DNS using this repository.
+- Develop the Node replacement here. Do not remove the live WordPress installation, switch DNS or migrate transactional data until preservation, restore and commercial acceptance are proven. The owner authorized the migration; missing technical access is not a request for new permission.
 - Never read, commit or copy production secrets or customer data.
 - TAKATAK is the master identity/customer authority only for approved cross-product integrations. No shared tenant data or ad-hoc second CRM. Do not expose Miel Aissa data to unrelated merchants.
 
@@ -17,8 +17,8 @@ Read this document, docs/AGENT_HANDOFF.md and docs/TASK_QUEUE.md **before** chan
 2. Query the live main SHA, open pull requests, issues, last CI runs and deployment results.
 3. Compare the live GitHub state with the written handoff; keep newer work from other agents.
 4. Work the first feasible queued item; make one coherent change at a time.
-5. Run bash scripts/check.sh and validate JavaScript with node --check wordpress/wp-content/plugins/mielaissa-storefront/assets/storefront.js.
-6. Push authorized changes to main without force and inspect their GitHub Actions result.
+5. Node checks: npm ci --ignore-scripts, npm test, npm run typecheck, npm run build, npm run test:browser. Also retain bash scripts/check.sh and legacy JS syntax validation until cutover.
+6. Publish the migration on a dedicated branch/PR while release dependencies remain unresolved. Inspect GitHub Actions. Never bypass the existing plugin-only deploy gate to publish Node.
 7. Update the five documentation files as decisions/state change; report verified status and blockers.
 8. If interrupted, a future authorized session resumes from the handoff. No prompt can autonomously restart this session.
 

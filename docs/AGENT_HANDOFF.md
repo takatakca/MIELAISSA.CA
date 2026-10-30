@@ -1,3 +1,22 @@
+# Migration Node.js — priorité actuelle (2026-10-30)
+
+**Codex — assistant OpenAI.** Le propriétaire a explicitement demandé le remplacement de WordPress par une solution Node.js dans ce dépôt. Les notes anciennes ci-dessous décrivent le périmètre historique du plugin, désormais dépassé pour le développement. Elles restent utiles pour préserver la boutique et le retour arrière.
+
+Voir **docs/NODE_MIGRATION.md** pour l'inventaire réel, les sources lues, le code livré, les accès manquants et l'ordre de bascule. Branche : `feat/node-storefront-20261030`. Application Node développée, publication de production **non effectuée**. Données transactionnelles toujours dans WordPress. Nouvelle identité TAKATAK non provisionnée, paiement fermé (503), photos/logo originaux à récupérer. Le plugin existant n'est pas la cible de publication Node.
+
+### Vérifications locales de cette tranche
+
+- npm test : 3/3 tests de capture/import réussis.
+- npm run typecheck : réussi ; ancien cache généré .next/dev déplacé hors de l’arbre après déplacement du layout de langue.
+- npm run build : réussi, serveur standalone Node démarré sur port 4180.
+- PLAYWRIGHT_EXISTING_SERVER=1 npm run test:browser : 3/3 réussis contre le build compilé, parcours 390 et 1440 px + API/redirect/noindex/404. Pas de réseau tiers ni erreur JavaScript dans ces parcours.
+- Captures locales /tmp/mielaissa-home-390.png, -1440.png, /tmp/mielaissa-business-390.png, -1440.png ; rendu mobile et bureau inspecté.
+- Premier contrôle dev : HMR local refusé par l’origine Next ; allowedDevOrigins local explicite ajouté, sans élargir les origines de production. Premier test de redirection ajusté pour distinguer normalisation du slash final et langue.
+- Contrôle PHP local indisponible : php: command not found. La CI historique multi-PHP demeure inchangée ; contrôler sa conclusion sur GitHub.
+- Aucun test de paiement, commande, identité ou import clients en production. Aucun déploiement public.
+
+---
+
 # Relève immédiate — 16 octobre 2026 (dernier état)
 
 **Dépôt et branche :** `takatakca/MIELAISSA.CA`, `main`. **Point de départ vérifié :** `5f87d1eb32a40c90a8b0803f9122d7dee9129be9`.

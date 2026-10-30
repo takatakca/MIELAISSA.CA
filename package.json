@@ -1,0 +1,32 @@
+{
+  "name": "mielaissa-storefront",
+  "version": "1.0.0-migration.1",
+  "private": true,
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "next dev --hostname 0.0.0.0",
+    "build": "next build --webpack",
+    "start": "next start --hostname 0.0.0.0",
+    "typecheck": "tsc --noEmit",
+    "test": "node --test tests/node/*.test.mjs",
+    "capture": "node scripts/node/capture-wordpress.mjs",
+    "import:catalog": "node scripts/node/import-catalog.mjs",
+    "test:browser": "playwright test"
+  },
+  "dependencies": {
+    "cheerio": "1.1.2",
+    "next": "16.2.10",
+    "react": "19.2.4",
+    "react-dom": "19.2.4"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.61.0",
+    "@types/node": "^22",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "prettier": "3.8.1",
+    "typescript": "^5"
+  }
+}

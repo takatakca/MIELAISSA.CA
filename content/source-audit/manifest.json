@@ -1,0 +1,23 @@
+{
+  "capturedAt": "2026-10-30",
+  "kind": "readable-web-excerpts",
+  "completeSiteBackup": false,
+  "originalMediaCaptured": 0,
+  "files": [
+    {
+      "file": "brand-and-product-readable.txt",
+      "bytes": 26861,
+      "sha256": "a57b275482d169dc4a1d2937e9a32f5e80845445d8902f2b05a80845a0eaae34"
+    },
+    {
+      "file": "business-and-contact-readable.txt",
+      "bytes": 24452,
+      "sha256": "2af81a7db68370ca99a8e00a43c28ca889117c6c6ce8781f6bcf0806661e5c91"
+    },
+    {
+      "file": "homepage-readable.txt",
+      "bytes": 19551,
+      "sha256": "72252dc33b05c9e4918c47022fc257a23ca93679b20f4c4c5d74b969f9b31b12"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+name: Miel Aissa Node
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  node:
+    runs-on: ubuntu-latest
+    env:
+      NEXT_TELEMETRY_DISABLED: 1
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - run: npm test
+      - run: npm run typecheck
+      - run: npm run build
+      - run: npx playwright install --with-deps chromium
+      - name: Browser flow against the compiled Node application
+        run: |
+          PORT=4180 node .next/standalone/server.js &
+          cp -r .next/static .next/standalone/.next/
+          cp -r public .next/standalone/
+          CHROMIUM_PATH="$(find "$HOME/.cache/ms-playwright" -type f -path '*/chrome-linux64/chrome' | head -1)" PLAYWRIGHT_EXISTING_SERVER=1 npm run test:browser
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: mielaissa-browser-evidence
+          path: /tmp/mielaissa-*.png
+          if-no-files-found: ignore
+      - name: Package runnable Node preview
+        run: |
+          cp -r .next/static .next/standalone/.next/
+          cp -r public .next/standalone/
+          tar -czf mielaissa-node-preview.tar.gz -C .next/standalone .
+      - uses: actions/upload-artifact@v4
+        with:
+          name: mielaissa-node-preview
+          path: mielaissa-node-preview.tar.gz
