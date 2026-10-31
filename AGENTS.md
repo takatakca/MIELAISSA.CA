@@ -2,6 +2,10 @@
 
 Read this document, docs/AGENT_HANDOFF.md and docs/TASK_QUEUE.md **before** changing files.
 
+## Owner correction — source fidelity
+
+Read docs/SOURCE_PARITY.md first. The owner rejected the amber/cream redesign. Clone the existing mielaissa.ca layout, brand, content and flows into Node.js; do not invent a replacement concept. Image quality improvements may preserve the real products/identity. Current prototype screenshots are not an accepted source reference. Do not publish it as the requested clone.
+
 ## Repository authority
 
 - GitHub: takatakca/MIELAISSA.CA, production branch main.

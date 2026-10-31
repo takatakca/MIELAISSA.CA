@@ -1,3 +1,9 @@
+// Owner rejected this editorial prototype. It must not become the public release.
+// Remove this hold only when the source-faithful replacement is implemented and verified.
+if (process.env.SITE_RELEASE_PUBLIC === "true") {
+  throw new Error("Public build blocked: source-faithful MIELAISSA conversion is incomplete; editorial prototype rejected by owner.");
+}
+
 const config = {
   output: "standalone",
   allowedDevOrigins: ["127.0.0.1"],

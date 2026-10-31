@@ -1,3 +1,5 @@
+> **OWNER CORRECTION — 2026-10-30:** the editorial redesign below was rejected. Target is a faithful Node.js conversion of the existing mielaissa.ca. See [source fidelity instructions](docs/SOURCE_PARITY.md). Current preview is not the requested clone and must not be released as such.
+
 # MIELAISSA.CA — Node.js / TAKATAK-V1 migration
 
 Owner direction, 2026-10-30: replace WordPress while preserving the merchant’s content and commercial records. **The new application is a working migration preview, not a transactional production release.**
