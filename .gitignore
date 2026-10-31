@@ -27,3 +27,8 @@ vendor/
 .vscode/
 .DS_Store
 Thumbs.db
+.next/
+*.tsbuildinfo
+migration-private/
+playwright-report/
+test-results/

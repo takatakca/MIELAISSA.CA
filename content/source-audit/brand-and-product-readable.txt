@@ -1,0 +1,734 @@
+Home - Mielaissa 5837 Rue Jean-Talon Est (https://mielaissa.ca/ca-fr/home)
+【turn131172view0】 [wordlim: 200] Crawled: last month; Content type: text/html; Source: click({"ref_id":"turn459262view1","id":3}); Redirected to URL: https://mielaissa.ca/ca-en/home/; Total lines: 353
+L0: [Button: ×] 【0†💥 Black Friday Mega Deals ...】
+L1: 
+L2: 【1†RESIDENTIAL】 【2†BUSINESS】
+L3: 
+L4: Deliver to H1J ✎
+L5: 
+L6: 【1†EN】 | 【3†FR】
+L7: 
+L8: 【1†RESIDENTIAL】 【2†BUSINESS】
+L9: 
+L10: Deliver to H1J ✎
+L11: 
+L12: ### 【4†Login】
+L13: 
+L14:   * 【5†Restaurant】
+L15:   * 【6†Point of Sale】
+L16:   * 【7†Corporate Gifts】
+L17: 
+L18:   * 【5†Restaurant】
+L19:   * 【6†Point of Sale】
+L20:   * 【7†Corporate Gifts】
+L21: 
+L22: 【1†EN】 | 【3†FR】
+L23: 
+L24: 【8†$0.00 0 Cart】
+L25: 
+L26: 【9†Honeys】
+L27: 
+L28: 【9†Care】
+L29: 
+L30: 【10†Groceries】
+L31: 
+L32: 【11†Home】
+L33: 
+L34: Free Shipping | Eligible on purchase of CA$120+
+L35: ### Available Offers
+L36: 
+L37: [Button: ×]
+L38: 
+L39: [Button: Promo Codes Details] [Button: Promo Codes] [Button: Service]
+L40: #### Promo Codes Details
+L41: 
+L42:   * Coupon 1 — Free Delivery : Free delivery in Quebec (except remote regions) with any purchase of CA$120.00 or more before taxes.
+L43:   * Coupon 2 — First Order Special : Get a 15% OFF promotion on your very first order. Limit of one use per new logged-in customer.
+L44:   * Coupon 3 — Business & Student Discount : Benefit from 15% OFF if you are a verified business or student. Proof of status may be requested.
+L45: #### Promo Codes
+L46: 
+L47: Free Shipping Coupon
+L48: 
+L49: on orders of CA$120+
+L50: 
+L51: Code : `MIELAISSA120`
+L52: 
+L53: Limit: 1 coupon per order. Excluding fees and taxes.
+L54: 
+L55: 【12†Use】 [Button: Copy]
+L56: 
+L57: 15% OFF
+L58: 
+L59: On your very first order
+L60: 
+L61: Code : `FIRSTORDER15`
+L62: 
+L63: Limit: One use per new logged-in customer.
+L64: 
+L65: 【13†Use】 [Button: Copy]
+L66: #### Service
+L67: 
+L68:   * Enjoy free Delivery on CA$120 (Valid across Quebec).
+L69:   * 15% OFF for verified business or student
+L70:   * Need Help ? [Button: Open chat] (Tidio).
+L71: 
+L72:   * 【5†Restaurant】
+L73:   * 【6†Point of Sale】
+L74:   * 【7†Corporate Gifts】
+L75: 
+L76:   * 【5†Restaurant】
+L77:   * 【6†Point of Sale】
+L78:   * 【7†Corporate Gifts】
+L79: ### 【4†Login】
+L80: 
+L81: 【8†$0.00 0 Cart】
+L82: 
+L83:   * 【9†Honeys】
+L84:   * 【14†Care】
+L85:   * 【10†Groceries】
+L86:   * 【11†Home】
+L87: 
+L88:   * 【9†Honeys】
+L89:   * 【14†Care】
+L90:   * 【10†Groceries】
+L91:   * 【11†Home】
+L92: 
+L93: 【15†Contact】
+L94: 
+L95: 【16†Image: Mielaissa Logo】
+L96: 
+L97:   * 【9†Honeys】
+L98:   * 【14†Care】
+L99:   * 【10†Groceries】
+L100:   * 【11†Home】
+L101: 
+L102:   * 【9†Honeys】
+L103:   * 【14†Care】
+L104:   * 【10†Groceries】
+L105:   * 【11†Home】
+L106: 
+L107: 【15†Contact】
+L108: 
+L109: ### 【4†Login】
+L110: 
+L111: 【8†$0.00 0 Cart】
+L112: 
+L113: MIELAISSA
+L114: 
+L115: [Input: Write here to search products...]
+L116: 
+L117: 【17†Home】
+L118: 
+L119: 【18†+90 Coins】 【18†Prize Land】 【18†Cashback】 【18†$0.01 Trials】 【18†Hot】
+L120: ## Subscribe to my Newsletter
+L121: 
+L122: ## Sign up with your email address to receive news and updates.
+L123: 
+L124: ## Get the Inside Scoop on our Initiatives, Specials, and Trends.
+L125: 
+L126: [Input] [Input] [Input] [Input]
+L127: 
+L128: [Input: Enter your email]
+L129: 
+L130: Subscribe
+L131: 
+L132: ## Subscribe to my Newsletter
+L133: 
+L134: ## Sign up with your email address to receive news and updates.
+L135: 
+L136: ## Get the Inside Scoop on our Initiatives, Specials, and Trends.
+L137: 
+L138: [Input] [Input] [Input] [Input]
+L139: 
+L140: [Input: Enter your email]
+L141: 
+L142: Subscribe
+L143: 
+L144: ## Subscribe to my Newsletter
+L145: ## Sign up with your email address to receive news and updates.
+L146: 
+L147: ## Get the Inside Scoop on our Initiatives, Specials, and Trends.
+L148: 
+L149: [Input] [Input] [Input] [Input]
+L150: 
+L151: [Input: Enter your email]
+L152: 
+L153: Subscribe
+L154: 
+L155: 【16†Image: Mielaissa Logo】
+L156: 
+L157: 【16†Image: Mielaissa Logo】
+L158: 
+L159: ## CONTACT DETAILS
+L160: 
+L161:   * Phone: (514)996-4247
+L162:   * Address: 5837 Rue Jean-Talon E, Saint-Léonard, QC H1S 1M4
+L163:   * Email: mielaissa.ca@gmail.com
+L164: ## Quick Links
+L165: 
+L166:   * 【9†Honeys】
+L167:   * 【10†Groceries】
+L168:   * 【11†Home】
+L169:   * 【14†Care】
+L170:   * 【6†Point of Sale】
+L171:   * 【7†Corporate Gifts】
+L172:   * 【6†Point of Sale】
+L173:   * 【5†Restaurant】
+L174:   * 【15†Contact】
+L175: 
+L176:   * 【9†Honeys】
+L177:   * 【10†Groceries】
+L178:   * 【11†Home】
+L179:   * 【14†Care】
+L180:   * 【6†Point of Sale】
+L181:   * 【7†Corporate Gifts】
+L182:   * 【6†Point of Sale】
+L183:   * 【5†Restaurant】
+L184:   * 【15†Contact】
+L185: 
+L186: ## STAY CONNECTED
+L187: 
+L188: 【1†EN】 | 【3†FR】
+L189: 
+L190: 【16†Image: Mielaissa Logo】
+L191: ## CONTACT DETAILS
+L192: 
+L193:   * Phone: (514)996-4247
+L194:   * Address: 5837 Rue Jean-Talon E, Saint-Léonard, QC H1S 1M4
+L195:   * Email: mielaissa.ca@gmail.com
+L196: 
+L197: ## Quick Links
+L198: 
+L199:   * 【9†Honeys】
+L200:   * 【10†Groceries】
+L201:   * 【11†Home】
+L202:   * 【14†Care】
+L203:   * 【6†Point of Sale】
+L204:   * 【7†Corporate Gifts】
+L205:   * 【6†Point of Sale】
+L206:   * 【5†Restaurant】
+L207:   * 【15†Contact】
+L208: 
+L209:   * 【9†Honeys】
+L210:   * 【10†Groceries】
+L211:   * 【11†Home】
+L212:   * 【14†Care】
+L213:   * 【6†Point of Sale】
+L214:   * 【7†Corporate Gifts】
+L215:   * 【6†Point of Sale】
+L216:   * 【5†Restaurant】
+L217:   * 【15†Contact】
+L218: ## STAY CONNECTED
+L219: 
+L220: 【1†EN】 | 【3†FR】
+L221: 
+L222: ©2025 All Rights Reserved. | Developed by 【19†Takatak Group†takatak.ca】
+L223: 
+L224: [Button: ×] 【0†💥 Black Friday Mega Deals — Up to 70% OFF · Free Delivery Today · Free Returns · Limited Time Only!】
+L225: 
+L226: Manage Consent
+L227: 🍯 MIELAISSA.CA – Cookies and Technologies
+L228: To provide the best experience on MIELAISSA.CA, we use technologies such as cookies to store and/or access information on your device. Consenting to these technologies allows us to process data such as your browsing behavior or unique identifiers on our site. Refusing or withdrawing your consent may limit certain features and reduce the quality of your experience on mielaissa.ca.
+L229: 
+L230: Functional Always active
+L231: The technical storage or access is strictly necessary for the legitimate purpose of enabling the use of a specific service explicitly requested by the subscriber or user, or for the sole purpose of carrying out the transmission of a communication over an electronic communications network.
+L232: 
+L233: Preferences
+L234: 
+L235: The technical storage or access is necessary for the legitimate purpose of storing preferences that are not requested by the subscriber or user.
+L236: 
+L237: Statistics
+L238: The technical storage or access that is used exclusively for statistical purposes. The technical storage or access that is used exclusively for anonymous statistical purposes. Without a subpoena, voluntary compliance on the part of your Internet Service Provider, or additional records from a third party, information stored or retrieved for this purpose alone cannot usually be used to identify you.
+L239: 
+L240: Marketing
+L241: The technical storage or access is required to create user profiles to send advertising, or to track the user on a website or across several websites for similar marketing purposes.
+L242: 
+L243:   *   *   *   * 【20†Read more about these purposes†cookiedatabase.org】
+L244: 
+L245: [Button: Accept] [Button: Deny] [Button: View preferences] [Button: Save preferences]
+L246: 
+L247:   *   * 【8†{title}】
+L248:   * 【8†{title}】
+L249: 
+L250: [Button: Manage consent]
+L251: 
+L252: Strong Acidic Water
+L253: 
+L254: pH 2.7
+L255: Not for drinking. This water has cleansing properties. Use Strong Acidic Water to clean kitchen utensils, countertops, and more to prevent cross-contamination. Usages: cleaning and reducing germs, hygiene, and commercial operation.
+L256: 
+L257: 【21†Image: banner_strong_acidic】
+L258: 
+L259: Hygiene
+L260: 
+L261: Clean your hands or your toothbrush. Keep a spray bottle in your bathroom for easy access.
+L262: 
+L263: Commercial
+L264: Beauty salons, hair salons, restaurants, agricultural colleges, daycare centers, pet shops, and nursing homes all benefit greatly from the use of Strong Acidic Water.
+L265: 
+L266: 【22†Image: content_img_strongacidic_1】
+L267: 
+L268: Cleaning & Reducing Germs
+L269: 
+L270: Clean knives, cutting boards, dish towels, and kitchen cloths etc. Clean in and around the kitchen, which is a breeding ground for germs.
+L271: 
+L272: Beauty Water
+L273: 
+L274: pH 4-6
+L275: Not for drinking. This slightly acidic water is recognized for its astringent effects. It’s terrific to use for gentle cleaning and beauty care. Usage: face wash, hair care, pet care, polishing, cleaning, and preserving frozen food.
+L276: 
+L277: Kangen Water is also friendly to your budget and to the Environment. Forget about buying and storing all those expensive plastic water bottles!
+L278: 
+L279: 【23†Image: banner_beauty】
+L280: 
+L281: Face Wash
+L282: The astringent properties of Acidic water are effective in toning and firming your skin. Pat the skin and leave to dry. This water is also excellent as a toner after shaving.
+L283: 
+L284: Hair Care
+L285: 
+L286: Use this water instead of conditioner after shampooing. Reduces annoying tangles and brings out a radiant shine. Keep in a spray bottle and spray your hair and face when you’re out and about.
+L287: 
+L288: Polishing
+L289: 
+L290: Polish mirrors, eyeglasses, glass objects, and windows to a high sheen.
+L291: 
+L292: Cleaning
+L293: Remove dirt from hardwood floors, ceramic tiles etc. without leaving a sticky residue.
+L294: 
+L295: 【24†Image: content_img_beauty_1】
+L296: 
+L297: Pets
+L298: 
+L299: Spray your pet with this water and brush afterwards to obtain soft and shiny fur.
+L300: 
+L301: 【25†Image: content_img_beauty_2】
+L302: 
+L303: Frozen Food
+L304: 
+L305: Spray foods with Acidic Water when freezing so that the food, including fish and shrimp, do not lose its flavor when thawed out.
+L306: 
+L307: 【25†Image: content_img_beauty_2】
+L308: 
+L309: Kangen Water
+L310: 
+L311: pH 8.5-9.5
+L312: This type of water is perfect for drinking and healthy cooking. This electrolytically-reduced, hydrogen-rich water works to restore your body to a more alkaline state, which is optimal for good health. Usage: drinking, food preparation, coffee and tea, soups and stews, and watering plants.
+L313: 
+L314: Kangen Water is also friendly to your budget and to the Environment. Forget about buying and storing all those expensive plastic water bottles!
+L315: 
+L316: 【26†Image: banner_kangen】
+L317: 
+L318: Drinking
+L319: Drink Kangen Water throughout the day. Unlike tap water, Kangen Water has no unpleasant odor, tastes lighter, and has a pleasantly sweet flavor.
+L320: 
+L321: Food Prep
+L322: 
+L323: Clean vegetables and fish. Enhance the flavor of broccoli, onions, bamboo etc. by pre-boiling them in Kangen Water. Use less condiments and salt.
+L324: 
+L325: Coffee & Tea
+L326: You’ll be surprised at the wonderful color, taste, and aroma of coffee or tea prepared with Kangen Water. You can also use less coffee or tea and still achieve a full rich taste due to the water’s extractable ability.
+L327: 
+L328: Cooking
+L329: 
+L330: Kangen Water draws out the flavor of ingredients so they get tender and juicy. Therefore, food doesn’t need as much seasoning, and excess salt can be avoided.
+L331: 
+L332: Strong Kangen Water
+L333: 
+L334: pH 11
+L335: Not for drinking. Strong Kangen Water preserves hygiene in your daily life due to its strong cleaning effect. It has dissolving and heat conducting benefits. Usage: food preparation and cleaning.
+L336: 
+L337: 【27†Image: banner_strong_kangen】
+L338: 
+L339: Food Prep
+L340: 
+L341: Remove rawness from vegetables such as green onions, bamboo, wasabi and flowering fern with Strong Kangen Water.
+L342: 
+L343: Cleaning
+L344: 
+L345: Clean cutting boards and dishcloths. Good for cleaning oil and tough grime from vents, as well as for general cleaning in the kitchen.
+L346: Stain Removal
+L347: 
+L348: The extra strength, absorption power, will remove coffee, soy sauce, and oil stains with ease. Also great for getting out stubborn toilet bowl stains.
+L349: 
+L350: Dishes
+L351: 
+L352: Use less detergent when washing your dishes. Save on water bills, as only one-third to one-fourth of the usual amount of water is adequate for rinsing off detergent.
+
+--------------------------------------------------------------------------------
+Internal Error ()
+【turn131172view1】 [wordlim: 200] Source: click({"ref_id":"turn459262view1","id":9}); 
+Failed to fetch https://mielaissa.ca/ca-en/honeys/: (400) Timeout fetching
+--------------------------------------------------------------------------------
+ (https://mielaissa.ca/wp-content/uploads/2025/11/Mielaissa-Logo.png)
+【turn131172view2】<<ImageDisplayed>>
+--------------------------------------------------------------------------------
+Honey Golden Orchard - Mielaissa 5837 Rue Jean-Talon Est (https://mielaissa.ca/product/honey-golden-orchard/)
+【turn131172view3】 [wordlim: 200] Crawled: last month; Content type: text/html; Source: click({"ref_id":"turn459262view1","id":17}); Total lines: 364
+L0: [Button: ×] 【0†💥 Black Friday Mega Deals ...】
+L1: 
+L2: 【1†RESIDENTIAL】 【2†BUSINESS】
+L3: 
+L4: Deliver to H1J ✎
+L5: 
+L6: 【1†EN】 | 【3†FR】
+L7: 
+L8: 【1†RESIDENTIAL】 【2†BUSINESS】
+L9: 
+L10: Deliver to H1J ✎
+L11: 
+L12: ### 【4†Login】
+L13: 
+L14:   * 【5†Restaurant】
+L15:   * 【6†Point of Sale】
+L16:   * 【7†Corporate Gifts】
+L17: 
+L18:   * 【5†Restaurant】
+L19:   * 【6†Point of Sale】
+L20:   * 【7†Corporate Gifts】
+L21: 
+L22: 【1†EN】 | 【3†FR】
+L23: 
+L24: 【8†$0.00 0 Cart】
+L25: 
+L26: 【9†Honeys】
+L27: 
+L28: 【9†Care】
+L29: 
+L30: 【10†Groceries】
+L31: 
+L32: 【11†Home】
+L33: 
+L34: Free Shipping | Eligible on purchase of CA$120+
+L35: ### Available Offers
+L36: 
+L37: [Button: ×]
+L38: 
+L39: [Button: Promo Codes Details] [Button: Promo Codes] [Button: Service]
+L40: #### Promo Codes Details
+L41: 
+L42:   * Coupon 1 — Free Delivery : Free delivery in Quebec (except remote regions) with any purchase of CA$120.00 or more before taxes.
+L43:   * Coupon 2 — First Order Special : Get a 15% OFF promotion on your very first order. Limit of one use per new logged-in customer.
+L44:   * Coupon 3 — Business & Student Discount : Benefit from 15% OFF if you are a verified business or student. Proof of status may be requested.
+L45: #### Promo Codes
+L46: 
+L47: Free Shipping Coupon
+L48: 
+L49: on orders of CA$120+
+L50: 
+L51: Code : `MIELAISSA120`
+L52: 
+L53: Limit: 1 coupon per order. Excluding fees and taxes.
+L54: 
+L55: 【12†Use】 [Button: Copy]
+L56: 
+L57: 15% OFF
+L58: 
+L59: On your very first order
+L60: 
+L61: Code : `FIRSTORDER15`
+L62: 
+L63: Limit: One use per new logged-in customer.
+L64: 
+L65: 【13†Use】 [Button: Copy]
+L66: #### Service
+L67: 
+L68:   * Enjoy free Delivery on CA$120 (Valid across Quebec).
+L69:   * 15% OFF for verified business or student
+L70:   * Need Help ? [Button: Open chat] (Tidio).
+L71: 
+L72:   * 【5†Restaurant】
+L73:   * 【6†Point of Sale】
+L74:   * 【7†Corporate Gifts】
+L75: 
+L76:   * 【5†Restaurant】
+L77:   * 【6†Point of Sale】
+L78:   * 【7†Corporate Gifts】
+L79: ### 【4†Login】
+L80: 
+L81: 【8†$0.00 0 Cart】
+L82: 
+L83:   * 【9†Honeys】
+L84:   * 【14†Care】
+L85:   * 【10†Groceries】
+L86:   * 【11†Home】
+L87: 
+L88:   * 【9†Honeys】
+L89:   * 【14†Care】
+L90:   * 【10†Groceries】
+L91:   * 【11†Home】
+L92: 
+L93: 【15†Contact】
+L94: 
+L95: 【16†Image: Mielaissa Logo】
+L96: 
+L97:   * 【9†Honeys】
+L98:   * 【14†Care】
+L99:   * 【10†Groceries】
+L100:   * 【11†Home】
+L101: 
+L102:   * 【9†Honeys】
+L103:   * 【14†Care】
+L104:   * 【10†Groceries】
+L105:   * 【11†Home】
+L106: 
+L107: 【15†Contact】
+L108: 
+L109: ### 【4†Login】
+L110: 
+L111: 【8†$0.00 0 Cart】
+L112: # Honey Golden Orchard
+L113: 
+L114: $50.00 – $150.00
+L115: 
+L116: Weight  | [Select]【8†Clear】
+L117: 
+L118: [Input][Input][Input][Input][Input]
+L119: 
+L120: [Input: ]
+L121: 
+L122: [Button: Add to cart] [Input] [Input] [Input]
+L123: 
+L124: Fast Shipping
+L125: 
+L126: 【17†Image: Bee icon】
+L127: 
+L128: 100% Pure Honey
+L129: 
+L130: Money-Back Guarantee
+L131: 
+L132: ## Subscribe to my Newsletter
+L133: 
+L134: ## Sign up with your email address to receive news and updates.
+L135: 
+L136: ## Get the Inside Scoop on our Initiatives, Specials, and Trends.
+L137: 
+L138: [Input] [Input] [Input] [Input]
+L139: 
+L140: [Input: Enter your email]
+L141: 
+L142: Subscribe
+L143: 
+L144: ## Subscribe to my Newsletter
+L145: ## Sign up with your email address to receive news and updates.
+L146: 
+L147: ## Get the Inside Scoop on our Initiatives, Specials, and Trends.
+L148: 
+L149: [Input] [Input] [Input] [Input]
+L150: 
+L151: [Input: Enter your email]
+L152: 
+L153: Subscribe
+L154: 
+L155: ## Subscribe to my Newsletter
+L156: 
+L157: ## Sign up with your email address to receive news and updates.
+L158: 
+L159: ## Get the Inside Scoop on our Initiatives, Specials, and Trends.
+L160: 
+L161: [Input] [Input] [Input] [Input]
+L162: 
+L163: [Input: Enter your email]
+L164: 
+L165: Subscribe
+L166: 
+L167: 【16†Image: Mielaissa Logo】
+L168: 
+L169: 【16†Image: Mielaissa Logo】
+L170: ## CONTACT DETAILS
+L171: 
+L172:   * Phone: (514)996-4247
+L173:   * Address: 5837 Rue Jean-Talon E, Saint-Léonard, QC H1S 1M4
+L174:   * Email: mielaissa.ca@gmail.com
+L175: 
+L176: ## Quick Links
+L177: 
+L178:   * 【9†Honeys】
+L179:   * 【10†Groceries】
+L180:   * 【11†Home】
+L181:   * 【14†Care】
+L182:   * 【6†Point of Sale】
+L183:   * 【7†Corporate Gifts】
+L184:   * 【6†Point of Sale】
+L185:   * 【5†Restaurant】
+L186:   * 【15†Contact】
+L187: 
+L188:   * 【9†Honeys】
+L189:   * 【10†Groceries】
+L190:   * 【11†Home】
+L191:   * 【14†Care】
+L192:   * 【6†Point of Sale】
+L193:   * 【7†Corporate Gifts】
+L194:   * 【6†Point of Sale】
+L195:   * 【5†Restaurant】
+L196:   * 【15†Contact】
+L197: ## STAY CONNECTED
+L198: 
+L199: 【1†EN】 | 【3†FR】
+L200: 
+L201: 【16†Image: Mielaissa Logo】
+L202: 
+L203: ## CONTACT DETAILS
+L204: 
+L205:   * Phone: (514)996-4247
+L206:   * Address: 5837 Rue Jean-Talon E, Saint-Léonard, QC H1S 1M4
+L207:   * Email: mielaissa.ca@gmail.com
+L208: ## Quick Links
+L209: 
+L210:   * 【9†Honeys】
+L211:   * 【10†Groceries】
+L212:   * 【11†Home】
+L213:   * 【14†Care】
+L214:   * 【6†Point of Sale】
+L215:   * 【7†Corporate Gifts】
+L216:   * 【6†Point of Sale】
+L217:   * 【5†Restaurant】
+L218:   * 【15†Contact】
+L219: 
+L220:   * 【9†Honeys】
+L221:   * 【10†Groceries】
+L222:   * 【11†Home】
+L223:   * 【14†Care】
+L224:   * 【6†Point of Sale】
+L225:   * 【7†Corporate Gifts】
+L226:   * 【6†Point of Sale】
+L227:   * 【5†Restaurant】
+L228:   * 【15†Contact】
+L229: ## STAY CONNECTED
+L230: 
+L231: 【1†EN】 | 【3†FR】
+L232: 
+L233: ©2025 All Rights Reserved. | Developed by 【18†Takatak Group†takatak.ca】
+L234: 
+L235: [Button: ×] 【0†💥 Black Friday Mega Deals — Up to 70% OFF · Free Delivery Today · Free Returns · Limited Time Only!】
+L236: 
+L237: Manage Consent
+L238: 🍯 MIELAISSA.CA – Cookies and Technologies
+L239: To provide the best experience on MIELAISSA.CA, we use technologies such as cookies to store and/or access information on your device. Consenting to these technologies allows us to process data such as your browsing behavior or unique identifiers on our site. Refusing or withdrawing your consent may limit certain features and reduce the quality of your experience on mielaissa.ca.
+L240: 
+L241: Functional Always active
+L242: The technical storage or access is strictly necessary for the legitimate purpose of enabling the use of a specific service explicitly requested by the subscriber or user, or for the sole purpose of carrying out the transmission of a communication over an electronic communications network.
+L243: 
+L244: Preferences
+L245: 
+L246: The technical storage or access is necessary for the legitimate purpose of storing preferences that are not requested by the subscriber or user.
+L247: 
+L248: Statistics
+L249: The technical storage or access that is used exclusively for statistical purposes. The technical storage or access that is used exclusively for anonymous statistical purposes. Without a subpoena, voluntary compliance on the part of your Internet Service Provider, or additional records from a third party, information stored or retrieved for this purpose alone cannot usually be used to identify you.
+L250: 
+L251: Marketing
+L252: The technical storage or access is required to create user profiles to send advertising, or to track the user on a website or across several websites for similar marketing purposes.
+L253: 
+L254:   *   *   *   * 【19†Read more about these purposes†cookiedatabase.org】
+L255: 
+L256: [Button: Accept] [Button: Deny] [Button: View preferences] [Button: Save preferences]
+L257: 
+L258:   *   * 【8†{title}】
+L259:   * 【8†{title}】
+L260: 
+L261: [Button: Manage consent]
+L262: 
+L263: Strong Acidic Water
+L264: 
+L265: pH 2.7
+L266: Not for drinking. This water has cleansing properties. Use Strong Acidic Water to clean kitchen utensils, countertops, and more to prevent cross-contamination. Usages: cleaning and reducing germs, hygiene, and commercial operation.
+L267: 
+L268: 【20†Image: banner_strong_acidic】
+L269: 
+L270: Hygiene
+L271: 
+L272: Clean your hands or your toothbrush. Keep a spray bottle in your bathroom for easy access.
+L273: 
+L274: Commercial
+L275: Beauty salons, hair salons, restaurants, agricultural colleges, daycare centers, pet shops, and nursing homes all benefit greatly from the use of Strong Acidic Water.
+L276: 
+L277: 【21†Image: content_img_strongacidic_1】
+L278: 
+L279: Cleaning & Reducing Germs
+L280: 
+L281: Clean knives, cutting boards, dish towels, and kitchen cloths etc. Clean in and around the kitchen, which is a breeding ground for germs.
+L282: 
+L283: Beauty Water
+L284: 
+L285: pH 4-6
+L286: Not for drinking. This slightly acidic water is recognized for its astringent effects. It’s terrific to use for gentle cleaning and beauty care. Usage: face wash, hair care, pet care, polishing, cleaning, and preserving frozen food.
+L287: 
+L288: Kangen Water is also friendly to your budget and to the Environment. Forget about buying and storing all those expensive plastic water bottles!
+L289: 
+L290: 【22†Image: banner_beauty】
+L291: 
+L292: Face Wash
+L293: The astringent properties of Acidic water are effective in toning and firming your skin. Pat the skin and leave to dry. This water is also excellent as a toner after shaving.
+L294: 
+L295: Hair Care
+L296: 
+L297: Use this water instead of conditioner after shampooing. Reduces annoying tangles and brings out a radiant shine. Keep in a spray bottle and spray your hair and face when you’re out and about.
+L298: 
+L299: Polishing
+L300: 
+L301: Polish mirrors, eyeglasses, glass objects, and windows to a high sheen.
+L302: 
+L303: Cleaning
+L304: Remove dirt from hardwood floors, ceramic tiles etc. without leaving a sticky residue.
+L305: 
+L306: 【23†Image: content_img_beauty_1】
+L307: 
+L308: Pets
+L309: 
+L310: Spray your pet with this water and brush afterwards to obtain soft and shiny fur.
+L311: 
+L312: 【24†Image: content_img_beauty_2】
+L313: 
+L314: Frozen Food
+L315: 
+L316: Spray foods with Acidic Water when freezing so that the food, including fish and shrimp, do not lose its flavor when thawed out.
+L317: 
+L318: 【24†Image: content_img_beauty_2】
+L319: 
+L320: Kangen Water
+L321: 
+L322: pH 8.5-9.5
+L323: This type of water is perfect for drinking and healthy cooking. This electrolytically-reduced, hydrogen-rich water works to restore your body to a more alkaline state, which is optimal for good health. Usage: drinking, food preparation, coffee and tea, soups and stews, and watering plants.
+L324: 
+L325: Kangen Water is also friendly to your budget and to the Environment. Forget about buying and storing all those expensive plastic water bottles!
+L326: 
+L327: 【25†Image: banner_kangen】
+L328: 
+L329: Drinking
+L330: Drink Kangen Water throughout the day. Unlike tap water, Kangen Water has no unpleasant odor, tastes lighter, and has a pleasantly sweet flavor.
+L331: 
+L332: Food Prep
+L333: 
+L334: Clean vegetables and fish. Enhance the flavor of broccoli, onions, bamboo etc. by pre-boiling them in Kangen Water. Use less condiments and salt.
+L335: 
+L336: Coffee & Tea
+L337: You’ll be surprised at the wonderful color, taste, and aroma of coffee or tea prepared with Kangen Water. You can also use less coffee or tea and still achieve a full rich taste due to the water’s extractable ability.
+L338: 
+L339: Cooking
+L340: 
+L341: Kangen Water draws out the flavor of ingredients so they get tender and juicy. Therefore, food doesn’t need as much seasoning, and excess salt can be avoided.
+L342: 
+L343: Strong Kangen Water
+L344: 
+L345: pH 11
+L346: Not for drinking. Strong Kangen Water preserves hygiene in your daily life due to its strong cleaning effect. It has dissolving and heat conducting benefits. Usage: food preparation and cleaning.
+L347: 
+L348: 【26†Image: banner_strong_kangen】
+L349: 
+L350: Food Prep
+L351: 
+L352: Remove rawness from vegetables such as green onions, bamboo, wasabi and flowering fern with Strong Kangen Water.
+L353: 
+L354: Cleaning
+L355: 
+L356: Clean cutting boards and dishcloths. Good for cleaning oil and tough grime from vents, as well as for general cleaning in the kitchen.
+L357: Stain Removal
+L358: 
+L359: The extra strength, absorption power, will remove coffee, soy sauce, and oil stains with ease. Also great for getting out stubborn toilet bowl stains.
+L360: 
+L361: Dishes
+L362: 
+
+--------------------------------------------------------------------------------
+Internal Error ()
+【turn131172view4】 [wordlim: 200] Source: click({"ref_id":"turn459262view1","id":15}); 
+Failed to fetch https://mielaissa.ca/ca-en/contact/: (400) Timeout fetching

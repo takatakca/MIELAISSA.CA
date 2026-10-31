@@ -1,0 +1,592 @@
+Home - Mielaissa 5837 Rue Jean-Talon Est (https://mielaissa.ca/)
+【turn142051view0】 [wordlim: 200] Crawled: today; Content type: text/html; Source: open({"ref_id":"http://mielaissa.ca/","lineno":null}); Total lines: 590
+L0: [Button: ×] 【0†💥 Black Friday Mega Deals ...】
+L1: 
+L2: 【1†RESIDENTIAL】 【2†BUSINESS】
+L3: 
+L4: Deliver to H1J ✎
+L5: 
+L6: 【1†EN】 | 【3†FR】
+L7: 
+L8: 【1†RESIDENTIAL】 【2†BUSINESS】
+L9: 
+L10: Deliver to H1J ✎
+L11: 
+L12: ### 【4†Login】
+L13: 
+L14:   * 【5†Restaurant】
+L15:   * 【6†Point of Sale】
+L16:   * 【7†Corporate Gifts】
+L17: 
+L18:   * 【5†Restaurant】
+L19:   * 【6†Point of Sale】
+L20:   * 【7†Corporate Gifts】
+L21: 
+L22: 【1†EN】 | 【3†FR】
+L23: 
+L24: 【8†$0.00 0 Cart】
+L25: 
+L26: 【9†Honeys】
+L27: 
+L28: 【9†Care】
+L29: 
+L30: 【10†Groceries】
+L31: 
+L32: 【11†Home】
+L33: 
+L34: Free Shipping | Eligible on purchase of CA$120+
+L35: ### Available Offers
+L36: 
+L37: [Button: ×]
+L38: 
+L39: [Button: Promo Codes Details] [Button: Promo Codes] [Button: Service]
+L40: #### Promo Codes Details
+L41: 
+L42:   * Coupon 1 — Free Delivery : Free delivery in Quebec (except remote regions) with any purchase of CA$120.00 or more before taxes.
+L43:   * Coupon 2 — First Order Special : Get a 15% OFF promotion on your very first order. Limit of one use per new logged-in customer.
+L44:   * Coupon 3 — Business & Student Discount : Benefit from 15% OFF if you are a verified business or student. Proof of status may be requested.
+L45: #### Promo Codes
+L46: 
+L47: Free Shipping Coupon
+L48: 
+L49: on orders of CA$120+
+L50: 
+L51: Code : `MIELAISSA120`
+L52: 
+L53: Limit: 1 coupon per order. Excluding fees and taxes.
+L54: 
+L55: 【12†Use】 [Button: Copy]
+L56: 
+L57: 15% OFF
+L58: 
+L59: On your very first order
+L60: 
+L61: Code : `FIRSTORDER15`
+L62: 
+L63: Limit: One use per new logged-in customer.
+L64: 
+L65: 【13†Use】 [Button: Copy]
+L66: #### Service
+L67: 
+L68:   * Enjoy free Delivery on CA$120 (Valid across Quebec).
+L69:   * 15% OFF for verified business or student
+L70:   * Need Help ? [Button: Open chat] (Tidio).
+L71: 
+L72:   * 【5†Restaurant】
+L73:   * 【6†Point of Sale】
+L74:   * 【7†Corporate Gifts】
+L75: 
+L76:   * 【5†Restaurant】
+L77:   * 【6†Point of Sale】
+L78:   * 【7†Corporate Gifts】
+L79: ### 【4†Login】
+L80: 
+L81: 【8†$0.00 0 Cart】
+L82: 
+L83:   * 【9†Honeys】
+L84:   * 【14†Care】
+L85:   * 【10†Groceries】
+L86:   * 【11†Home】
+L87: 
+L88:   * 【9†Honeys】
+L89:   * 【14†Care】
+L90:   * 【10†Groceries】
+L91:   * 【11†Home】
+L92: 
+L93: 【15†Contact】
+L94: 
+L95: 【16†Image: Mielaissa Logo】
+L96: 
+L97:   * 【9†Honeys】
+L98:   * 【14†Care】
+L99:   * 【10†Groceries】
+L100:   * 【11†Home】
+L101: 
+L102:   * 【9†Honeys】
+L103:   * 【14†Care】
+L104:   * 【10†Groceries】
+L105:   * 【11†Home】
+L106: 
+L107: 【15†Contact】
+L108: 
+L109: ### 【4†Login】
+L110: 
+L111: 【8†$0.00 0 Cart】
+L112: 
+L113: # Honey delivered to your home
+L114: 
+L115: 【9†Order now】
+L116: 
+L117: # Honey delivered to your home
+L118: 
+L119: 【9†Order now】
+L120: 
+L121: ## Featured Products
+L122: ### 【17†Honey Golden Orchard】
+L123: 
+L124: $50.00 – $150.00
+L125: 
+L126: 【17†Select options】 This product has multiple variants. The options may be chosen on the product page
+L127: 
+L128: ### 【18†Honey Buckwheat】
+L129: 
+L130: $50.00 – $150.00
+L131: 
+L132: 【18†Select options】 This product has multiple variants. The options may be chosen on the product page
+L133: 
+L134: ### 【19†Honey Eucalyptus】
+L135: 
+L136: $50.00 – $150.00
+L137: 
+L138: 【19†Select options】 This product has multiple variants. The options may be chosen on the product page
+L139: ### 【20†Honey Algerian Thyme】
+L140: 
+L141: $50.00 – $150.00
+L142: 
+L143: 【20†Select options】 This product has multiple variants. The options may be chosen on the product page
+L144: 
+L145: ### 【21†Honey Jujube】
+L146: 
+L147: $50.00 – $150.00
+L148: 
+L149: 【21†Select options】 This product has multiple variants. The options may be chosen on the product page
+L150: 
+L151: ### 【22†Honey Booster】
+L152: 
+L153: $50.00 – $150.00
+L154: 
+L155: 【22†Select options】 This product has multiple variants. The options may be chosen on the product page
+L156: ### 【23†Honey Creamy】
+L157: 
+L158: $50.00 – $150.00
+L159: 
+L160: 【23†Select options】 This product has multiple variants. The options may be chosen on the product page
+L161: 
+L162: ### 【24†Honey Fortifying】
+L163: 
+L164: $50.00 – $150.00
+L165: 
+L166: 【24†Select options】 This product has multiple variants. The options may be chosen on the product page
+L167: 
+L168: ### 【25†Honey Romarin】
+L169: 
+L170: $50.00 – $150.00
+L171: 
+L172: 【25†Select options】 This product has multiple variants. The options may be chosen on the product page
+L173: ### 【26†Honey Bleuet】
+L174: 
+L175: $50.00 – $150.00
+L176: 
+L177: 【26†Select options】 This product has multiple variants. The options may be chosen on the product page
+L178: 
+L179: ## THE BENEFITS OF NATURAL HONEY
+L180: 
+L181: 🍯
+L182: 
+L183: ## Natural Hydration
+L184: 
+L185: Nourishes and softens the skin, provides quick and healthy energy.
+L186: 
+L187: 🌿
+L188: 
+L189: ## Rich in Minerals
+L190: 
+L191: Provides essential nutrients to strengthen the body naturally.
+L192: 
+L193: ⚖️
+L194: 
+L195: ## Natural Balance
+L196: 
+L197: Helps to soothe, revitalize and support daily well-being.
+L198: 
+L199: ## From drop of nectar to drizzle of honey.
+L200: ## All your needs are taken care of
+L201: 
+L202: ### 【27†Sweet Almond Oil】
+L203: 
+L204: $10.00 – $110.00
+L205: 
+L206: 【27†Select options】 This product has multiple variants. The options may be chosen on the product page
+L207: 
+L208: ### 【28†Sidr Oil】
+L209: 
+L210: $10.00 – $110.00
+L211: 
+L212: 【28†Select options】 This product has multiple variants. The options may be chosen on the product page
+L213: 
+L214: ### 【29†Rosemary Oil (Rosmarinus/Rosemary Herb)】
+L215: 
+L216: $10.00 – $110.00
+L217: 
+L218: 【29†Select options】 This product has multiple variants. The options may be chosen on the product page
+L219: ### 【30†Rose Oil】
+L220: 
+L221: $10.00 – $110.00
+L222: 
+L223: 【30†Select options】 This product has multiple variants. The options may be chosen on the product page
+L224: 
+L225: ### 【31†Peppermint Oil】
+L226: 
+L227: $10.00 – $110.00
+L228: 
+L229: 【31†Select options】 This product has multiple variants. The options may be chosen on the product page
+L230: 
+L231: ### 【32†Licorice Root Oil】
+L232: 
+L233: $10.00 – $110.00
+L234: 
+L235: 【32†Select options】 This product has multiple variants. The options may be chosen on the product page
+L236: ### 【33†Lavender Oil】
+L237: 
+L238: $10.00 – $110.00
+L239: 
+L240: 【33†Select options】 This product has multiple variants. The options may be chosen on the product page
+L241: 
+L242: ### 【34†Indian Costus Oil】
+L243: 
+L244: $10.00 – $110.00
+L245: 
+L246: 【34†Select options】 This product has multiple variants. The options may be chosen on the product page
+L247: 
+L248: ### 【35†Garlic Oil】
+L249: 
+L250: $10.00 – $110.00
+L251: 
+L252: 【35†Select options】 This product has multiple variants. The options may be chosen on the product page
+L253: ### 【36†Fenugreek Oil】
+L254: 
+L255: $10.00 – $110.00
+L256: 
+L257: 【36†Select options】 This product has multiple variants. The options may be chosen on the product page
+L258: 
+L259: ## Delivering great taste in your area
+L260: 
+L261: Dedicated to supporting homes and businesses throughout Quebec.
+L262: 
+L263: 【37†Image: Water Delivery Areas】
+L264: 
+L265: ### 【38†Candle 6】
+L266: 
+L267: $20.00
+L268: 
+L269: 【39†Add to cart】
+L270: 
+L271: ### 【40†Candle 5】
+L272: 
+L273: $20.00
+L274: 
+L275: 【41†Add to cart】
+L276: 
+L277: ### 【42†Candle 4】
+L278: 
+L279: $20.00
+L280: 
+L281: 【43†Add to cart】
+L282: 
+L283: ### 【44†Candle 3】
+L284: 
+L285: $20.00
+L286: 
+L287: 【45†Add to cart】
+L288: 
+L289: ### 【46†Candle 2】
+L290: 
+L291: $20.00
+L292: 
+L293: 【47†Add to cart】
+L294: ### 【48†Candle 1】
+L295: 
+L296: $20.00
+L297: 
+L298: 【49†Add to cart】
+L299: 
+L300: ## Pure Honey, Delivered to Your Doorstep
+L301: 
+L302: Miel Aissa offers 100% pure and handcrafted honey products — jars, candles, natural soaps, and wellness items — straight from our hives to your home.
+L303: 
+L304: 【9†Order now】
+L305: 
+L306: # Pure Honey, Delivered to Your Doorstep
+L307: 
+L308: Miel Aissa offers 100% pure and handcrafted honey products — jars, candles, natural soaps, and wellness items — straight from our hives to your home.
+L309: 
+L310: 【9†Order now】
+L311: ## Honeys
+L312: 
+L313: Taste our pure and flavorful honey.
+L314: 
+L315: 【9†More Information】
+L316: 
+L317: ## Groceries
+L318: 
+L319: Granola, teas & natural sweets.
+L320: 
+L321: 【10†More Information】
+L322: 
+L323: ## For the Home
+L324: 
+L325: Handcrafted beeswax, candles and decor.
+L326: 
+L327: 【11†More Information】
+L328: 
+L329: ## Care & Well-Being
+L330: 
+L331: Natural soaps & body care made with.
+L332: 
+L333: 【14†More Information】
+L334: 
+L335: ## Honeys
+L336: 
+L337: Taste our pure and flavorful honey.
+L338: 
+L339: 【9†More Information】
+L340: 
+L341: ## Groceries
+L342: 
+L343: Granola, teas & natural sweets.
+L344: 
+L345: 【10†More Information】
+L346: ## For the Home
+L347: 
+L348: Handcrafted beeswax, candles and decor.
+L349: 
+L350: 【11†More Information】
+L351: 
+L352: ## Care & Well-Being
+L353: 
+L354: Natural soaps & body care made with.
+L355: 
+L356: 【14†More Information】
+L357: 
+L358: ## Subscribe to my Newsletter
+L359: 
+L360: ## Sign up with your email address to receive news and updates.
+L361: 
+L362: ## Get the Inside Scoop on our Initiatives, Specials, and Trends.
+L363: 
+L364: [Input] [Input] [Input] [Input]
+L365: 
+L366: [Input: Enter your email]
+L367: 
+L368: Subscribe
+L369: 
+L370: ## Subscribe to my Newsletter
+L371: 
+L372: ## Sign up with your email address to receive news and updates.
+L373: ## Get the Inside Scoop on our Initiatives, Specials, and Trends.
+L374: 
+L375: [Input] [Input] [Input] [Input]
+L376: 
+L377: [Input: Enter your email]
+L378: 
+L379: Subscribe
+L380: 
+L381: ## Subscribe to my Newsletter
+L382: 
+L383: ## Sign up with your email address to receive news and updates.
+L384: 
+L385: ## Get the Inside Scoop on our Initiatives, Specials, and Trends.
+L386: 
+L387: [Input] [Input] [Input] [Input]
+L388: 
+L389: [Input: Enter your email]
+L390: 
+L391: Subscribe
+L392: 
+L393: 【16†Image: Mielaissa Logo】
+L394: 
+L395: 【16†Image: Mielaissa Logo】
+L396: ## CONTACT DETAILS
+L397: 
+L398:   * Phone: (514)996-4247
+L399:   * Address: 5837 Rue Jean-Talon E, Saint-Léonard, QC H1S 1M4
+L400:   * Email: mielaissa.ca@gmail.com
+L401: 
+L402: ## Quick Links
+L403: 
+L404:   * 【9†Honeys】
+L405:   * 【10†Groceries】
+L406:   * 【11†Home】
+L407:   * 【14†Care】
+L408:   * 【6†Point of Sale】
+L409:   * 【7†Corporate Gifts】
+L410:   * 【6†Point of Sale】
+L411:   * 【5†Restaurant】
+L412:   * 【15†Contact】
+L413: 
+L414:   * 【9†Honeys】
+L415:   * 【10†Groceries】
+L416:   * 【11†Home】
+L417:   * 【14†Care】
+L418:   * 【6†Point of Sale】
+L419:   * 【7†Corporate Gifts】
+L420:   * 【6†Point of Sale】
+L421:   * 【5†Restaurant】
+L422:   * 【15†Contact】
+L423: ## STAY CONNECTED
+L424: 
+L425: 【1†EN】 | 【3†FR】
+L426: 
+L427: 【16†Image: Mielaissa Logo】
+L428: 
+L429: ## CONTACT DETAILS
+L430: 
+L431:   * Phone: (514)996-4247
+L432:   * Address: 5837 Rue Jean-Talon E, Saint-Léonard, QC H1S 1M4
+L433:   * Email: mielaissa.ca@gmail.com
+L434: ## Quick Links
+L435: 
+L436:   * 【9†Honeys】
+L437:   * 【10†Groceries】
+L438:   * 【11†Home】
+L439:   * 【14†Care】
+L440:   * 【6†Point of Sale】
+L441:   * 【7†Corporate Gifts】
+L442:   * 【6†Point of Sale】
+L443:   * 【5†Restaurant】
+L444:   * 【15†Contact】
+L445: 
+L446:   * 【9†Honeys】
+L447:   * 【10†Groceries】
+L448:   * 【11†Home】
+L449:   * 【14†Care】
+L450:   * 【6†Point of Sale】
+L451:   * 【7†Corporate Gifts】
+L452:   * 【6†Point of Sale】
+L453:   * 【5†Restaurant】
+L454:   * 【15†Contact】
+L455: ## STAY CONNECTED
+L456: 
+L457: 【1†EN】 | 【3†FR】
+L458: 
+L459: ©2025 All Rights Reserved. | Developed by 【50†Takatak Group†takatak.ca】
+L460: 
+L461: [Button: ×] 【0†💥 Black Friday Mega Deals — Up to 70% OFF · Free Delivery Today · Free Returns · Limited Time Only!】
+L462: 
+L463: Manage Consent
+L464: 🍯 MIELAISSA.CA – Cookies and Technologies
+L465: To provide the best experience on MIELAISSA.CA, we use technologies such as cookies to store and/or access information on your device. Consenting to these technologies allows us to process data such as your browsing behavior or unique identifiers on our site. Refusing or withdrawing your consent may limit certain features and reduce the quality of your experience on mielaissa.ca.
+L466: 
+L467: Functional Always active
+L468: The technical storage or access is strictly necessary for the legitimate purpose of enabling the use of a specific service explicitly requested by the subscriber or user, or for the sole purpose of carrying out the transmission of a communication over an electronic communications network.
+L469: 
+L470: Preferences
+L471: 
+L472: The technical storage or access is necessary for the legitimate purpose of storing preferences that are not requested by the subscriber or user.
+L473: 
+L474: Statistics
+L475: The technical storage or access that is used exclusively for statistical purposes. The technical storage or access that is used exclusively for anonymous statistical purposes. Without a subpoena, voluntary compliance on the part of your Internet Service Provider, or additional records from a third party, information stored or retrieved for this purpose alone cannot usually be used to identify you.
+L476: 
+L477: Marketing
+L478: The technical storage or access is required to create user profiles to send advertising, or to track the user on a website or across several websites for similar marketing purposes.
+L479: 
+L480:   *   *   *   * 【51†Read more about these purposes†cookiedatabase.org】
+L481: 
+L482: [Button: Accept] [Button: Deny] [Button: View preferences] [Button: Save preferences]
+L483: 
+L484:   *   * 【8†{title}】
+L485:   * 【8†{title}】
+L486: 
+L487: [Button: Manage consent]
+L488: 
+L489: Strong Acidic Water
+L490: 
+L491: pH 2.7
+L492: Not for drinking. This water has cleansing properties. Use Strong Acidic Water to clean kitchen utensils, countertops, and more to prevent cross-contamination. Usages: cleaning and reducing germs, hygiene, and commercial operation.
+L493: 
+L494: 【52†Image: banner_strong_acidic】
+L495: 
+L496: Hygiene
+L497: 
+L498: Clean your hands or your toothbrush. Keep a spray bottle in your bathroom for easy access.
+L499: 
+L500: Commercial
+L501: Beauty salons, hair salons, restaurants, agricultural colleges, daycare centers, pet shops, and nursing homes all benefit greatly from the use of Strong Acidic Water.
+L502: 
+L503: 【53†Image: content_img_strongacidic_1】
+L504: 
+L505: Cleaning & Reducing Germs
+L506: 
+L507: Clean knives, cutting boards, dish towels, and kitchen cloths etc. Clean in and around the kitchen, which is a breeding ground for germs.
+L508: 
+L509: Beauty Water
+L510: 
+L511: pH 4-6
+L512: Not for drinking. This slightly acidic water is recognized for its astringent effects. It’s terrific to use for gentle cleaning and beauty care. Usage: face wash, hair care, pet care, polishing, cleaning, and preserving frozen food.
+L513: 
+L514: Kangen Water is also friendly to your budget and to the Environment. Forget about buying and storing all those expensive plastic water bottles!
+L515: 
+L516: 【54†Image: banner_beauty】
+L517: 
+L518: Face Wash
+L519: The astringent properties of Acidic water are effective in toning and firming your skin. Pat the skin and leave to dry. This water is also excellent as a toner after shaving.
+L520: 
+L521: Hair Care
+L522: 
+L523: Use this water instead of conditioner after shampooing. Reduces annoying tangles and brings out a radiant shine. Keep in a spray bottle and spray your hair and face when you’re out and about.
+L524: 
+L525: Polishing
+L526: 
+L527: Polish mirrors, eyeglasses, glass objects, and windows to a high sheen.
+L528: 
+L529: Cleaning
+L530: Remove dirt from hardwood floors, ceramic tiles etc. without leaving a sticky residue.
+L531: 
+L532: 【55†Image: content_img_beauty_1】
+L533: 
+L534: Pets
+L535: 
+L536: Spray your pet with this water and brush afterwards to obtain soft and shiny fur.
+L537: 
+L538: 【56†Image: content_img_beauty_2】
+L539: 
+L540: Frozen Food
+L541: 
+L542: Spray foods with Acidic Water when freezing so that the food, including fish and shrimp, do not lose its flavor when thawed out.
+L543: 
+L544: 【56†Image: content_img_beauty_2】
+L545: 
+L546: Kangen Water
+L547: 
+L548: pH 8.5-9.5
+L549: This type of water is perfect for drinking and healthy cooking. This electrolytically-reduced, hydrogen-rich water works to restore your body to a more alkaline state, which is optimal for good health. Usage: drinking, food preparation, coffee and tea, soups and stews, and watering plants.
+L550: 
+L551: Kangen Water is also friendly to your budget and to the Environment. Forget about buying and storing all those expensive plastic water bottles!
+L552: 
+L553: 【57†Image: banner_kangen】
+L554: 
+L555: Drinking
+L556: Drink Kangen Water throughout the day. Unlike tap water, Kangen Water has no unpleasant odor, tastes lighter, and has a pleasantly sweet flavor.
+L557: 
+L558: Food Prep
+L559: 
+L560: Clean vegetables and fish. Enhance the flavor of broccoli, onions, bamboo etc. by pre-boiling them in Kangen Water. Use less condiments and salt.
+L561: 
+L562: Coffee & Tea
+L563: You’ll be surprised at the wonderful color, taste, and aroma of coffee or tea prepared with Kangen Water. You can also use less coffee or tea and still achieve a full rich taste due to the water’s extractable ability.
+L564: 
+L565: Cooking
+L566: 
+L567: Kangen Water draws out the flavor of ingredients so they get tender and juicy. Therefore, food doesn’t need as much seasoning, and excess salt can be avoided.
+L568: 
+L569: Strong Kangen Water
+L570: 
+L571: pH 11
+L572: Not for drinking. Strong Kangen Water preserves hygiene in your daily life due to its strong cleaning effect. It has dissolving and heat conducting benefits. Usage: food preparation and cleaning.
+L573: 
+L574: 【58†Image: banner_strong_kangen】
+L575: 
+L576: Food Prep
+L577: 
+L578: Remove rawness from vegetables such as green onions, bamboo, wasabi and flowering fern with Strong Kangen Water.
+L579: 
+L580: Cleaning
+L581: 
+L582: Clean cutting boards and dishcloths. Good for cleaning oil and tough grime from vents, as well as for general cleaning in the kitchen.
+L583: Stain Removal
+L584: 
+L585: The extra strength, absorption power, will remove coffee, soy sauce, and oil stains with ease. Also great for getting out stubborn toilet bowl stains.
+L586: 
+L587: Dishes
+L588: 
+L589: Use less detergent when washing your dishes. Save on water bills, as only one-third to one-fourth of the usual amount of water is adequate for rinsing off detergent.
