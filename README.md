@@ -20,6 +20,8 @@ npm run test:browser
 
 Use the compiled standalone server for release checks: copy `.next/static` to `.next/standalone/.next/`, copy `public` to `.next/standalone/`, then `PORT=4180 node .next/standalone/server.js`. Dockerfile packages the same server. `/api/health` reports preview status honestly. No production host or deploy credentials are configured.
 
+Source-preservation tools: `npm run capture` now includes original CSS/fonts/scripts/media with recursive CSS dependencies; `npm run audit:reference -- /private/archive` verifies archived bytes. See [capture runbook](docs/REFERENCE_CAPTURE.md). These tools have only been tested offline here; the real site assets remain unavailable.
+
 Read [migration inventory and cutover](docs/NODE_MIGRATION.md). Read [agent handoff](docs/AGENT_HANDOFF.md) before editing. The following section describes the historical plugin only.
 
 ---
