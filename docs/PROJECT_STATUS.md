@@ -1,5 +1,7 @@
 # État du projet — MIELAISSA.CA
 
+> **2026-11-05 status:** Optional TAKATAK transfer notice code is prepared for Miel Aissa, disabled by default. The live WooCommerce shop has NOT been changed. Manual MU-plugin deployment, staging, owner approval and verified TAKATAK transfer lead intake remain necessary. Details: [TAKATAK_LEGACY_NOTICE.md](TAKATAK_LEGACY_NOTICE.md).
+
 Mise à jour : 15 octobre 2026. Dépôt : takatakca/MIELAISSA.CA ; branche main.
 
 ## Périmètre réel
