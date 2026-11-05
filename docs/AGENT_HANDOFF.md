@@ -1,5 +1,7 @@
 # Relève immédiate — 16 octobre 2026 (dernier état)
 
+> **2026-11-05 — TAKATAK migration notice (new separate PR):** Added optional MU-plugin and standalone notice, NOT deployed. The existing WordPress store remains the source of truth; no access to live WP/cPanel is verified. See [safe activation and rollback](TAKATAK_LEGACY_NOTICE.md). Do not mistake PR merge for publication.
+
 **Dépôt et branche :** `takatakca/MIELAISSA.CA`, `main`. **Point de départ vérifié :** `5f87d1eb32a40c90a8b0803f9122d7dee9129be9`.
 **Dernier commit fonctionnel poussé :** `8b8b2cffde8ba13f0aa26e8d40d1d9ad958bb720` (plugin v0.2.7). **Pour le SHA de cette relève**, consulter le HEAD réel de `main` après publication.
 
