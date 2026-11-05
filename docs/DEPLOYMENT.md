@@ -1,5 +1,7 @@
 # Déploiement vérifiable — extension Miel Aissa
 
+> **2026-11-05 notice deployment gate:** [TAKATAK_LEGACY_NOTICE.md](TAKATAK_LEGACY_NOTICE.md) documents manual staging and reversible homepage activation for the new opt-in MU-plugin. This repository's standard workflow publishes only `mielaissa-storefront` and **does not** install or enable the notice. No live deployment has occurred.
+
 ## 1. Ce dépôt n'est PAS une sauvegarde complète du site
 
 Il contient seulement wordpress/wp-content/plugins/mielaissa-storefront.
