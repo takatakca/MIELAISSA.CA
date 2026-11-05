@@ -4,6 +4,26 @@
 
 The live site is a WordPress/WooCommerce store. This repository is **not** the full WordPress installation. Never overwrite its `index.php`, theme, customers, loyalty data, products, orders or checkout.
 
+## Urgent: WordPress database connection failure (reported 2026-11-05)
+
+**Important design correction:** A WordPress MU-plugin and a shortcode require WordPress to boot, so they **cannot** reliably show the notice when MySQL is unavailable. Do not attempt to "fix" the database by changing DNS, overwriting `wp-config.php`, creating an empty database, or restoring an unverified backup.
+
+**Read-only diagnosis before changing live data**
+1. Verify the exact URL and HTTP response for apex/www, and check whether the failure is limited to WordPress or all sites sharing the MySQL instance. Avoid relying on cached HTML.
+2. On an authorized cPanel account, identify the **confirmed** document root for `mielaissa.ca`. Check MySQL availability, disk quota, database/user assignment, and server error logs. Compare `DB_NAME`, `DB_USER`, `DB_HOST` from the existing `wp-config.php` against cPanel **without copying secrets into Git or chat**.
+3. Back up WordPress files and the existing SQL database before any password, user privilege, repair, or service restart. Do not run bulk updates or drop/recreate a database.
+4. If credentials are valid and MySQL is unavailable, escalate to hosting/service status; if tables are damaged, restore/repair only after a backup. Verify storefront, product detail, cart, checkout, login, order history, email, and loyalty before declaring recovery.
+
+**Database-independent public transition notice**, if the owner wants a customer-facing notice during the outage:
+1. After verifying the real Apache/cPanel document root, back up its current `.htaccess` and upload `deploy/legacy-notice/index.html` to `transition/index.html` **inside that verified root**.
+2. Verify `https://mielaissa.ca/transition/index.html` loads the branded HTML and points to a verified working `https://takatak.ca/transfert`. Test that form with a controlled lead in the authorized inbox; do not route real customers to an untested form.
+3. **Copy only the snippet** in `deploy/legacy-notice/apache-home-only.htaccess.snippet` above the existing `# BEGIN WordPress` block in the live root `.htaccess`. Never replace or upload this snippet as the entire `.htaccess`.
+4. The snippet rewrites **only** GETs to the domain homepage path `/` (for both apex and www), and only when the static HTML exists. It does not invoke WordPress/MySQL for the landing page, does not change DNS, and leaves wp-admin, product, cart, checkout and mail paths intact. Those paths may **still fail** until the underlying database issue is fixed.
+5. Test `/`, `/transition/index.html`, `/wp-admin/`, `/cart/`, `/checkout/`, HTTP-to-HTTPS and both hostnames. If root returns 500, immediately remove **only** the new block and re-test. Do not remove the original WordPress rules.
+6. The static notice is a communication measure **not a database repair**. Once database access is restored, decide whether to keep the notice or restore the original homepage.
+
+This procedure is not auto-deployed by a GitHub merge and must not be applied to an unverified hosting root or Nginx-only deployment. For Nginx, configure an equivalent narrowly scoped route after a tested backup instead of assuming Apache rules will work.
+
 ## Deliverables
 - `wordpress/wp-content/mu-plugins/takatak-migration-notice.php`: opt-in must-use plugin, no dependencies or WooCommerce mutations. Includes shortcode `[takatak_mielaissa_moved_notice]`.
 - `deploy/legacy-notice/index.html`: independent static notice for a **separate approved legacy landing directory**. Preview by uploading to e.g. `/transition/index.html` (do not replace the WordPress root).
