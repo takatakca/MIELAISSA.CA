@@ -1,5 +1,7 @@
 # File de travail exécutable — MIELAISSA.CA
 
+> **New request 2026-11-05:** Stage optional [TAKATAK migration notice](TAKATAK_LEGACY_NOTICE.md), verify authorized WordPress access and backups, smoke-test TAKATAK lead intake, then seek owner authorization before homepage activation. Do not change live shop just because code merges.
+
 Ordre de priorité. Les items marqués en attente ne peuvent pas être considérés comme terminés sans preuve.
 
 ## P0 — Publication de la version réellement fonctionnelle

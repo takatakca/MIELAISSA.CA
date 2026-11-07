@@ -1,5 +1,7 @@
 # Journal de décisions — MIELAISSA.CA
 
+> **2026-11-05 — Reversible TAKATAK transfer notice:** Chosen approach is an independent opt-in WordPress MU-plugin and a standalone staging HTML, not replacing the WooCommerce root/theme or DNS. Homepage interception requires explicit `TAKATAK_MIELAISSA_NOTICE_HOME=true` after staging/backup verification. See [deployment procedure](TAKATAK_LEGACY_NOTICE.md).
+
 ## 2026-10-14 — Préserver la boutique existante
 
 Situation : GitHub contenait un README minimal, tandis que mielaissa.ca disposait déjà d'un site WordPress/WooCommerce et de produits publics. Décision : créer une **extension additive**, sans réécrire le marchand, le panier, le thème, les comptes ni les prix.

@@ -1,0 +1,14 @@
+# Apache / cPanel COPY-PASTE SNIPPET (not an entire .htaccess file).
+# Insert this ABOVE '# BEGIN WordPress' in the VERIFIED mielaissa.ca
+# document root .htaccess, only after backing up the current file.
+# Requires a tested static file at /transition/index.html.
+# WordPress, WooCommerce and MySQL are NOT executed for the root URL.
+# Domain-specific: does not apply to unrelated domains on shared hosting.
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^(www\.)?mielaissa\.ca$ [NC]
+RewriteCond %{REQUEST_URI} ^/$
+RewriteCond %{DOCUMENT_ROOT}/transition/index.html -f
+RewriteRule ^$ /transition/index.html [END]
+</IfModule>
+# ROLLBACK: remove only the block above; keep original WordPress rules.
