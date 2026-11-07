@@ -6,6 +6,10 @@ test -s "$plugin/mielaissa-storefront.php"
 test -s "$plugin/assets/storefront.css"
 test -s "$plugin/assets/storefront.js"
 php -l "$plugin/mielaissa-storefront.php"
+# Validate the standalone optional TAKATAK MU-plugin (no activation).
+php -l wordpress/wp-content/mu-plugins/takatak-migration-notice.php
+php -l tests/migration-notice.php
+php tests/migration-notice.php
 php -l tests/smoke.php
 php -l scripts/wordpress-smoke.php
 php -l tests/no-woocommerce.php
