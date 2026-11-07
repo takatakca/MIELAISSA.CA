@@ -1,6 +1,20 @@
+## Relève courante — 2026-11-07 11:00 UTC — Codex — ChatGPT Work
+
+- Reprise exclusive et séquentielle depuis main `b122567cdaa8eeeac75caf679462c19d25c582ba` : PR #2 historique puis branche complète PR #5 `c910f8d80468a1622cd52051374bba0de33500b1` (incluant les deux commits Apache/diagnostic absents du snapshot PR). Les anciennes notes ci-dessous sont conservées comme historique.
+- Source préparée : notice optionnelle PHP 1.0.1 limitée à GET/HEAD de l'accueil canonique sans query ; POST/actions panier/AJAX, pagination, administration, preview et feed traversent WordPress. HEAD sans corps. Snippet Apache limité GET/HEAD et query vide. Aucun changement au HTML statique ni au plugin WooCommerce existant.
+- Validation : test comportemental de 21 requêtes PHP isolées ajouté au contrôle existant ; matrice GitHub PHP 7.4/8.2/8.3, JavaScript et ZIP attendue avant fusion. PHP absent de cet exécuteur local : aucun succès PHP local inventé. Résultats et SHA final seront consignés dans le reçu de PR et le journal Drive sans boucle de commits documentaires.
+- Production observée AVANT intervention : `https://mielaissa.ca/` et `https://www.mielaissa.ca/`, HTTP 200, 2565 octets, SHA256 `0537fb3877623e231686385c46cb2278602636f055f4353ab116664cbb769844`, exactement le HTML `deploy/legacy-notice/index.html`. La notice était déjà en ligne ; cette session ne l'a pas déployée. CTA transfert observé sur le formulaire public TAKATAK, sans soumission ni preuve de réception d'un lead.
+- Aucun accès WordPress/cPanel/SSH, WP_ROOT, staging ou backup restaurable actuellement vérifié pour cette cible. Aucune application Coolify associée trouvée sur les deux contrôleurs consultés. DNS observé `209.42.24.127`. Ne pas traiter cette page statique comme preuve de santé MySQL, commandes, plugin activé ou checkout. Aucun déploiement WordPress/MU-plugin/Apache, aucune activation de flag, aucun changement DNS/mail/données/identité effectué.
+- PR #3 reste draft : prototype Node rejeté, fidélité et migration commerciale non acceptées (#4). L'autorisation de poursuivre existe ; les originaux, l'accès à l'installation et les validations techniques manquent. Préserver source, fidélité `[mielaissa_points]`, `_miel_diamonds` et `/en-ca/games/`. Aucun remplacement visuel inventé.
+- Prochaine action : vérifier CI candidate, fusionner la source examinée, vérifier main CI et health public, puis reçu signé. Reprendre #1/#4 uniquement avec preuve des dépendances techniques ; ne pas déclarer la migration ou les paiements terminés.
+
+Signature : Codex — ChatGPT Work.
+
+---
+
 # Miel Aissa → TAKATAK legacy migration notice
 
-**Prepared 2026-11-05. Not deployed to mielaissa.ca.** Uses the public transfer form delivered by [TAKATAK PR #254](https://github.com/takatakca/takatak-v1/pull/254).
+**Source prepared 2026-11-05. Public static notice independently verified 2026-11-07; deployment operator/access not verified by this session.** Uses the public transfer form delivered by [TAKATAK PR #254](https://github.com/takatakca/takatak-v1/pull/254).
 
 The live site is a WordPress/WooCommerce store. This repository is **not** the full WordPress installation. Never overwrite its `index.php`, theme, customers, loyalty data, products, orders or checkout.
 
@@ -18,7 +32,7 @@ The live site is a WordPress/WooCommerce store. This repository is **not** the f
 1. After verifying the real Apache/cPanel document root, back up its current `.htaccess` and upload `deploy/legacy-notice/index.html` to `transition/index.html` **inside that verified root**.
 2. Verify `https://mielaissa.ca/transition/index.html` loads the branded HTML and points to a verified working `https://takatak.ca/transfert`. Test that form with a controlled lead in the authorized inbox; do not route real customers to an untested form.
 3. **Copy only the snippet** in `deploy/legacy-notice/apache-home-only.htaccess.snippet` above the existing `# BEGIN WordPress` block in the live root `.htaccess`. Never replace or upload this snippet as the entire `.htaccess`.
-4. The snippet rewrites **only** GETs to the domain homepage path `/` (for both apex and www), and only when the static HTML exists. It does not invoke WordPress/MySQL for the landing page, does not change DNS, and leaves wp-admin, product, cart, checkout and mail paths intact. Those paths may **still fail** until the underlying database issue is fixed.
+4. The snippet rewrites **only** GET/HEAD requests without query strings to the domain homepage path `/` (for both apex and www), and only when the static HTML exists. It does not invoke WordPress/MySQL for the landing page, does not change DNS, and leaves wp-admin, product, cart, checkout and mail paths intact. Those paths may **still fail** until the underlying database issue is fixed.
 5. Test `/`, `/transition/index.html`, `/wp-admin/`, `/cart/`, `/checkout/`, HTTP-to-HTTPS and both hostnames. If root returns 500, immediately remove **only** the new block and re-test. Do not remove the original WordPress rules.
 6. The static notice is a communication measure **not a database repair**. Once database access is restored, decide whether to keep the notice or restore the original homepage.
 
@@ -38,7 +52,7 @@ This procedure is not auto-deployed by a GitHub merge and must not be applied to
    ```php
    define('TAKATAK_MIELAISSA_NOTICE_HOME', true);
    ```
-   Default is disabled. Only the front page is intercepted; do not change DNS, product/customer tables, checkout routes, email or admin.
+   Default is disabled. Only GET/HEAD to the canonical homepage without query strings is intercepted; POST, query actions and non-home paths remain with WordPress; do not change DNS, product/customer tables, checkout routes, email or admin.
 6. Verify homepage, customer login, cart, checkout and product pages. The homepage intentionally sets `X-Robots-Tag: noindex` during the transition; assess SEO implications before activation.
 
 ## Rollback

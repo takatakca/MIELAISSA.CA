@@ -7,6 +7,8 @@
 <IfModule mod_rewrite.c>
 RewriteEngine On
 RewriteCond %{HTTP_HOST} ^(www\.)?mielaissa\.ca$ [NC]
+RewriteCond %{REQUEST_METHOD} ^(GET|HEAD)$
+RewriteCond %{QUERY_STRING} ^$
 RewriteCond %{REQUEST_URI} ^/$
 RewriteCond %{DOCUMENT_ROOT}/transition/index.html -f
 RewriteRule ^$ /transition/index.html [END]

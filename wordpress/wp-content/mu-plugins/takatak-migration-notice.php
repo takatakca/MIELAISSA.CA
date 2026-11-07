@@ -2,7 +2,7 @@
 /**
  * Plugin Name: TAKATAK Legacy Migration Notice — Miel Aissa
  * Description: Optional transfer notice for the existing Miel Aissa WordPress site. Does not alter WooCommerce.
- * Version: 1.0.0
+ * Version: 1.0.1
  * Requires PHP: 7.4
  */
 defined('ABSPATH') || exit;
@@ -52,9 +52,21 @@ function takatak_mielaissa_maybe_show_home_notice() {
     if (!is_front_page() || is_admin() || is_preview() || is_feed()) {
         return;
     }
+    // Homepage queries can be WooCommerce add-to-cart/AJAX or other WordPress
+    // actions. Leave them, non-read methods and paginated paths to WordPress.
+    $method = isset($_SERVER['REQUEST_METHOD']) ? $_SERVER['REQUEST_METHOD'] : '';
+    $home_path = parse_url(home_url('/'), PHP_URL_PATH);
+    if (!in_array($method, array('GET', 'HEAD'), true)
+        || (isset($_SERVER['QUERY_STRING']) ? $_SERVER['QUERY_STRING'] : '') !== ''
+        || (isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : '') !== $home_path) {
+        return;
+    }
     status_header(200);
     nocache_headers();
     header('X-Robots-Tag: noindex, follow', true);
+    if ($method === 'HEAD') {
+        exit;
+    }
     echo '<!doctype html><html lang="fr-CA"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Notre serveur a déménagé — Miel Aissa · TAKATAK</title></head><body style="margin:0">';
     echo takatak_mielaissa_notice_markup();
     echo '</body></html>';
