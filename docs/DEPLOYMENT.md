@@ -1,53 +1,20 @@
-## 2026-10-30 23:58 — Codex — assistant OpenAI — Capture fidèle v2
+## Relève courante — 2026-11-07 11:00 UTC — Codex — ChatGPT Work
 
-AVANT : relu la directive de fidélité, vérifié l’état du dépôt et l’accès réseau ; source toujours non autorisée dans cet exécuteur. Note préalable GitHub PR #3 et NOTEPAD Drive.
+- Reprise exclusive et séquentielle depuis main `b122567cdaa8eeeac75caf679462c19d25c582ba` : PR #2 historique puis branche complète PR #5 `c910f8d80468a1622cd52051374bba0de33500b1` (incluant les deux commits Apache/diagnostic absents du snapshot PR). Les anciennes notes ci-dessous sont conservées comme historique.
+- Source préparée : notice optionnelle PHP 1.0.1 limitée à GET/HEAD de l'accueil canonique sans query ; POST/actions panier/AJAX, pagination, administration, preview et feed traversent WordPress. HEAD sans corps. Snippet Apache limité GET/HEAD et query vide. Aucun changement au HTML statique ni au plugin WooCommerce existant.
+- Validation : test comportemental de 21 requêtes PHP isolées ajouté au contrôle existant ; matrice GitHub PHP 7.4/8.2/8.3, JavaScript et ZIP attendue avant fusion. PHP absent de cet exécuteur local : aucun succès PHP local inventé. Résultats et SHA final seront consignés dans le reçu de PR et le journal Drive sans boucle de commits documentaires.
+- Production observée AVANT intervention : `https://mielaissa.ca/` et `https://www.mielaissa.ca/`, HTTP 200, 2565 octets, SHA256 `0537fb3877623e231686385c46cb2278602636f055f4353ab116664cbb769844`, exactement le HTML `deploy/legacy-notice/index.html`. La notice était déjà en ligne ; cette session ne l'a pas déployée. CTA transfert observé sur le formulaire public TAKATAK, sans soumission ni preuve de réception d'un lead.
+- Aucun accès WordPress/cPanel/SSH, WP_ROOT, staging ou backup restaurable actuellement vérifié pour cette cible. Aucune application Coolify associée trouvée sur les deux contrôleurs consultés. DNS observé `209.42.24.127`. Ne pas traiter cette page statique comme preuve de santé MySQL, commandes, plugin activé ou checkout. Aucun déploiement WordPress/MU-plugin/Apache, aucune activation de flag, aucun changement DNS/mail/données/identité effectué.
+- PR #3 reste draft : prototype Node rejeté, fidélité et migration commerciale non acceptées (#4). L'autorisation de poursuivre existe ; les originaux, l'accès à l'installation et les validations techniques manquent. Préserver source, fidélité `[mielaissa_points]`, `_miel_diamonds` et `/en-ca/games/`. Aucun remplacement visuel inventé.
+- Prochaine action : vérifier CI candidate, fusionner la source examinée, vérifier main CI et health public, puis reçu signé. Reprendre #1/#4 uniquement avec preuve des dépendances techniques ; ne pas déclarer la migration ou les paiements terminés.
 
-PENDANT : étendu la récupération aux fichiers CSS du thème/page builder, imports CSS récursifs, polices, images responsive et lazy, scripts publics et médias statiques même origine. Octets originaux inchangés, SHA256 et redirections conservés. Aucun script exécuté ; aucune connexion, commande ou écriture WordPress. Les ressources tierces, manquantes, en erreur ou au-delà des limites rendent la capture incomplète. Queries de version uniquement sur assets publics ; pas de tokens privés conservés dans les rapports de dépendances manquantes.
-
-APRÈS : 9 tests locaux réussis et typecheck réussi. Un vérificateur d’archives détecte altérations et chemins sortant de l’archive. Il ne valide jamais le clone visuel ni la reprise transactionnelle à partir d’une simple empreinte. CI de la révision publiée à vérifier dans la PR. Le build public du prototype rejeté reste bloqué. Aucun visuel inventé, aucune capture live prétendue, aucun déploiement.
-
-Commandes à utiliser seulement depuis un accès réseau autorisé à mielaissa.ca :
-
-```
-npm run capture
-npm run audit:reference -- /chemin/prive/vers/la/capture
-```
-
-Sorties : migration-private/TIMESTAMP/manifest.json, pages/ et assets/, gitignorés. Valeur `complete` = couverture des ressources statiques découvertes, pas preuve d’exhaustivité du site/SEO ni de fidélité fonctionnelle. L’audit garde `visualParityVerified:false` et `transactionalMigrationComplete:false`.
-
-Limites restantes : styles Google Fonts/CDN ou widgets tiers à inventorier avec des accès dédiés, pages privées non parcourues, médias sans extension et URLs à paramètres non reconnus à examiner, captures bureau/mobile réelles et export Woo à récupérer. Ne pas envoyer les archives brutes contenant du HTML dans GitHub. La prochaine étape reste l’acquisition réelle des originaux puis leur conversion en composants Node fidèles au source.
-
----
-
-## Directive propriétaire — copie fidèle du site existant — 2026-10-30 23:52
-
-**Signé : Codex — assistant OpenAI.** Le propriétaire a rejeté la refonte ambre/crème et demande un clone fidèle de https://mielaissa.ca/ en Node.js. Ce correctif de périmètre prévaut sur les comptes rendus plus anciens ci-dessous.
-
-- Garder le projet existant : marque/logo, disposition, menus, ordre des sections, textes, produits, parcours, pages et fonctions. Ne pas substituer une nouvelle direction artistique ou une nouvelle sélection de fonctions.
-- Les améliorations d’images sont autorisées si elles préservent l’identité et les produits réels. Pas de faux emballage, de nouvelle marque ou d’illustrations remplaçant arbitrairement les photos.
-- Le prototype éditorial actuel et ses captures sont **rejetés comme cible de migration**. Les CI vertes prouvent son fonctionnement technique, pas la ressemblance ni l’acceptation. Ne pas le publier comme clone terminé.
-- Les anomalies du site source (contenu ALKA-O, doublons, redirections) doivent être relevées, sans réécriture/suppression autonome. Toute correction fonctionnelle ou de contenu doit rester distincte de la conversion fidèle.
-- Première dépendance : récupérer le HTML rendu, les CSS du thème/page builder, polices et médias originaux, plus des captures source bureau/mobile. Sans ces éléments, ne pas inventer les styles manquants ni prétendre une copie visuelle exacte.
-- Accès revérifiés : réseau de l’exécuteur restreint sans mielaissa.ca ; outil navigateur associé non exposé, connexion Opera antérieure en demande de reconnexion ; recherche Drive par noms MIELAISSA/Miel Aissa ne trouve pas de sauvegarde du thème. Les exports commerciaux restent aussi à obtenir.
-- Prochaine action : acquérir les fichiers/captures par un accès autorisé, remplacer le prototype par les composants reproduisant le source, puis comparer chaque page et parcours aux références. Autorisation déjà donnée, aucune nouvelle refonte proposée.
-
----
-
-# Migration Node.js — priorité actuelle (2026-10-30)
-
-**Codex — assistant OpenAI.** Le propriétaire a explicitement demandé le remplacement de WordPress par une solution Node.js dans ce dépôt. Les notes anciennes ci-dessous décrivent le périmètre historique du plugin, désormais dépassé pour le développement. Elles restent utiles pour préserver la boutique et le retour arrière.
-
-Voir **docs/NODE_MIGRATION.md** pour l'inventaire réel, les sources lues, le code livré, les accès manquants et l'ordre de bascule. Branche : `feat/node-storefront-20261030`. Application Node développée, publication de production **non effectuée**. Données transactionnelles toujours dans WordPress. Nouvelle identité TAKATAK non provisionnée, paiement fermé (503), photos/logo originaux à récupérer. Le plugin existant n'est pas la cible de publication Node.
-
-## Preuve GitHub et remise — 2026-10-30 — Codex — assistant OpenAI
-
-PR #3 : https://github.com/takatakca/MIELAISSA.CA/pull/3 (draft, non mergée). Révision fonctionnelle e4a1dc4ae634180410ba37c54782c4b54fb70cbf : CI Node 41049533489 **success**, CI historique multi-PHP 41049533336 **success**. Tests navigateur compilé 3/3, tests de capture/import 3/3 ; build et typecheck réussis. Langue HTML vérifiée côté serveur FR/EN. Les captures, le code source ZIP et le guide ont été déposés dans le Drive privé MAIN → Miel Aissa → 6. Site web, hébergement et serveur ; parents et partage privé relus. NOTEPAD, journal quotidien et addendum Opérations signés. La présente mise à jour est documentaire ; relire la CI du HEAD suivant pour son statut exact.
-
-Aucun déploiement, aucune suppression WordPress. BLOC-MIEL-MIGRATION : originaux et export Woo complet, sauvegarde restaurable/cible Node, réconciliation transactionnelle et scope MIELAISSA dédié dans TAKATAK-V1. Prochaine action : obtenir ces sources privées via les connecteurs/identités autorisés, compléter capture/reprise sans refaire la vitrine, vérifier le staging transactionnel, puis basculer avec rollback. Autorisation propriétaire de développer et migrer déjà donnée ; pas besoin de la redemander.
+Signature : Codex — ChatGPT Work.
 
 ---
 
 # Déploiement vérifiable — extension Miel Aissa
+
+> **2026-11-05 notice deployment gate:** [TAKATAK_LEGACY_NOTICE.md](TAKATAK_LEGACY_NOTICE.md) documents manual staging and reversible homepage activation for the new opt-in MU-plugin. This repository's standard workflow publishes only `mielaissa-storefront` and **does not** install or enable the notice. No live deployment has occurred.
 
 ## 1. Ce dépôt n'est PAS une sauvegarde complète du site
 
