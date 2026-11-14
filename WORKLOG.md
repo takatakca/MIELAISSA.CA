@@ -1,3 +1,8 @@
 # Work log
 
 - 2026-11-07 | Codex — ChatGPT Work | codex/sequential-release-20261107 | source prepared; CI/merge receipt pending | Sequentially reconcile KLEAN and optional transition notice, protect commerce requests, validate source and existing public notice | Verify PR/main PHP matrix and signed final receipt; WordPress migration remains blocked in #4
+
+2026-10-30 23:58 | Codex — assistant OpenAI | feat/node-storefront-20261030 → PR #3 | local tested / publication in progress | Capture fidèle v2 CSS/fonts/media/scripts + recursive CSS dependencies, unchanged bytes/hash manifest, missing dependencies and offline archive auditor | 9 tests pass + typecheck; inspect CI, leave signed Drive/GitHub handoff; live acquisition still blocked by source network access, no clone claimed.
+2026-10-30 23:52 | Codex — assistant OpenAI | feat/node-storefront-20261030 → PR #3 | redesign rejected / faithful conversion blocked on source assets | Owner requires same site in Node.js, optional faithful image improvements; recorded overriding directive and blocked public-indexed build of rejected prototype | recover original HTML/CSS/fonts/media and source screenshots via authorized access, then replace prototype and compare parity; no guessed design.
+2026-10-30 | Codex — assistant OpenAI | feat/node-storefront-20261030 → PR #3 | delivered / draft / not deployed | Owner-authorized Node migration: sources audited, public-content inventory, premium FR/EN storefront and preservation tooling | Node unit safety tests 3/3, compiled browser flows 3/3, typecheck/build pass; CI Node 41049533489 and legacy PHP 41049533336 SUCCESS for functional e4a1dc4; PR #3 and private Drive handoff published. Original media/full Woo export/TAKATAK scope/hosting remain dependencies.
+
