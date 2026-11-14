@@ -1,0 +1,832 @@
+Internal Error ()
+【turn532571view0】 [wordlim: 200] Source: open({"ref_id":"http://mielaissa.ca/wp-json/wc/store/v1/products?per_page=100","lineno":null}); 
+URL https://mielaissa.ca/wp-json/wc/store/v1/products?per_page=100 is not accessible via this tool.
+--------------------------------------------------------------------------------
+Internal Error ()
+【turn532571view1】 [wordlim: 200] Source: open({"ref_id":"http://mielaissa.ca/wp-sitemap.xml","lineno":null}); 
+URL https://mielaissa.ca/wp-sitemap.xml is not accessible via this tool.
+--------------------------------------------------------------------------------
+Contact - Mielaissa 5837 Rue Jean-Talon Est (https://mielaissa.ca/ca-en/contact/)
+【turn532571view2】 [wordlim: 200] Crawled: today; Content type: text/html; Source: open({"ref_id":"http://mielaissa.ca/ca-en/contact/","lineno":null}); Total lines: 387
+L0: [Button: ×] 【0†💥 Black Friday Mega Deals ...】
+L1: 
+L2: 【1†RESIDENTIAL】 【2†BUSINESS】
+L3: 
+L4: Deliver to H1J ✎
+L5: 
+L6: 【1†EN】 | 【3†FR】
+L7: 
+L8: 【1†RESIDENTIAL】 【2†BUSINESS】
+L9: 
+L10: Deliver to H1J ✎
+L11: 
+L12: ### 【4†Login】
+L13: 
+L14:   * 【5†Restaurant】
+L15:   * 【6†Point of Sale】
+L16:   * 【7†Corporate Gifts】
+L17: 
+L18:   * 【5†Restaurant】
+L19:   * 【6†Point of Sale】
+L20:   * 【7†Corporate Gifts】
+L21: 
+L22: 【1†EN】 | 【3†FR】
+L23: 
+L24: 【8†$0.00 0 Cart】
+L25: 
+L26: 【9†Honeys】
+L27: 
+L28: 【9†Care】
+L29: 
+L30: 【10†Groceries】
+L31: 
+L32: 【11†Home】
+L33: 
+L34: Free Shipping | Eligible on purchase of CA$120+
+L35: ### Available Offers
+L36: 
+L37: [Button: ×]
+L38: 
+L39: [Button: Promo Codes Details] [Button: Promo Codes] [Button: Service]
+L40: #### Promo Codes Details
+L41: 
+L42:   * Coupon 1 — Free Delivery : Free delivery in Quebec (except remote regions) with any purchase of CA$120.00 or more before taxes.
+L43:   * Coupon 2 — First Order Special : Get a 15% OFF promotion on your very first order. Limit of one use per new logged-in customer.
+L44:   * Coupon 3 — Business & Student Discount : Benefit from 15% OFF if you are a verified business or student. Proof of status may be requested.
+L45: #### Promo Codes
+L46: 
+L47: Free Shipping Coupon
+L48: 
+L49: on orders of CA$120+
+L50: 
+L51: Code : `MIELAISSA120`
+L52: 
+L53: Limit: 1 coupon per order. Excluding fees and taxes.
+L54: 
+L55: 【12†Use】 [Button: Copy]
+L56: 
+L57: 15% OFF
+L58: 
+L59: On your very first order
+L60: 
+L61: Code : `FIRSTORDER15`
+L62: 
+L63: Limit: One use per new logged-in customer.
+L64: 
+L65: 【13†Use】 [Button: Copy]
+L66: #### Service
+L67: 
+L68:   * Enjoy free Delivery on CA$120 (Valid across Quebec).
+L69:   * 15% OFF for verified business or student
+L70:   * Need Help ? [Button: Open chat] (Tidio).
+L71: 
+L72:   * 【5†Restaurant】
+L73:   * 【6†Point of Sale】
+L74:   * 【7†Corporate Gifts】
+L75: 
+L76:   * 【5†Restaurant】
+L77:   * 【6†Point of Sale】
+L78:   * 【7†Corporate Gifts】
+L79: ### 【4†Login】
+L80: 
+L81: 【8†$0.00 0 Cart】
+L82: 
+L83:   * 【9†Honeys】
+L84:   * 【14†Care】
+L85:   * 【10†Groceries】
+L86:   * 【11†Home】
+L87: 
+L88:   * 【9†Honeys】
+L89:   * 【14†Care】
+L90:   * 【10†Groceries】
+L91:   * 【11†Home】
+L92: 
+L93: 【15†Contact】
+L94: 
+L95: 【16†Image: Mielaissa Logo】
+L96: 
+L97:   * 【9†Honeys】
+L98:   * 【14†Care】
+L99:   * 【10†Groceries】
+L100:   * 【11†Home】
+L101: 
+L102:   * 【9†Honeys】
+L103:   * 【14†Care】
+L104:   * 【10†Groceries】
+L105:   * 【11†Home】
+L106: 
+L107: 【15†Contact】
+L108: 
+L109: ### 【4†Login】
+L110: 
+L111: 【8†$0.00 0 Cart】
+L112: ## Hi, How can we help you??
+L113: 
+L114: Already an ALKAO customer? 【4†Login for a better experience】
+L115: 
+L116: Try our ALKAO AI assistant (Tidio) — instant answers, 24/7.
+L117: ## Browse support by products and services
+L118: 
+L119: 【17†💳Account & Billing】 【18†🔁Subscriptions & Plans】 【19†🚚Orders & Delivery】 【20†🥤Products 500ml / 5L / 18.9L】 【21†⚙Machines & Dispensers】 【22†🏢Business / Enterprise】 【23†↩Returns & Refunds】 【24†🏷Promotions & Coupons】 【25†🕹ALKAO Water Factory (Game)】 【26†♻Refill / Exchange (5738 Jean-Talon E)】 【27†🎫Open a Support Ticket】 【28†♿Accessibility at ALKAO】
+L120: ## Quick Actions
+L121: 
+L122: 【29†🧰 Tutorials & guides Machine setup, filters, 18.9L handling, 5L storage, 500ml packs】 【30†📦 Track an order Status, reschedule, missed delivery】 【31†⚡ ALKAO service status Zone availability, delivery windows, alerts】
+L123: 
+L124: ## Suggested articles
+L125: 
+L126: 【32†Water pH & mineralization — what to expect →】 【33†Change my subscription frequency →】 【34†5L vs 18.9L — choose the right format →】 【35†Damaged product — replacement process →】
+L127: 
+L128: ## Ready to elevate your hydration?
+L129: ## Tell us about your home or business needs and we’ll set up the ideal plan.
+L130: 
+L131:   * (514) 501-6241
+L132:   * 【36†alkao.ca@gmail.com†gmail.com】
+L133:   * 5505 Rue Irwin, LaSalle, QC • 5738 Rue Jean‑Talon E, Montréal
+L134: 
+L135: 【15†Get a Quote】
+L136: 
+L137: 【37†Shop Now】
+L138: 
+L139: ## Quick Contact Form
+L140: 
+L141: [Input] [Input] [Input] [Input]
+L142: 
+L143: Name [Input: Name]
+L144: 
+L145: Email [Input: Email]
+L146: 
+L147: Phone [Input: Phone]
+L148: 
+L149: Message
+L150: 
+L151: By submitting, you consent to be contacted about ALKA‑O services.
+L152: 
+L153: Send
+L154: 
+L155: ## Subscribe to my Newsletter
+L156: ## Sign up with your email address to receive news and updates.
+L157: 
+L158: ## Get the Inside Scoop on our Initiatives, Specials, and Trends.
+L159: 
+L160: [Input] [Input] [Input] [Input]
+L161: 
+L162: [Input: Enter your email]
+L163: 
+L164: Subscribe
+L165: 
+L166: ## Subscribe to my Newsletter
+L167: 
+L168: ## Sign up with your email address to receive news and updates.
+L169: 
+L170: ## Get the Inside Scoop on our Initiatives, Specials, and Trends.
+L171: 
+L172: [Input] [Input] [Input] [Input]
+L173: 
+L174: [Input: Enter your email]
+L175: 
+L176: Subscribe
+L177: 
+L178: ## Subscribe to my Newsletter
+L179: ## Sign up with your email address to receive news and updates.
+L180: 
+L181: ## Get the Inside Scoop on our Initiatives, Specials, and Trends.
+L182: 
+L183: [Input] [Input] [Input] [Input]
+L184: 
+L185: [Input: Enter your email]
+L186: 
+L187: Subscribe
+L188: 
+L189: 【16†Image: Mielaissa Logo】
+L190: 
+L191: 【16†Image: Mielaissa Logo】
+L192: 
+L193: ## CONTACT DETAILS
+L194: 
+L195:   * Phone: (514)996-4247
+L196:   * Address: 5837 Rue Jean-Talon E, Saint-Léonard, QC H1S 1M4
+L197:   * Email: mielaissa.ca@gmail.com
+L198: ## Quick Links
+L199: 
+L200:   * 【9†Honeys】
+L201:   * 【10†Groceries】
+L202:   * 【11†Home】
+L203:   * 【14†Care】
+L204:   * 【6†Point of Sale】
+L205:   * 【7†Corporate Gifts】
+L206:   * 【6†Point of Sale】
+L207:   * 【5†Restaurant】
+L208:   * 【15†Contact】
+L209: 
+L210:   * 【9†Honeys】
+L211:   * 【10†Groceries】
+L212:   * 【11†Home】
+L213:   * 【14†Care】
+L214:   * 【6†Point of Sale】
+L215:   * 【7†Corporate Gifts】
+L216:   * 【6†Point of Sale】
+L217:   * 【5†Restaurant】
+L218:   * 【15†Contact】
+L219: 
+L220: ## STAY CONNECTED
+L221: 
+L222: 【1†EN】 | 【3†FR】
+L223: 
+L224: 【16†Image: Mielaissa Logo】
+L225: ## CONTACT DETAILS
+L226: 
+L227:   * Phone: (514)996-4247
+L228:   * Address: 5837 Rue Jean-Talon E, Saint-Léonard, QC H1S 1M4
+L229:   * Email: mielaissa.ca@gmail.com
+L230: 
+L231: ## Quick Links
+L232: 
+L233:   * 【9†Honeys】
+L234:   * 【10†Groceries】
+L235:   * 【11†Home】
+L236:   * 【14†Care】
+L237:   * 【6†Point of Sale】
+L238:   * 【7†Corporate Gifts】
+L239:   * 【6†Point of Sale】
+L240:   * 【5†Restaurant】
+L241:   * 【15†Contact】
+L242: 
+L243:   * 【9†Honeys】
+L244:   * 【10†Groceries】
+L245:   * 【11†Home】
+L246:   * 【14†Care】
+L247:   * 【6†Point of Sale】
+L248:   * 【7†Corporate Gifts】
+L249:   * 【6†Point of Sale】
+L250:   * 【5†Restaurant】
+L251:   * 【15†Contact】
+L252: ## STAY CONNECTED
+L253: 
+L254: 【1†EN】 | 【3†FR】
+L255: 
+
+--------------------------------------------------------------------------------
+Corporate Gifts - Mielaissa 5837 Rue Jean-Talon Est (https://mielaissa.ca/ca-en/corporate-gifts/)
+【turn532571view3】 [wordlim: 200] Crawled: today; Content type: text/html; Source: open({"ref_id":"http://mielaissa.ca/ca-en/corporate-gifts/","lineno":null}); Total lines: 500
+L0: [Button: ×] 【0†💥 Black Friday Mega Deals ...】
+L1: 
+L2: 【1†RESIDENTIAL】 【2†BUSINESS】
+L3: 
+L4: Deliver to H1J ✎
+L5: 
+L6: 【1†EN】 | 【3†FR】
+L7: 
+L8: 【1†RESIDENTIAL】 【2†BUSINESS】
+L9: 
+L10: Deliver to H1J ✎
+L11: 
+L12: ### 【4†Login】
+L13: 
+L14:   * 【5†Restaurant】
+L15:   * 【6†Point of Sale】
+L16:   * 【7†Corporate Gifts】
+L17: 
+L18:   * 【5†Restaurant】
+L19:   * 【6†Point of Sale】
+L20:   * 【7†Corporate Gifts】
+L21: 
+L22: 【1†EN】 | 【3†FR】
+L23: 
+L24: 【8†$0.00 0 Cart】
+L25: 
+L26: 【9†Honeys】
+L27: 
+L28: 【9†Care】
+L29: 
+L30: 【10†Groceries】
+L31: 
+L32: 【11†Home】
+L33: 
+L34: Free Shipping | Eligible on purchase of CA$120+
+L35: ### Available Offers
+L36: 
+L37: [Button: ×]
+L38: 
+L39: [Button: Promo Codes Details] [Button: Promo Codes] [Button: Service]
+L40: #### Promo Codes Details
+L41: 
+L42:   * Coupon 1 — Free Delivery : Free delivery in Quebec (except remote regions) with any purchase of CA$120.00 or more before taxes.
+L43:   * Coupon 2 — First Order Special : Get a 15% OFF promotion on your very first order. Limit of one use per new logged-in customer.
+L44:   * Coupon 3 — Business & Student Discount : Benefit from 15% OFF if you are a verified business or student. Proof of status may be requested.
+L45: #### Promo Codes
+L46: 
+L47: Free Shipping Coupon
+L48: 
+L49: on orders of CA$120+
+L50: 
+L51: Code : `MIELAISSA120`
+L52: 
+L53: Limit: 1 coupon per order. Excluding fees and taxes.
+L54: 
+L55: 【12†Use】 [Button: Copy]
+L56: 
+L57: 15% OFF
+L58: 
+L59: On your very first order
+L60: 
+L61: Code : `FIRSTORDER15`
+L62: 
+L63: Limit: One use per new logged-in customer.
+L64: 
+L65: 【13†Use】 [Button: Copy]
+L66: #### Service
+L67: 
+L68:   * Enjoy free Delivery on CA$120 (Valid across Quebec).
+L69:   * 15% OFF for verified business or student
+L70:   * Need Help ? [Button: Open chat] (Tidio).
+L71: 
+L72:   * 【5†Restaurant】
+L73:   * 【6†Point of Sale】
+L74:   * 【7†Corporate Gifts】
+L75: 
+L76:   * 【5†Restaurant】
+L77:   * 【6†Point of Sale】
+L78:   * 【7†Corporate Gifts】
+L79: ### 【4†Login】
+L80: 
+L81: 【8†$0.00 0 Cart】
+L82: 
+L83:   * 【9†Honeys】
+L84:   * 【14†Care】
+L85:   * 【10†Groceries】
+L86:   * 【11†Home】
+L87: 
+L88:   * 【9†Honeys】
+L89:   * 【14†Care】
+L90:   * 【10†Groceries】
+L91:   * 【11†Home】
+L92: 
+L93: 【15†Contact】
+L94: 
+L95: 【16†Image: Mielaissa Logo】
+L96: 
+L97:   * 【9†Honeys】
+L98:   * 【14†Care】
+L99:   * 【10†Groceries】
+L100:   * 【11†Home】
+L101: 
+L102:   * 【9†Honeys】
+L103:   * 【14†Care】
+L104:   * 【10†Groceries】
+L105:   * 【11†Home】
+L106: 
+L107: 【15†Contact】
+L108: 
+L109: ### 【4†Login】
+L110: 
+L111: 【8†$0.00 0 Cart】
+L112: 
+L113: ## serve your business
+L114: ## It's our business to
+L115: 
+L116: Alkao alkaline water delivery service means business when it comes to the product vave and great tasting, mineralized alkaline water, advanced water dispenser and a variety of wealthless-focused beverage options.
+L117: 
+L118: 【17†Shop Now】
+L119: 
+L120: ## It's our business to
+L121: ## serve your business
+L122: 
+L123: Alkao alkaline water delivery service means business when it comes to the product vave and great tasting, mineralized alkaline water, advanced water dispenser and a variety of wealthless-focused beverage options.
+L124: 
+L125: 【17†Shop Now】
+L126: 
+L127: ## the water everyone is talking about,
+L128: 
+L129: ## delivered to your door
+L130: 
+L131: [alkao_carousel categories="" per_page="30"]
+L132: ## Multi-pH Alkaline Water at your Fingerprints
+L133: 
+L134:   * 7 drinking modes of ionized alkaline water
+L135:   * Easy one-touch operation with voice prompts
+L136:   * Large LCD panel and bright control buttons
+L137:   * Response touch display with pH-monitoring
+L138: 
+L139: 【17†Shop Machines】
+L140: 
+L141: 【18†Book a Demo†calendly.com】
+L142: 
+L143: 【19†Image: Multi-pH Alkaline Water】
+L144: 
+L145: ## Office Delivery plans
+L146: 
+L147: ## Small Office
+L148: 
+L149: 1-22 employees
+L150: 
+L151: 【20†Image: Small Office】
+L152: 
+L153: ## Medium Office
+L154: 
+L155: 23-49 employees
+L156: 
+L157: 【21†Image: Medium Office】
+L158: ## Large Office
+L159: 
+L160: 50+ employees
+L161: 
+L162: 【22†Image: Large Office】
+L163: 
+L164: 【23†Image: Leveluk K8】
+L165: 
+L166: ## Leveluk K8
+L167: 
+L168: ## (ALKAO Edition)
+L169: 
+L170:   * 8 electrode plates for stronger ORP (oxidation-reduction potential)
+L171:   * Multi-language voice guidance
+L172:   * Touchscreen interface
+L173:   * Sleek, futuristic design
+L174:   * Portable power supply for international use
+L175: 
+L176: 【24†Image: Leveluk SD501】
+L177: 
+L178: ## Leveluk SD501
+L179: ## (ALKAO Edition)
+L180: 
+L181:   * 7-electrode platinum-coated titanium plates
+L182:   * Easy one-touch operation with voice prompts
+L183:   * Large LCD panel and bright control buttons
+L184:   * Produces a pH range from 2.5 to 11.5
+L185: 
+L186: 【25†Image: Leveluk SD501 Platinum】
+L187: 
+L188: ## Leveluk SD501
+L189: 
+L190: ## (Platinum Edition)
+L191: 
+L192:   * Same advanced technology as SD501
+L193:   * Elegant metallic look for upscale homes
+L194:   * User-friendly LCD
+L195:   * 5 water types, from strong acidic to Kangen
+L196:   * Great for health-conscious
+L197: 
+L198: 【26†Image: Leveluk JR4】
+L199: 
+L200: ## Leveluk JR4
+L201: ## (ALKAO Edition)
+L202: 
+L203:   * 4 large plates (for supercharged performance)
+L204:   * High-capacity continuous flow
+L205:   * Electrolysis enhancer tank
+L206:   * Separate water hoses for acidic & alkaline output
+L207:   * Designed for single and couples use
+L208: 
+L209: 【27†More Information】
+L210: 
+L211: 【27†More Information】
+L212: 
+L213: 【28†More Information】
+L214: 
+L215: 【29†More Information】
+L216: 
+L217: 【23†Image: Leveluk K8】
+L218: 
+L219: ## Leveluk K8
+L220: ## (ALKAO Edition)
+L221: 
+L222:   * 8 electrode plates for stronger ORP (oxidation-reduction potential)
+L223:   * Multi-language voice guidance
+L224:   * Touchscreen interface
+L225:   * Sleek, futuristic design
+L226:   * Portable power supply for international use
+L227: 
+L228: 【27†More Information】
+L229: 
+L230: 【24†Image: Leveluk SD501】
+L231: 
+L232: ## Leveluk SD501
+L233: ## (ALKAO Edition)
+L234: 
+L235:   * 7-electrode solid platinum-coated titanium plates
+L236:   * Easy one-touch operation with voice prompts
+L237:   * Large LCD panel and bright control buttons
+L238:   * Produces water with a pH range from 2.5 to 11.5
+L239: 
+L240: 【27†More Information】
+L241: 
+L242: 【25†Image: Leveluk SD501 Platinum】
+L243: 
+L244: ## Leveluk SD501
+L245: ## (Platinum Edition)
+L246: 
+L247:   * Same advanced technology as SD501
+L248:   * Elegant metallic look for upscale homes
+L249:   * User-friendly  LCD
+L250:   * 5 water types, from strong acidic to Kangen
+L251:   * Great for health-conscious
+L252: 
+L253: 【28†More Information】
+L254: 
+L255: 【26†Image: Leveluk JR4】
+L256: 
+L257: ## Leveluk JR4
+L258: ## (ALKAO Edition)
+L259: 
+L260:   * 4 large plates (for supercharged performance)
+L261:   * High-capacity continuous flow
+L262:   * Electrolysis enhancer tank
+L263:   * Separate water hoses for acidic & alkaline output
+L264:   * Designed for single and couples use
+L265: 
+L266: 【29†More Information】
+L267: 
+L268: ## Subscribe to my Newsletter
+L269: 
+L270: ## Sign up with your email address to receive news and updates.
+L271: 
+L272: ## Get the Inside Scoop on our Initiatives, Specials, and Trends.
+L273: 
+L274: [Input] [Input] [Input] [Input]
+L275: 
+L276: [Input: Enter your email]
+L277: 
+L278: Subscribe
+
+--------------------------------------------------------------------------------
+Point of Sale - Mielaissa 5837 Rue Jean-Talon Est (https://mielaissa.ca/ca-en/point-of-sale/)
+【turn532571view4】 [wordlim: 200] Crawled: today; Content type: text/html; Source: open({"ref_id":"http://mielaissa.ca/ca-en/point-of-sale/","lineno":null}); Total lines: 500
+L0: [Button: ×] 【0†💥 Black Friday Mega Deals ...】
+L1: 
+L2: 【1†RESIDENTIAL】 【2†BUSINESS】
+L3: 
+L4: Deliver to H1J ✎
+L5: 
+L6: 【1†EN】 | 【3†FR】
+L7: 
+L8: 【1†RESIDENTIAL】 【2†BUSINESS】
+L9: 
+L10: Deliver to H1J ✎
+L11: 
+L12: ### 【4†Login】
+L13: 
+L14:   * 【5†Restaurant】
+L15:   * 【6†Point of Sale】
+L16:   * 【7†Corporate Gifts】
+L17: 
+L18:   * 【5†Restaurant】
+L19:   * 【6†Point of Sale】
+L20:   * 【7†Corporate Gifts】
+L21: 
+L22: 【1†EN】 | 【3†FR】
+L23: 
+L24: 【8†$0.00 0 Cart】
+L25: 
+L26: 【9†Honeys】
+L27: 
+L28: 【9†Care】
+L29: 
+L30: 【10†Groceries】
+L31: 
+L32: 【11†Home】
+L33: 
+L34: Free Shipping | Eligible on purchase of CA$120+
+L35: ### Available Offers
+L36: 
+L37: [Button: ×]
+L38: 
+L39: [Button: Promo Codes Details] [Button: Promo Codes] [Button: Service]
+L40: #### Promo Codes Details
+L41: 
+L42:   * Coupon 1 — Free Delivery : Free delivery in Quebec (except remote regions) with any purchase of CA$120.00 or more before taxes.
+L43:   * Coupon 2 — First Order Special : Get a 15% OFF promotion on your very first order. Limit of one use per new logged-in customer.
+L44:   * Coupon 3 — Business & Student Discount : Benefit from 15% OFF if you are a verified business or student. Proof of status may be requested.
+L45: #### Promo Codes
+L46: 
+L47: Free Shipping Coupon
+L48: 
+L49: on orders of CA$120+
+L50: 
+L51: Code : `MIELAISSA120`
+L52: 
+L53: Limit: 1 coupon per order. Excluding fees and taxes.
+L54: 
+L55: 【12†Use】 [Button: Copy]
+L56: 
+L57: 15% OFF
+L58: 
+L59: On your very first order
+L60: 
+L61: Code : `FIRSTORDER15`
+L62: 
+L63: Limit: One use per new logged-in customer.
+L64: 
+L65: 【13†Use】 [Button: Copy]
+L66: #### Service
+L67: 
+L68:   * Enjoy free Delivery on CA$120 (Valid across Quebec).
+L69:   * 15% OFF for verified business or student
+L70:   * Need Help ? [Button: Open chat] (Tidio).
+L71: 
+L72:   * 【5†Restaurant】
+L73:   * 【6†Point of Sale】
+L74:   * 【7†Corporate Gifts】
+L75: 
+L76:   * 【5†Restaurant】
+L77:   * 【6†Point of Sale】
+L78:   * 【7†Corporate Gifts】
+L79: ### 【4†Login】
+L80: 
+L81: 【8†$0.00 0 Cart】
+L82: 
+L83:   * 【9†Honeys】
+L84:   * 【14†Care】
+L85:   * 【10†Groceries】
+L86:   * 【11†Home】
+L87: 
+L88:   * 【9†Honeys】
+L89:   * 【14†Care】
+L90:   * 【10†Groceries】
+L91:   * 【11†Home】
+L92: 
+L93: 【15†Contact】
+L94: 
+L95: 【16†Image: Mielaissa Logo】
+L96: 
+L97:   * 【9†Honeys】
+L98:   * 【14†Care】
+L99:   * 【10†Groceries】
+L100:   * 【11†Home】
+L101: 
+L102:   * 【9†Honeys】
+L103:   * 【14†Care】
+L104:   * 【10†Groceries】
+L105:   * 【11†Home】
+L106: 
+L107: 【15†Contact】
+L108: 
+L109: ### 【4†Login】
+L110: 
+L111: 【8†$0.00 0 Cart】
+L112: 
+L113: ## serve your business
+L114: ## It's our business to
+L115: 
+L116: Alkao alkaline water delivery service means business when it comes to the product vave and great tasting, mineralized alkaline water, advanced water dispenser and a variety of wealthless-focused beverage options.
+L117: 
+L118: 【17†Shop Now】
+L119: 
+L120: ## It's our business to
+L121: ## serve your business
+L122: 
+L123: Alkao alkaline water delivery service means business when it comes to the product vave and great tasting, mineralized alkaline water, advanced water dispenser and a variety of wealthless-focused beverage options.
+L124: 
+L125: 【17†Shop Now】
+L126: 
+L127: ## the water everyone is talking about,
+L128: 
+L129: ## delivered to your door
+L130: 
+L131: [alkao_carousel categories="" per_page="30"]
+L132: ## Multi-pH Alkaline Water at your Fingerprints
+L133: 
+L134:   * 7 drinking modes of ionized alkaline water
+L135:   * Easy one-touch operation with voice prompts
+L136:   * Large LCD panel and bright control buttons
+L137:   * Response touch display with pH-monitoring
+L138: 
+L139: 【17†Shop Machines】
+L140: 
+L141: 【18†Book a Demo†calendly.com】
+L142: 
+L143: 【19†Image: Multi-pH Alkaline Water】
+L144: 
+L145: ## Office Delivery plans
+L146: 
+L147: ## Small Office
+L148: 
+L149: 1-22 employees
+L150: 
+L151: 【20†Image: Small Office】
+L152: 
+L153: ## Medium Office
+L154: 
+L155: 23-49 employees
+L156: 
+L157: 【21†Image: Medium Office】
+L158: ## Large Office
+L159: 
+L160: 50+ employees
+L161: 
+L162: 【22†Image: Large Office】
+L163: 
+L164: 【23†Image: Leveluk K8】
+L165: 
+L166: ## Leveluk K8
+L167: 
+L168: ## (ALKAO Edition)
+L169: 
+L170:   * 8 electrode plates for stronger ORP (oxidation-reduction potential)
+L171:   * Multi-language voice guidance
+L172:   * Touchscreen interface
+L173:   * Sleek, futuristic design
+L174:   * Portable power supply for international use
+L175: 
+L176: 【24†Image: Leveluk SD501】
+L177: 
+L178: ## Leveluk SD501
+L179: ## (ALKAO Edition)
+L180: 
+L181:   * 7-electrode platinum-coated titanium plates
+L182:   * Easy one-touch operation with voice prompts
+L183:   * Large LCD panel and bright control buttons
+L184:   * Produces a pH range from 2.5 to 11.5
+L185: 
+L186: 【25†Image: Leveluk SD501 Platinum】
+L187: 
+L188: ## Leveluk SD501
+L189: 
+L190: ## (Platinum Edition)
+L191: 
+L192:   * Same advanced technology as SD501
+L193:   * Elegant metallic look for upscale homes
+L194:   * User-friendly LCD
+L195:   * 5 water types, from strong acidic to Kangen
+L196:   * Great for health-conscious
+L197: 
+L198: 【26†Image: Leveluk JR4】
+L199: 
+L200: ## Leveluk JR4
+L201: ## (ALKAO Edition)
+L202: 
+L203:   * 4 large plates (for supercharged performance)
+L204:   * High-capacity continuous flow
+L205:   * Electrolysis enhancer tank
+L206:   * Separate water hoses for acidic & alkaline output
+L207:   * Designed for single and couples use
+L208: 
+L209: 【27†More Information】
+L210: 
+L211: 【27†More Information】
+L212: 
+L213: 【28†More Information】
+L214: 
+L215: 【29†More Information】
+L216: 
+L217: 【23†Image: Leveluk K8】
+L218: 
+L219: ## Leveluk K8
+L220: ## (ALKAO Edition)
+L221: 
+L222:   * 8 electrode plates for stronger ORP (oxidation-reduction potential)
+L223:   * Multi-language voice guidance
+L224:   * Touchscreen interface
+L225:   * Sleek, futuristic design
+L226:   * Portable power supply for international use
+L227: 
+L228: 【27†More Information】
+L229: 
+L230: 【24†Image: Leveluk SD501】
+L231: 
+L232: ## Leveluk SD501
+L233: ## (ALKAO Edition)
+L234: 
+L235:   * 7-electrode solid platinum-coated titanium plates
+L236:   * Easy one-touch operation with voice prompts
+L237:   * Large LCD panel and bright control buttons
+L238:   * Produces water with a pH range from 2.5 to 11.5
+L239: 
+L240: 【27†More Information】
+L241: 
+L242: 【25†Image: Leveluk SD501 Platinum】
+L243: 
+L244: ## Leveluk SD501
+L245: ## (Platinum Edition)
+L246: 
+L247:   * Same advanced technology as SD501
+L248:   * Elegant metallic look for upscale homes
+L249:   * User-friendly  LCD
+L250:   * 5 water types, from strong acidic to Kangen
+L251:   * Great for health-conscious
+L252: 
+L253: 【28†More Information】
+L254: 
+L255: 【26†Image: Leveluk JR4】
+L256: 
+L257: ## Leveluk JR4
+L258: ## (ALKAO Edition)
+L259: 
+L260:   * 4 large plates (for supercharged performance)
+L261:   * High-capacity continuous flow
+L262:   * Electrolysis enhancer tank
+L263:   * Separate water hoses for acidic & alkaline output
+L264:   * Designed for single and couples use
+L265: 
+L266: 【29†More Information】
+L267: 
+L268: ## Subscribe to my Newsletter
+L269: 
+L270: ## Sign up with your email address to receive news and updates.
+L271: 
+L272: ## Get the Inside Scoop on our Initiatives, Specials, and Trends.
+L273: 
+L274: [Input] [Input] [Input] [Input]
+L275: 
+L276: [Input: Enter your email]
+L277: 
+L278: Subscribe

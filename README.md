@@ -1,3 +1,31 @@
+> **OWNER CORRECTION — 2026-10-30:** the editorial redesign below was rejected. Target is a faithful Node.js conversion of the existing mielaissa.ca. See [source fidelity instructions](docs/SOURCE_PARITY.md). Current preview is not the requested clone and must not be released as such.
+
+# MIELAISSA.CA — Node.js / TAKATAK-V1 migration
+
+Owner direction, 2026-10-30: replace WordPress while preserving the merchant’s content and commercial records. **The new application is a working migration preview, not a transactional production release.**
+
+- Node 22+, Next.js 16.2.10, React 19.2.4, TypeScript; same application family as TAKATAK-V1.
+- Premium FR/EN storefront, 26 observed public references, product discovery/search/filter/sort, product pages, local selection, business/contact/privacy/offers pages.
+- No WordPress runtime dependency. No fake checkout, account migration, marketing subscription or live TAKATAK integration.
+- Original plugin files stay available as a rollback/reference until actual cutover.
+
+```bash
+npm ci --ignore-scripts
+npm run dev -- --port 4180
+npm test
+npm run typecheck
+npm run build
+npm run test:browser
+```
+
+Use the compiled standalone server for release checks: copy `.next/static` to `.next/standalone/.next/`, copy `public` to `.next/standalone/`, then `PORT=4180 node .next/standalone/server.js`. Dockerfile packages the same server. `/api/health` reports preview status honestly. No production host or deploy credentials are configured.
+
+Source-preservation tools: `npm run capture` now includes original CSS/fonts/scripts/media with recursive CSS dependencies; `npm run audit:reference -- /private/archive` verifies archived bytes. See [capture runbook](docs/REFERENCE_CAPTURE.md). These tools have only been tested offline here; the real site assets remain unavailable.
+
+Read [migration inventory and cutover](docs/NODE_MIGRATION.md). Read [agent handoff](docs/AGENT_HANDOFF.md) before editing. The following section describes the historical plugin only.
+
+---
+
 # MIELAISSA.CA
 
 Version-controlled enhancements for the existing **Miel Aissa** WordPress and WooCommerce shop at https://mielaissa.ca/.

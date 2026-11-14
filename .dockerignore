@@ -1,0 +1,8 @@
+.git
+node_modules
+.next
+migration-private
+content/source-audit
+wordpress
+*.log
+test-results
